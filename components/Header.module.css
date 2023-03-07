@@ -1,0 +1,126 @@
+.header {
+    position: static;
+    background-color: var(--dark-3);
+}
+
+.headerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-xl) 40px;
+    font-size: var(--bold-26-size);
+    color: #ff571a;
+    max-width: 1360px;
+    margin: auto;
+    /* gap: 84px; */
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-md);
+}
+
+.favIcon {
+    position: relative;
+    width: 28.5px;
+    height: 28.5px;
+    flex-shrink: 0;
+    margin-top: 7px;
+}
+
+.logoTitle {
+    font-family: var(--semibold-12);
+    font-size: var(--bold-26-size);
+    line-height: 38px;
+    cursor: pointer;
+    margin: 0;
+  }
+
+.logoDot {
+    color: var(--secondary-color-background-2);
+}
+
+.contentRight {
+    display: flex;
+    float: right;
+    font-size: 14px;
+    gap: 65px;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-start;
+    font-size: var(--semibold-14-size);
+    color: var(--secondary-color-secondary-4);
+
+    border-radius: 8px;
+    background-color: var(--dark-4);
+    width: 440px;
+    flex-shrink: 0;
+    flex-direction: row;
+    padding: 9px var(--padding-xl);
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.searchInputWrapper {
+    line-height: 22px;
+    display: inline-block;
+    width: 100%;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    color: grey;
+    width: 100%;
+}
+
+.searchIcon {
+    width: 20.5px;
+height: 20.5px;
+}
+
+.icons {
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-radius: var(--br-md);
+    padding: var(--padding-lg);
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.icon:hover {
+    background-color: var(--red-red);
+}
+
+.homeIcon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.groupIcon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.sharpIcon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
