@@ -94,8 +94,8 @@ body {
   background-color: var(--body-back-color);
 }
 
-input:focus-visible {
-  border: none;
+:focus-visible {
+  outline: none;
 }
 
 body[data-theme="dark"] {
