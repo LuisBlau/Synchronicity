@@ -95,9 +95,13 @@
   gap: var(--gap-sm);
 }
 
+.newPosts:hover {
+  background-color: var(--item-hover-back);
+}
+
 .newIcon {
   border-radius: var(--br-sm);
-  background-color: var(--dark-4);
+  background-color: var(--icon-back);
   display: flex;
   padding: var(--padding-2xs);
   width: 20px;
@@ -169,6 +173,10 @@
   gap: var(--gap-sm);
 }
 
+.popularPosts:hover {
+  background-color: var(--item-hover-back);
+}
+
 .popularIconChild {
   height: 100%;
   width: 100%;
@@ -190,6 +198,10 @@
   flex-direction: row;
   align-items: center;
   gap: var(--gap-sm);
+}
+
+.members:hover {
+  background-color: var(--item-hover-back);
 }
 
 .wrapperNumber {
@@ -226,11 +238,17 @@
 }
 
 .tag {
+  border-radius: var(--br-sm);
+  width: 160px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
   gap: var(--gap-md);
+}
+
+.tag:hover {
+  background-color: var(--item-hover-back);
 }
 
 .icon {
@@ -372,6 +390,10 @@
   cursor: pointer;
 }
 
+.postTitle:hover {
+  text-decoration: underline;
+}
+
 .postTags {
   display: flex;
   align-items: flex-start;
@@ -390,6 +412,10 @@
   padding: var(--padding-2xs) var(--padding-lg);
   align-items: center;
   justify-content: center;
+}
+
+.postTag:hover {
+  background-color: var(--tag-hover-back);
 }
 
 .postTagText {
@@ -456,6 +482,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-xs);
+}
+
+.postUserNameWrapper:hover {
+  text-decoration: underline;
 }
 
 .postUserName {
@@ -549,6 +579,10 @@
   cursor: pointer;
 }
 
+.postActionDesc:hover {
+  text-decoration: underline;
+}
+
 .rightGroup {
   border-radius: var(--br-lg);
   background-color: var(--header-back-color);
@@ -623,6 +657,10 @@
   flex-shrink: 0;
 }
 
+.rightGroupItemName:hover {
+  text-decoration: underline;
+}
+
 .rightGroupItemTag {
   border-radius: var(--br-xl);
   background-color: var(--blue-blue-30);
@@ -672,6 +710,9 @@
   padding: var(--padding-3xs) var(--padding-md);
   align-items: center;
   justify-content: center;
+}
+.memberProfileTag:hover {
+  background-color: var(--tag-hover-back);
 }
 
 .rightGroupItemAdminTag {
