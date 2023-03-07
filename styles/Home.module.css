@@ -38,11 +38,11 @@
 
 .explore {
   border-radius: var(--br-lg);
-  background-color: var(--dark-3);
+  background-color: var(--header-back-color);
   width: 210px;
   padding: var(--padding-lg);
   box-sizing: border-box;
-  color: var(--secondary-color-background);
+  /* color: var(--main-font-color); */
   gap: var(--gap-md);
   flex-direction: column;
   display: flex;
@@ -129,9 +129,9 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-    align-items: flex-start;
-    gap: var(--gap-3xs);
-    font-size: var(--semibold-12-size);
+  align-items: flex-start;
+  gap: var(--gap-3xs);
+  font-size: var(--semibold-12-size);
 }
 
 .subtitle {
@@ -203,7 +203,7 @@
 
 .groups {
   border-radius: var(--br-lg);
-  background-color: var(--dark-3);
+  background-color: var(--header-back-color);
   width: 210px;
   padding: var(--padding-xl) var(--padding-2xl) var(--padding-xl) var(--padding-xl);
   box-sizing: border-box;
@@ -220,7 +220,6 @@
   gap: var(--gap-md);
   text-align: center;
   font-size: var(--semibold-12-size);
-  color: var(--color-black);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -282,7 +281,7 @@
 .name1 {
   flex-direction: column;
   text-align: left;
-  color: var(--secondary-color-background-2);
+  /* color: var(--secondary-color-background-2); */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -290,7 +289,7 @@
 
 .postHome {
   border-radius: var(--br-lg);
-  background-color: var(--dark-3);
+  background-color: var(--header-back-color);
   width: 785px;
   flex-direction: column;
   padding: var(--padding-xl);
@@ -380,12 +379,12 @@
   gap: var(--gap-md);
   flex-direction: row;
   font-size: var(--regular-10-size);
-  color: var(--secondary-color-secondary-5);
+  color: var(--secondary-font-color);
 }
 
 .postTag {
   border-radius: var(--br-xl);
-  background-color: var(--dark-4);
+  background-color: var(--tag-back-color);
   display: flex;
   flex-direction: row;
   padding: var(--padding-2xs) var(--padding-lg);
@@ -406,7 +405,7 @@
   justify-content: flex-start;
   gap: var(--gap-md);
   font-size: var(--semibold-14-size);
-  color: var(--secondary-color-secondary-6);
+  /* color: var(--secondary-color-secondary-6); */
   align-items: center;
 }
 
@@ -469,7 +468,7 @@
   position: relative;
   font-size: var(--regular-10-size);
   line-height: 16px;
-  color: var(--secondary-color-secondary-5);
+  color: var(--secondary-font-color);
 }
 
 .postUserNameDot {
@@ -552,7 +551,7 @@
 
 .rightGroup {
   border-radius: var(--br-lg);
-  background-color: var(--dark-3);
+  background-color: var(--header-back-color);
   width: 325px;
   padding: var(--padding-xl);
   box-sizing: border-box;
@@ -667,7 +666,7 @@
 
 .memberProfileTag {
   border-radius: var(--br-xl);
-  background-color: var(--dark-4);
+  background-color: var(--tag-back-color);
   display: flex;
   flex-direction: row;
   padding: var(--padding-3xs) var(--padding-md);
