@@ -82,6 +82,7 @@
   --icon-back: #f4f6f8;
   --divider-color: #F4F6F8;
   --setting-effect-color: #97989D;
+  --social-icon-color: #858EAD;
 }
 
 body {
@@ -118,6 +119,7 @@ body[data-theme="dark"] {
   --icon-back: #2c353d;
   --divider-color: #3F4354;
   --setting-effect-color: #151A1E;
+  --social-icon-color: #F4F6F8;
 }
 
 .flex {

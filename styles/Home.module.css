@@ -25,6 +25,7 @@
   min-width: 265px;
 }
 
+/* ----------------------------- LEFT ----------------------------------- */
 .explore {
   border-radius: 16px;
   background-color: var(--header-back-color);
@@ -159,6 +160,7 @@
   display: flex;
 }
 
+/* ----------------------------- CENTER ----------------------------------- */
 .postHome {
   border-radius: 16px;
   background-color: var(--header-back-color);
@@ -365,6 +367,7 @@
   text-decoration: underline;
 }
 
+/* ----------------------------- RIGHT ----------------------------------- */
 .rightGroup {
   border-radius: 16px;
   background-color: var(--header-back-color);

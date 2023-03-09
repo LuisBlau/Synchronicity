@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 // import { Source_Sans_Pro } from 'next/font/google';
 import Header from '../components/Header';
 import styles from '@/styles/PostOpen.module.css';
@@ -31,6 +32,7 @@ import thumbnilSvg from '../public/thumbnail.svg';
 // const inter = Source_Sans_Pro({ subsets: ['latin'], weight: '700' });
 
 export default function PostOpen() {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -141,7 +143,7 @@ export default function PostOpen() {
                 />
               </div>
             </div>
-            <button className={styles.viewProfileBtn}>
+            <button className={styles.viewProfileBtn} onClick={() => router.push('/profile')}>
               View Profile
             </button>
             <div className={styles.joinDate}>
