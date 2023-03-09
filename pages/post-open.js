@@ -259,12 +259,15 @@ export default function PostOpen() {
             </div>
             <div className={styles.comments}>
               <div className={styles.comment}>
-                <div className={styles.commentAvatar}>
-                  <Image
-                    className={styles.commentAvatar}
-                    alt="comment avatar"
-                    src={postUserAvatar}
-                  />
+                <div className={styles.commentLeft}>
+                  <div className={styles.commentAvatar}>
+                    <Image
+                      className={styles.commentAvatar}
+                      alt="comment avatar"
+                      src={postUserAvatar}
+                    />
+                  </div>
+                  <div className={styles.commentLeftLine}></div>
                 </div>
                 <div className={styles.commentBox}>
                   <div className={styles.commentTitle}>
@@ -277,12 +280,15 @@ export default function PostOpen() {
                 </div>
               </div>
               <div className={styles.comment2}>
-                <div className={styles.commentAvatar}>
-                  <Image
-                    className={styles.commentAvatar}
-                    alt="comment avatar"
-                    src={postUserAvatar}
-                  />
+                <div className={styles.commentLeft2}>
+                  <div className={styles.commentLeftLine2}></div>
+                  <div className={styles.commentAvatar}>
+                    <Image
+                      className={styles.commentAvatar}
+                      alt="comment avatar"
+                      src={postUserAvatar}
+                    />
+                  </div>
                 </div>
                 <div className={styles.commentBox}>
                   <div className={styles.commentTitle}>

@@ -96,7 +96,7 @@
   font-weight: 600;
   font-size: 26px;
   line-height: 38px;
-  color: #F7F7F7;
+  color: var(--main-font-color);
 }
 
 .profileMemberOf {
@@ -183,7 +183,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 26px;
-  color: #F7F7F7;
+  color: var(--main-font-color);
 }
 
 .divider {
@@ -194,7 +194,7 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
-  color: #F7F7F7;
+  color: var(--main-font-color);
 }
 
 .infoSecondary {
@@ -247,7 +247,7 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
-  color: #C5D0E6;
+  color: var(--secondary-font-color);
   padding-top: 10px;
 }
 
@@ -269,7 +269,7 @@
   font-weight: 600;
   font-size: 26px;
   line-height: 38px;
-  color: #F7F7F7;
+  color: var(--main-font-color);
 }
 
 .postShareIcon {
@@ -303,7 +303,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
-  color: #C5D0E6;
+  color: var(--secondary-font-color);
   cursor: pointer;
 }
 
@@ -366,6 +366,21 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  position: relative;
+}
+
+.commentLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentLeftLine {
+  border-left: #C5D0E6 2px solid;
+  height: calc(100% + 35px);
+  width: 1px;
+  position: absolute;
+  left: 40px;
+  top: 50px;
 }
 
 .comment2 {
@@ -374,6 +389,21 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  position: relative;
+}
+
+.commentLeft2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.commentLeftLine2 {
+  border-top: #C5D0E6 2px solid;
+  width: 35px;
+  height: 10%;
+  position: absolute;
+  left: 40px;
+  top: 25px;
 }
 
 .commentAvatar {
@@ -394,7 +424,7 @@
 }
 
 .commentTitle {
-  color: #F7F7F7;
+  color: var(--main-font-color);
 }
 
 .actionGroup {
@@ -448,7 +478,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  color: #F7F7F7;
+  color: var(--main-font-color);
 }
 
 .postDate {
