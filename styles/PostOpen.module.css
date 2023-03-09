@@ -355,7 +355,46 @@
 }
 
 .comments {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
 
+.comment {
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.comment2 {
+  padding: 0px 20px;
+  padding-left: 80px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.commentAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  background-color: #1F4988;
+}
+
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+  gap: 10px;
+  border: 1px solid #C5D0E6;
+  border-radius: 22.5px;
+}
+
+.commentTitle {
+  color: #F7F7F7;
 }
 
 .actionGroup {

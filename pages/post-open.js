@@ -258,7 +258,42 @@ export default function PostOpen() {
               </div>
             </div>
             <div className={styles.comments}>
-              comment
+              <div className={styles.comment}>
+                <div className={styles.commentAvatar}>
+                  <Image
+                    className={styles.commentAvatar}
+                    alt="comment avatar"
+                    src={postUserAvatar}
+                  />
+                </div>
+                <div className={styles.commentBox}>
+                  <div className={styles.commentTitle}>
+                    <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
+                  </div>
+                  <div className={styles.postText}>
+                    <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
+                    <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.comment2}>
+                <div className={styles.commentAvatar}>
+                  <Image
+                    className={styles.commentAvatar}
+                    alt="comment avatar"
+                    src={postUserAvatar}
+                  />
+                </div>
+                <div className={styles.commentBox}>
+                  <div className={styles.commentTitle}>
+                    <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
+                  </div>
+                  <div className={styles.postText}>
+                    <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
+                    <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

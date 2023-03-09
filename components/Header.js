@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from 'next/image';
 import Link from "next/link";
+import { useRouter } from 'next/router';
 import logoSvg from '../public/favicon.svg';
 import searchIconSvg from '../public/search-icon.svg';
 import homeIconSvg from '../public/home-icon.svg';
@@ -13,6 +14,7 @@ import moonSvg from '../public/moon.svg';
 import styles from './Header.module.css';
 
 export default function Header() {
+  const router = useRouter();
   const clickedClass = 'clicked';
   const lightTheme = 'light';
   const darkTheme = 'dark';
@@ -59,8 +61,8 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
-        <div className={styles.logo}>
-          <Link href="/"><Image className={styles.favIcon} alt="logo" src={logoSvg} /></Link>
+        <div className={styles.logo} onClick={() => router.push('/')}>
+          <Image className={styles.favIcon} alt="logo" src={logoSvg} />
           <h1 className={styles.logoTitle}><span>Synchronicity</span><span className={styles.logoDot}>.</span></h1>
         </div>
         <div className={styles.contentRight}>

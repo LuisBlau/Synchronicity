@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 // import { Source_Sans_Pro } from 'next/font/google';
 import Header from '../components/Header';
 import styles from '@/styles/Home.module.css';
@@ -26,6 +27,8 @@ import adminSvg from '../public/admin.svg';
 // const inter = Source_Sans_Pro({ subsets: ['latin'], weight: '700' });
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -235,7 +238,7 @@ export default function Home() {
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle}>
+                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
                       Bitcoin has tumbled from its record high of $58,000 after
                       words from three wise men and women...
                     </div>
@@ -251,7 +254,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.postMoreIcon}>
+                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
                     <Image
                       alt="share svg"
                       src={shareSvg}
@@ -321,7 +324,7 @@ export default function Home() {
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle}>
+                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
                       Bitcoin has tumbled from its record high of $58,000 after
                       words from three wise men and women...
                     </div>
@@ -337,7 +340,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.postMoreIcon}>
+                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
                     <Image
                       alt="share svg"
                       src={shareSvg}
@@ -407,7 +410,7 @@ export default function Home() {
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle}>
+                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
                       Bitcoin has tumbled from its record high of $58,000 after
                       words from three wise men and women...
                     </div>
@@ -423,7 +426,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.postMoreIcon}>
+                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
                     <Image
                       alt="share svg"
                       src={shareSvg}
@@ -493,7 +496,7 @@ export default function Home() {
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle}>
+                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
                       Bitcoin has tumbled from its record high of $58,000 after
                       words from three wise men and women...
                     </div>
@@ -509,7 +512,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.postMoreIcon}>
+                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
                     <Image
                       alt="share svg"
                       src={shareSvg}
@@ -579,7 +582,7 @@ export default function Home() {
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle}>
+                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
                       Bitcoin has tumbled from its record high of $58,000 after
                       words from three wise men and women...
                     </div>
@@ -595,7 +598,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.postMoreIcon}>
+                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
                     <Image
                       alt="share svg"
                       src={shareSvg}
