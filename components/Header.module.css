@@ -1,27 +1,24 @@
 .header {
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    height: 80px;
     background-color: var(--header-back-color);
 }
 
 .headerContent {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: var(--padding-xl) 40px;
-    font-size: var(--bold-26-size);
+    padding: 20px 40px;
     color: #ff571a;
     max-width: 1360px;
     margin: auto;
-    /* gap: 84px; */
 }
 
 .logo {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    gap: var(--gap-md);
+    gap: 10px;
 }
 
 .favIcon {
@@ -34,7 +31,7 @@
 
 .logoTitle {
     font-family: var(--semibold-12);
-    font-size: var(--bold-26-size);
+    font-size: 26px;
     line-height: 38px;
     cursor: pointer;
     margin: 0;
@@ -46,34 +43,31 @@
 
 .contentRight {
     display: flex;
-    float: right;
-    font-size: 14px;
+    align-items: center;
     gap: 20px;
 }
 
 .search {
     display: flex;
-    justify-content: flex-start;
-    font-size: var(--semibold-14-size);
-    color: var(--secondary-color-secondary-4);
-
+    color: #858ead;
     border-radius: 8px;
     background-color: var(--search-bar-color);
-    width: 440px;
-    flex-shrink: 0;
-    flex-direction: row;
-    padding: 9px var(--padding-xl);
+    max-width: 440px;
+    width: 40vw;
+    padding: 9px 20px;
     box-sizing: border-box;
     align-items: center;
 }
 
 .searchInputWrapper {
-    line-height: 22px;
-    display: inline-block;
+    display: flex;
     width: 100%;
+    align-items: center;
 }
 
 .searchInput {
+    font-size: 14px;
+    line-height: 22px;
     border: none;
     background: none;
     color: grey;
@@ -86,20 +80,14 @@
 }
 
 .icons {
-    justify-content: flex-start;
-    gap: var(--gap-xl);
+    gap: 20px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
 }
 
 .icon {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    border-radius: var(--br-md);
-    padding: var(--padding-lg);
-    justify-content: flex-start;
+    border-radius: 7px;
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -111,8 +99,8 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    border-radius: var(--br-md);
-    padding: var(--padding-lg);
+    border-radius: 7px;
+    padding: 10px;
     justify-content: flex-start;
     cursor: pointer;
 }

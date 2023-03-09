@@ -1,98 +1,56 @@
 .main {
-  position: relative;
-  top: 20px;
-  flex-direction: row;
   max-width: 1360px;
   margin: auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-xl);
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.leftSidebar {
-  gap: var(--gap-xl);
+.side {
+  gap: 20px;
   flex-direction: column;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
-.centerSection {
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: var(--gap-xl);
-  font-size: var(--semibold-18-size);
-  display: flex;
-  align-items: flex-start;
+.leftSide {
+  width: 15.5%;
+  min-width: 170px;
+}
+.centerSide {
+  width: 58%;
 }
 
-.rightSidebar {
-  flex-direction: column;
-  font-size: var(--semibold-14-size);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-xl);
+.rightSide {
+  width: 24%;
+  min-width: 265px;
 }
 
 .explore {
-  border-radius: var(--br-lg);
+  border-radius: 16px;
   background-color: var(--header-back-color);
-  width: 210px;
-  padding: var(--padding-lg);
-  box-sizing: border-box;
-  /* color: var(--main-font-color); */
-  gap: var(--gap-md);
+  padding: 18px 12px;
+  gap: 10px;
   flex-direction: column;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.titleWrapper {
-  width: 77px;
-  align-items: flex-start;
-  justify-content: center;
-  display: flex;
-    flex-direction: row;
-}
-
-.title {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  position: relative;
-  line-height: 24px;
-  font-weight: 600;
+  box-sizing: border-box;
 }
 
 .content {
-  font-size: var(--semibold-12-size);
-  gap: var(--gap-md);
+  font-size: 12px;
+  gap: 10px;
   flex-direction: column;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .newPosts {
-  border-radius: var(--br-sm);
-  /* background-color: var(--dark-3); */
-  width: 186px;
-  flex-direction: column;
-  padding: var(--padding-sm) var(--padding-xs);
-  box-sizing: border-box;
-  align-items: flex-start;
+  border-radius: 6px;
+  padding: 6px 5px;
   font-size: 6px;
   cursor: pointer;
   display: flex;
-  justify-content: flex-start;
-
   flex-direction: row;
   align-items: center;
-  gap: var(--gap-sm);
+  gap: 6px;
 }
 
 .newPosts:hover {
@@ -100,151 +58,76 @@
 }
 
 .newIcon {
-  border-radius: var(--br-sm);
+  border-radius: 6px;
   background-color: var(--icon-back);
   display: flex;
-  padding: var(--padding-2xs);
+  padding: 4px;
   width: 20px;
   height: 20px;
-  flex-shrink: 0;
 }
 
-.starParent {
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.instanceChild {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.starText {
-  position: absolute;
-  top: 10px;
-  left: 9px;
-  line-height: 0px;
-  font-size: 12px;
+.iconImg {
 }
 
 .titleAndDesc {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--gap-3xs);
-  font-size: var(--semibold-12-size);
+  gap: 2px;
 }
 
 .subtitle {
-  position: relative;
+  font-size: 12px;
   line-height: 18px;
   font-weight: 600;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: var(--gap-xs);
+  gap: 4px;
 }
 
 .description {
-  position: relative;
-  font-size: var(--regular-9-size);
+  font-size: 9px;
   line-height: 14px;
-  color: var(--secondary-color-secondary-3);
-}
-
-.popularPosts {
-  border-radius: var(--br-sm);
-  /* background-color: var(--dark-3); */
-  width: 186px;
-  flex-direction: column;
-  padding: var(--padding-sm) var(--padding-xs);
-  box-sizing: border-box;
-  align-items: flex-start;
-  font-size: 6px;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-
-  flex-direction: row;
-  align-items: center;
-  gap: var(--gap-sm);
-}
-
-.popularPosts:hover {
-  background-color: var(--item-hover-back);
-}
-
-.popularIconChild {
-  height: 100%;
-  width: 100%;
-}
-
-.members {
-  border-radius: var(--br-sm);
-  /* background-color: var(--dark-3); */
-  width: 186px;
-  flex-direction: column;
-  padding: var(--padding-sm) var(--padding-xs);
-  box-sizing: border-box;
-  align-items: flex-start;
-  font-size: 6px;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-
-  flex-direction: row;
-  align-items: center;
-  gap: var(--gap-sm);
-}
-
-.members:hover {
-  background-color: var(--item-hover-back);
+  color: #97989D;
 }
 
 .wrapperNumber {
   line-height: 14px;
   border-radius: 2px;
-  background-color: var(--red-red-80);
-  flex-direction: column;
-  padding: 3px var(--padding-sm);
-  font-size: var(--regular-9-size);
+  background-color: #ff6934;
+  padding: 3px 6px;
+  font-size: 9px;
 }
 
 .groups {
-  border-radius: var(--br-lg);
+  border-radius: 16px;
+  max-width: 210px;
   background-color: var(--header-back-color);
-  width: 210px;
-  padding: var(--padding-xl) var(--padding-2xl) var(--padding-xl) var(--padding-xl);
-  box-sizing: border-box;
+  padding: 20px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-
-  gap: var(--gap-xl);
+  gap: 20px;
   flex-direction: column;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--main-font-color);
 }
 
 .tags {
   flex-direction: column;
-  gap: var(--gap-md);
-  text-align: center;
-  font-size: var(--semibold-12-size);
+  gap: 10px;
+  font-size: 12px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .tag {
-  border-radius: var(--br-sm);
-  width: 160px;
+  border-radius: 6px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: var(--gap-md);
+  align-items: center;
+  gap: 10px;
 }
 
 .tag:hover {
@@ -252,140 +135,90 @@
 }
 
 .icon {
-  border-radius: var(--br-xs);
+  border-radius: 4px;
   box-shadow: 0 3px 3px rgb(255 171 97 / 6%);
   border: 1px solid rgba(255, 171, 97, 0.1);
-  flex-direction: row;
-  padding: var(--padding-sm);
+  padding: 6px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .icon5 {
-  border-radius: var(--br-xs);
+  border-radius: 4px;
   background-color: #5a4f43;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-sm);
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.div1 {
-  position: relative;
-  line-height: 18px;
+  padding: 6px;
   font-weight: 600;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-.div6 {
-  position: relative;
-  line-height: 26px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 22px;
   height: 22px;
-  flex-shrink: 0;
-  font-size: var(--semibold-18-size);
-  color: var(--yellow-yellow);
+  font-size: 18px;
+  color: #ea942c;
+  text-align: center;
 }
 
 .name1 {
   flex-direction: column;
-  text-align: left;
-  /* color: var(--secondary-color-background-2); */
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .postHome {
-  border-radius: var(--br-lg);
+  border-radius: 16px;
   background-color: var(--header-back-color);
-  width: 785px;
+  max-width: 785px;
   flex-direction: column;
-  padding: var(--padding-xl);
+  padding: 20px;
   box-sizing: border-box;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
 .postInner {
-  justify-content: flex-start;
-  gap: var(--gap-xl);
+  gap: 20px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .postThumb {
-  border-radius: var(--br-lg);
-  width: 168px;
-  height: 168px;
-  flex-shrink: 0;
+  border-radius: 16px;
+  width: 156px;
+  height: 156px;
   object-fit: cover;
   cursor: pointer;
 }
 
 .postData {
-  width: 569px;
-  flex-shrink: 0;
-  flex-direction: row;
-  gap: var(--gap-xl);
+  flex-direction: column;
+  gap: 30px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
 }
 
-.postDataMain {
-  width: 519px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-2xl);
-  flex-shrink: 0;
+.postDataUpper {
   display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .postMoreIcon {
-  border-radius: var(--br-xs);
-  background-color: var(--secondary-color-secondary-5);
+  border-radius: 4px;
   width: 28px;
   height: 28px;
   display: flex;
-  flex-direction: row;
-  padding: var(--padding-sm);
   box-sizing: border-box;
   text-align: center;
-  font-size: var(--regular-16-size);
-  color: var(--yellow-yellow);
   align-items: center;
   justify-content: center;
-
-  line-height: 24px;
   cursor: pointer;
 }
 
 .postTitleWrapper {
-  width: 521px;
   flex-direction: column;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: 10px;
 }
 
 .postTitle {
   line-height: 26px;
+  max-width: 540px;
+  width: 35vw;
   display: inline-block;
-  width: 521px;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -396,20 +229,17 @@
 
 .postTags {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-md);
-  flex-direction: row;
-  font-size: var(--regular-10-size);
+  gap: 10px;
+  font-size: 10px;
   color: var(--secondary-font-color);
 }
 
 .postTag {
-  border-radius: var(--br-xl);
+  border-radius: 20px;
   background-color: var(--tag-back-color);
   display: flex;
   flex-direction: row;
-  padding: var(--padding-2xs) var(--padding-lg);
+  padding: 4px 10px;
   align-items: center;
   justify-content: center;
 }
@@ -420,18 +250,14 @@
 
 .postTagText {
   line-height: 16px;
-  position: relative;
   font-weight: 600;
   cursor: pointer;
 }
 
 .postUser {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: var(--gap-md);
-  font-size: var(--semibold-14-size);
-  /* color: var(--secondary-color-secondary-6); */
+  gap: 10px;
+  font-size: 14px;
   align-items: center;
 }
 
@@ -462,9 +288,7 @@
 
 .postUserMain {
   display: flex;
-  flex-direction: row;
-  width: 521px;
-  flex-shrink: 0;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
@@ -472,109 +296,68 @@
 .postUserInfo {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.postUserNameWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-xs);
-}
-
-.postUserNameWrapper:hover {
-  text-decoration: underline;
 }
 
 .postUserName {
-  position: relative;
+  display: flex;
+  gap: 4px;
   line-height: 22px;
   font-weight: 600;
 }
 
+.postUserName:hover {
+  text-decoration: underline;
+}
+
 .postDate {
   position: relative;
-  font-size: var(--regular-10-size);
+  font-size: 10px;
   line-height: 16px;
   color: var(--secondary-font-color);
 }
 
-.postUserNameDot {
-  position: relative;
-  width: 5px;
-  height: 5px;
-  flex-shrink: 0;
-}
-
 .postActions {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-lg);
-  text-align: center;
-  font-size: var(--regular-9-size);
-  color: var(--yellow-yellow);
+  gap: 14px;
+  font-size: 9px;
+  color: #ea942c;
 }
 
 .postActionIcon1 {
   display: flex;
-  border-radius: var(--br-xs);
-  background-color: var(--blue-blue-30);
+  border-radius: 4px;
+  background-color: #c2d7f6;
   width: 22px;
   height: 22px;
-  flex-direction: row;
-  padding: var(--padding-sm);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 .postActionIcon2 {
-  border-radius: var(--br-xs);
+  display: flex;
+  border-radius: 4px;
+  background-color: #ffc7b3;
   width: 22px;
   height: 22px;
-  flex-shrink: 0;
-  padding: var(--padding-sm);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-  background-color: var(--red-red-30);
-  display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .postActionIcon3 {
   display: flex;
-  flex-direction: row;
-  border-radius: var(--br-xs);
-  background-color: var(--green-green-10);
+  border-radius: 4px;
+  background-color: #e7faf4;
   width: 22px;
   height: 22px;
-  flex-shrink: 0;
-  padding: var(--padding-sm);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.postActionName {
-  flex-shrink: 0;
-  display: flex;
-  line-height: 14px;
   align-items: center;
   justify-content: center;
-  width: 10px;
-  height: 10px;
 }
 
 .postActionDesc {
   position: relative;
-  font-size: var(--semibold-14-size);
+  font-size: 12px;
   line-height: 22px;
-  color: var(--secondary-color-secondary-3);
+  color: #97989D;
   text-align: left;
   cursor: pointer;
 }
@@ -584,30 +367,28 @@
 }
 
 .rightGroup {
-  border-radius: var(--br-lg);
+  border-radius: 16px;
   background-color: var(--header-back-color);
-  width: 325px;
-  padding: var(--padding-xl);
+  max-width: 325px;
+  padding: 20px;
   box-sizing: border-box;
+}
+
+.divider {
+  border-top: 1px solid var(--divider-color);
 }
 
 .rightGroupInner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 295px;
-  gap: var(--gap-xl);
+  gap: 20px;
 }
 
 .rightGroupTitleWrapper {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
   align-items: flex-end;
-  gap: var(--gap-2xs);
-  font-size: var(--regular-16-size);
-  justify-content: flex-start;
+  gap: 3px;
+  font-size: 16px;
 }
 
 .rightGroupTitle {
@@ -625,36 +406,28 @@
 
 .rightGroupItem {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row;
-  gap: var(--gap-lg);
+  gap: 14px;
 }
 
 .rightGroupItemData {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: 10px;
   flex-direction: column;
 }
 
 .rightGroupItemTitle {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: var(--gap-md);
+  gap: 10px;
   cursor: pointer;
 }
 
 .rightGroupItemName {
-  position: relative;
   line-height: 22px;
+  font-size: 14px;
   font-weight: 600;
-  display: inline-block;
-  width: 70px;
-  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100px;
 }
 
 .rightGroupItemName:hover {
@@ -662,52 +435,40 @@
 }
 
 .rightGroupItemTag {
-  border-radius: var(--br-xl);
-  background-color: var(--blue-blue-30);
-  padding: var(--padding-3xs) var(--padding-md);
-  font-size: var(--regular-9-size);
-  color: var(--secondary-color-secondary-4);
+  border-radius: 20px;
+  background-color: #c2d7f6;
+  padding: 2px 8px;
+  font-size: 9px;
+  color: #858ead;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
 
 .rightGroupItemTagInner {
-  position: relative;
   line-height: 14px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .rightGroupItemMember {
   color: var(--color-darkslateblue);
 }
 
-.memberProfile {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: var(--regular-10-size);
-  color: var(--secondary-color-secondary-3);
-}
-
 .memberProfileTags {
   flex-direction: row;
-  font-size: var(--regular-9-size);
-  color: var(--secondary-color-secondary-4);
+  font-size: 9px;
+  color: #858ead;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-md);
+  gap: 10px;
 }
 
 .memberProfileTag {
-  border-radius: var(--br-xl);
+  border-radius: 20px;
   background-color: var(--tag-back-color);
   display: flex;
   flex-direction: row;
-  padding: var(--padding-3xs) var(--padding-md);
+  padding: 2px 8px;
   align-items: center;
   justify-content: center;
 }
@@ -716,15 +477,13 @@
 }
 
 .rightGroupItemAdminTag {
-  border-radius: var(--br-xl);
   background-color: var(--red-red-20);
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-3xs) var(--padding-md);
-  align-items: center;
-  justify-content: center;
-  font-size: var(--regular-9-size);
   color: var(--red-red-60);
+
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-size: 9px;
+  display: flex;
 }
 
 .rightGroupItemAdmin {

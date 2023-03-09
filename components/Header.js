@@ -8,6 +8,7 @@ import groupIconSvg from '../public/group-icon.svg';
 import sharpIconSvg from '../public/sharp-icon.svg';
 import settingIconSvg from '../public/setting.svg';
 import sunSvg from '../public/sun.svg';
+import sunLightSvg from '../public/sun-light.svg';
 import moonSvg from '../public/moon.svg';
 import styles from './Header.module.css';
 
@@ -74,7 +75,12 @@ export default function Header() {
                   <div className={styles.settingLabel}>Interface</div>
                   <div className={styles.modeSwitch} onClick={e => switchTheme(e)}>
                     <div className={styles.sun}>
-                      <Image src={sunSvg} width={16} height={16} alt="sun icon" />
+                      {theme === 'dark' && (
+                        <Image src={sunSvg} width={16} height={16} alt="sun icon" />
+                      )}
+                      {theme === 'light' && (
+                        <Image src={sunLightSvg} width={16} height={16} alt="sun icon" />
+                      )}
                     </div>
                     <div className={styles.moon}>
                       <Image src={moonSvg} width={16} height={16} alt="moon icon" />
@@ -88,23 +94,23 @@ export default function Header() {
               <div className={styles.searchInputWrapper}>
                 <input type="text" placeholder="Type here to search..."  className={styles.searchInput} />
               </div>
-              <a href="#">
+              <div className="flex pointer">
                 <Image
                   className={styles.searchIcon}
                   alt="search icon"
                   src={searchIconSvg}
                 />
-              </a>
+              </div>
           </div>
           <div className={styles.icons}>
             <div className={styles.icon}>
-              <a href="#"><Image className={styles.homeIcon} alt="home icon" src={homeIconSvg} /></a>
+              <Image className={styles.homeIcon} alt="home icon" src={homeIconSvg} />
             </div>
             <div className={styles.icon}>
-              <a href="#"><Image className={styles.groupIcon} alt="group icon" src={groupIconSvg} /></a>
+              <Image className={styles.groupIcon} alt="group icon" src={groupIconSvg} />
             </div>
             <div className={styles.icon}>
-              <a href="#"><Image className={styles.sharpIcon} alt="sharp icon" src={sharpIconSvg} /></a>
+              <Image className={styles.sharpIcon} alt="sharp icon" src={sharpIconSvg} />
             </div>
           </div>
         </div>
