@@ -71,6 +71,8 @@ export default function Header() {
               <Image src={settingIconSvg} alt="setting icon" />
             </div>
             { showSetting && (
+              <>
+              <div className={styles.effect} />
               <div className={styles.settingDropDown} onMouseLeave={() => setShowSetting(false)}>
                 <div className={styles.border} />
                 <div className={styles.settingDropDownInner}>
@@ -90,6 +92,7 @@ export default function Header() {
                   </div>
                 </div>
               </div>
+              </>
             )}
           </div>
           <div className={styles.search}>

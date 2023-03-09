@@ -65,7 +65,7 @@
 
 
 
-  --body-back-color: #E5E5E5;
+  --body-back-color: #f7f7f7;
   --header-back-color: #ffffff;
   --search-bar-color: #f4f6f8;
   --header-logo-dot-color: #1e252b;
@@ -81,6 +81,7 @@
   --tag-hover-back: #cdcdcd;
   --icon-back: #f4f6f8;
   --divider-color: #F4F6F8;
+  --setting-effect-color: #97989D;
 }
 
 body {
@@ -116,6 +117,7 @@ body[data-theme="dark"] {
   --tag-hover-back: #3b444c;
   --icon-back: #2c353d;
   --divider-color: #3F4354;
+  --setting-effect-color: #151A1E;
 }
 
 .flex {

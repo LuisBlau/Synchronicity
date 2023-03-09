@@ -129,6 +129,16 @@
     top: -10px;
 }
 
+.effect {
+    position: absolute;
+    left: -87.77%;
+    right: -104.05%;
+    top: 97.86%;
+    bottom: -233%;
+    background: var(--setting-effect-color);
+    filter: blur(50px);
+}
+
 .settingDropDownInner {
     display: flex;
     align-items: center;
