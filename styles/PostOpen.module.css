@@ -376,7 +376,7 @@
 
 .commentLeftLine {
   border-left: #C5D0E6 2px solid;
-  height: calc(100% + 35px);
+  height: calc(100% + 2px);
   width: 1px;
   position: absolute;
   left: 40px;
@@ -398,12 +398,14 @@
 }
 
 .commentLeftLine2 {
-  border-top: #C5D0E6 2px solid;
+  border-bottom: #C5D0E6 2px solid;
+  border-left: #c5d0e6 2px solid;
   width: 35px;
-  height: 10%;
+  height: 35px;
   position: absolute;
   left: 40px;
-  top: 25px;
+  top: -13px;
+  border-bottom-left-radius: 40px;
 }
 
 .commentAvatar {
