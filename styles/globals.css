@@ -83,6 +83,7 @@
   --divider-color: #F4F6F8;
   --setting-effect-color: #97989D;
   --social-icon-color: #858EAD;
+  --description-font-color: #97989D;
 }
 
 body {
@@ -120,6 +121,7 @@ body[data-theme="dark"] {
   --divider-color: #3F4354;
   --setting-effect-color: #151A1E;
   --social-icon-color: #F4F6F8;
+  --description-font-color: #97989D;
 }
 
 .flex {

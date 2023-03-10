@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 // import { Source_Sans_Pro } from 'next/font/google';
 import Header from '../components/Header';
-import styles from '@/styles/Profile.module.css';
+import styles from '@/styles/MemberProfile.module.css';
 import cornerSvg from '../public/corner.svg';
 import smileSvg from '../public/smileface.svg';
 import warningSvg from '../public/warning.svg';
@@ -38,7 +38,7 @@ export default function Profile() {
   return (
     <>
       <Head>
-        <title>Profile</title>
+        <title>Member Profile</title>
         <meta name="description" content="Synchronicity is social website." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
