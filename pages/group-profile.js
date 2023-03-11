@@ -43,68 +43,70 @@ export default function GroupProfile() {
       <Header />
       <main className={styles.main}>
         <aside className={`${styles.side} ${styles.leftSide}`}>
-          <div className={styles.groups}>
-            <div className={styles.title}>Tags posted in this Group</div>
-            <div className={styles.tags}>
-              <div className={styles.tag}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.postUserInfo}>
-                  <div className={styles.postUserName}>
-                    Pavel Gvay
-                  </div>
-                  <div className={styles.postDate}>3 weeks ago</div>
-                </div>
+          <div className={`${styles.card} ${styles.tagsCard}`}>
+            <div className={styles.tagsCardTitle}>Tags posted in this Group</div>
+            <div className={styles.tagHeader}>
+              <div className={styles.tagHeaderLeft}>
+              <div className={styles.tagsCardAvatar}>
+                <Image
+                  className={styles.tagsCardAvatarImg}
+                  alt=""
+                  src={groupAvatarSvg}
+                />
               </div>
+              <div className={styles.tagHeaderInfo}>
+                <div className={styles.tagHeaderTitle}>
+                  Meditation
+                </div>
+                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+              </div>
+              </div>
+              <div className={styles.tagHeaderRight}>
+                <svg className={styles.tagHeaderDownArrow} width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 1.75L6 6.25L1.5 1.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div className={styles.tagsCardtags}>
               <div className={styles.tag}>
-                <div className={styles.icon5}>
+                <div className={styles.tagsCardSharp}>
                   #
                 </div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#music</div>
-                  <div className={styles.description}>65,523 Posted • Trending</div>
+                  <div className={styles.tagDescription}>65,523 Posted • Trending</div>
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className={styles.tagsCardSharp}>#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#meditation</div>
-                  <div className={styles.description}>
+                  <div className={styles.tagDescription}>
                     51,354 • Trending in Bangladesh
                   </div>
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className={styles.tagsCardSharp}>#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#yoga</div>
-                  <div className={styles.description}>48,029 Posted by this tag</div>
+                  <div className={styles.tagDescription}>48,029 Posted by this tag</div>
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className={styles.tagsCardSharp}>#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#messi</div>
-                  <div className={styles.description}>
+                  <div className={styles.tagDescription}>
                     51,354 • Trending in Bangladesh
                   </div>
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className={styles.tagsCardSharp}>#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#video</div>
-                  <div className={styles.description}>82,645 Posted by this tag</div>
+                  <div className={styles.tagDescription}>82,645 Posted by this tag</div>
                 </div>
               </div>
             </div>

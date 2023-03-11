@@ -143,7 +143,7 @@ export default function PostOpen() {
                 />
               </div>
             </div>
-            <button className={styles.viewProfileBtn} onClick={() => router.push('/profile')}>
+            <button className={styles.viewProfileBtn} onClick={() => router.push('/member-profile')}>
               View Profile
             </button>
             <div className={styles.joinDate}>

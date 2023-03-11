@@ -27,14 +27,104 @@
 
 /* ----------------------------- LEFT ----------------------------------- */
 .tagsCard {
-
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
+
+.tagsCardTitle {
+  font-size: 16px;
+  /* line-height: 24px; */
+  color: var(--main-font-color);
+  margin-bottom: 15px;
+}
+
+.tagHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tagHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tagHeaderInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.tagHeaderTitle {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--main-font-color);
+}
+
+.tagHeaderDescription {
+  font-size: 10px;
+  line-height: 16px;
+  color: #97989D;
+}
+
+.tagHeaderRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagsCardtags {
+  padding-left: 20px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tagHeaderDownArrow {
+  /* fill: #ff00ff; */
+}
+
+.tagsCardSharp {
+  border-radius: 4px;
+  background-color: #5a4f43;
+  padding: 6px;
+  font-weight: 600;
+  width: 34px;
+  height: 34px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #ea942c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagDescription {
+  font-size: 9px;
+  line-height: 14px;
+  color: #97989D;
+  max-width: 105px;
+}
+
 .tagsCardAvatar {
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #FDF4EA;
+  border: 2px solid #f7f7f7;
+  border-radius: 100px;
 }
-.tagsCardAvatarBack {
 
+.tagsCardAvatarImg {
+  width: 28px;
+  height: auto;
+  object-fit: cover;
 }
+
 .titleAndDesc {
   display: flex;
   flex-direction: column;
