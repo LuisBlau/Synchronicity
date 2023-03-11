@@ -26,6 +26,7 @@ import adminSvg from '../public/admin.svg';
 import joinSvg from '../public/join.svg';
 import groupAvatarSvg from '../public/group-avatar.svg';
 import groupCoverImg from '../public/group-cover.png';
+import groupProfileMediaImg from '../public/group-profile-media.png';
 
 // const inter = Source_Sans_Pro({ subsets: ['latin'], weight: '700' });
 
@@ -46,12 +47,23 @@ export default function GroupProfile() {
             <div className={styles.title}>Tags posted in this Group</div>
             <div className={styles.tags}>
               <div className={styles.tag}>
-                <div className={styles.icon5}>
-                  #
+                <div className={styles.postUserAvatar}>
+                  <Image
+                    className={styles.postUserAvatarBack}
+                    alt=""
+                    src={avatarBack}
+                  />
+                  <Image
+                    className={styles.postUserAvatarImg}
+                    alt=""
+                    src={postUserAvatar}
+                  />
                 </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#bitcoin</div>
-                  <div className={styles.description}>82,645 Posted by this tag</div>
+                <div className={styles.postUserInfo}>
+                  <div className={styles.postUserName}>
+                    Pavel Gvay
+                  </div>
+                  <div className={styles.postDate}>3 weeks ago</div>
                 </div>
               </div>
               <div className={styles.tag}>
@@ -117,7 +129,7 @@ export default function GroupProfile() {
                 </div>
                 <div className={styles.rightGroupItemData}>
                   <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
+                    <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
                       <Image
@@ -174,7 +186,7 @@ export default function GroupProfile() {
                 </div>
                 <div className={styles.rightGroupItemData}>
                   <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
+                    <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
                       <Image
@@ -231,7 +243,7 @@ export default function GroupProfile() {
                 </div>
                 <div className={styles.rightGroupItemData}>
                   <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
+                    <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
                       <Image
@@ -288,7 +300,7 @@ export default function GroupProfile() {
                 </div>
                 <div className={styles.rightGroupItemData}>
                   <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
+                    <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
                       <Image
@@ -507,21 +519,23 @@ export default function GroupProfile() {
                 Explore
               </span>
               <div className={styles.exploreCardBtnGroup}>
-                <div className={styles.aboutCardBtn}>
-                  <svg className={styles.aboutCardBtnSvg} width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div className={styles.exploreBtn}>
+                  <svg className={styles.exploreCardBtnSvg} width="17" height="17" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.63305 13L2.11305 9.1H0.573047V7.58H2.27305L2.59305 5H0.973047V3.48H2.79305L3.23305 -7.15256e-07H4.61305L4.19305 3.48H6.53305L6.99305 -7.15256e-07H8.35305L7.93305 3.48H9.53305V5H7.75305L7.43305 7.58H9.13305V9.1H7.25305L6.79305 13H5.39305L5.85305 9.1H3.51305L3.03305 13H1.63305ZM3.67305 7.58H6.03305L6.35305 5H3.99305L3.67305 7.58Z" />
                   </svg>
                   <span>All Tags</span>
                 </div>
-                <div className={styles.aboutCardBtn}>
-                  <svg className={styles.aboutCardBtnSvg} width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.63305 13L2.11305 9.1H0.573047V7.58H2.27305L2.59305 5H0.973047V3.48H2.79305L3.23305 -7.15256e-07H4.61305L4.19305 3.48H6.53305L6.99305 -7.15256e-07H8.35305L7.93305 3.48H9.53305V5H7.75305L7.43305 7.58H9.13305V9.1H7.25305L6.79305 13H5.39305L5.85305 9.1H3.51305L3.03305 13H1.63305ZM3.67305 7.58H6.03305L6.35305 5H3.99305L3.67305 7.58Z" />
+                <div className={`${styles.exploreBtn} ${styles.selected}`}>
+                  <svg className={styles.exploreCardBtnSvg} width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.16046 1.29732C9.55452 0.68838 10.4455 0.68838 10.8395 1.29732L11.7217 2.66053C11.9789 3.05794 12.4795 3.22058 12.9211 3.05024L14.4361 2.46591C15.1128 2.2049 15.8336 2.72859 15.7945 3.45285L15.7069 5.07425C15.6814 5.54692 15.9908 5.97274 16.4482 6.09452L18.0173 6.51227C18.7182 6.69888 18.9935 7.54622 18.5362 8.10917L17.5123 9.36944C17.2138 9.73683 17.2138 10.2632 17.5123 10.6306L18.5362 11.8908C18.9935 12.4538 18.7182 13.3011 18.0173 13.4877L16.4482 13.9055C15.9908 14.0273 15.6814 14.4531 15.7069 14.9257L15.7945 16.5471C15.8336 17.2714 15.1128 17.7951 14.4361 17.5341L12.9211 16.9498C12.4795 16.7794 11.9789 16.9421 11.7217 17.3395L10.8395 18.7027C10.4455 19.3116 9.55452 19.3116 9.16046 18.7027L8.27828 17.3395C8.0211 16.9421 7.52052 16.7794 7.07887 16.9498L5.56389 17.5341C4.88716 17.7951 4.16637 17.2714 4.20549 16.5471L4.29306 14.9257C4.31859 14.4531 4.00922 14.0273 3.55179 13.9055L1.98269 13.4877C1.28178 13.3011 1.00646 12.4538 1.46383 11.8908L2.48771 10.6306C2.78619 10.2632 2.78619 9.73683 2.48771 9.36944L1.46382 8.10917C1.00646 7.54622 1.28178 6.69888 1.98269 6.51227L3.55179 6.09452C4.00922 5.97274 4.31859 5.54692 4.29306 5.07425L4.20549 3.45285C4.16637 2.72859 4.88716 2.2049 5.56389 2.46591L7.07887 3.05024C7.52052 3.22058 8.0211 3.05794 8.27828 2.66053L9.16046 1.29732Z" />
+                    <path d="M4.462 12V8.088H5.368L6.388 10.032L6.772 10.896H6.796C6.78 10.688 6.758 10.456 6.73 10.2C6.702 9.944 6.688 9.7 6.688 9.468V8.088H7.528V12H6.622L5.602 10.05L5.218 9.198H5.194C5.214 9.414 5.236 9.646 5.26 9.894C5.288 10.142 5.302 10.382 5.302 10.614V12H4.462ZM9.71223 12.072C9.42823 12.072 9.17223 12.01 8.94423 11.886C8.71623 11.762 8.53623 11.584 8.40423 11.352C8.27223 11.12 8.20623 10.84 8.20623 10.512C8.20623 10.188 8.27223 9.91 8.40423 9.678C8.54023 9.446 8.71623 9.268 8.93223 9.144C9.14823 9.016 9.37423 8.952 9.61023 8.952C9.89423 8.952 10.1282 9.016 10.3122 9.144C10.5002 9.268 10.6402 9.438 10.7322 9.654C10.8282 9.866 10.8762 10.108 10.8762 10.38C10.8762 10.456 10.8722 10.532 10.8642 10.608C10.8562 10.68 10.8482 10.734 10.8402 10.77H9.05823C9.09823 10.986 9.18823 11.146 9.32823 11.25C9.46823 11.35 9.63623 11.4 9.83223 11.4C10.0442 11.4 10.2582 11.334 10.4742 11.202L10.7682 11.736C10.6162 11.84 10.4462 11.922 10.2582 11.982C10.0702 12.042 9.88823 12.072 9.71223 12.072ZM9.05223 10.188H10.1262C10.1262 10.024 10.0862 9.89 10.0062 9.786C9.93023 9.678 9.80423 9.624 9.62823 9.624C9.49223 9.624 9.37023 9.672 9.26223 9.768C9.15423 9.86 9.08423 10 9.05223 10.188ZM11.9485 12L11.2045 9.024H12.0805L12.3685 10.404C12.3925 10.552 12.4145 10.698 12.4345 10.842C12.4545 10.986 12.4765 11.134 12.5005 11.286H12.5245C12.5525 11.134 12.5785 10.984 12.6025 10.836C12.6305 10.688 12.6625 10.544 12.6985 10.404L13.0285 9.024H13.7905L14.1265 10.404C14.1625 10.552 14.1945 10.698 14.2225 10.842C14.2545 10.986 14.2845 11.134 14.3125 11.286H14.3365C14.3645 11.134 14.3865 10.986 14.4025 10.842C14.4225 10.698 14.4465 10.552 14.4745 10.404L14.7565 9.024H15.5725L14.8585 12H13.8265L13.5565 10.812C13.5285 10.672 13.5005 10.532 13.4725 10.392C13.4485 10.252 13.4225 10.102 13.3945 9.942H13.3705C13.3425 10.102 13.3165 10.252 13.2925 10.392C13.2725 10.532 13.2485 10.672 13.2205 10.812L12.9565 12H11.9485Z" fill='white' />
                   </svg>
+
                   <span>Recent</span>
                 </div>
-                <div className={styles.aboutCardBtn}>
-                  <svg className={styles.aboutCardBtnSvg} width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.63305 13L2.11305 9.1H0.573047V7.58H2.27305L2.59305 5H0.973047V3.48H2.79305L3.23305 -7.15256e-07H4.61305L4.19305 3.48H6.53305L6.99305 -7.15256e-07H8.35305L7.93305 3.48H9.53305V5H7.75305L7.43305 7.58H9.13305V9.1H7.25305L6.79305 13H5.39305L5.85305 9.1H3.51305L3.03305 13H1.63305ZM3.67305 7.58H6.03305L6.35305 5H3.99305L3.67305 7.58Z" />
+                <div className={styles.exploreBtn}>
+                  <svg className={styles.exploreCardBtnSvg} width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.72134 11.4503L9 13.8905C9.22611 14.1259 9.64018 13.9547 9.64018 13.6338V11.4718L11.4491 11.4717C12.4357 11.4717 13.2373 10.6372 13.2373 9.6102L13.2375 1.86147C13.2375 0.834468 12.4358 0 11.4492 0H1.78827C0.801653 0 0 0.834468 0 1.86147V9.58881C0 10.6158 0.801653 11.4503 1.78827 11.4503L6.72134 11.4503ZM4.11094 4.42909L5.71424 4.30073L6.33093 2.73882C6.45424 2.43927 6.84481 2.43927 6.94763 2.73882L7.56432 4.30073L9.16763 4.42909C9.4759 4.45043 9.59936 4.83566 9.35259 5.04951L8.1192 6.1407L8.50979 7.76681C8.59195 8.06635 8.26317 8.32308 7.99591 8.15187L6.61871 7.27457L5.24151 8.15187C4.97425 8.32306 4.66597 8.06635 4.72763 7.76681L5.11822 6.1407L3.88483 5.04951C3.67922 4.85698 3.80252 4.45056 4.11094 4.42909ZM15.5602 3.10254C15.108 3.10254 14.7381 2.71747 14.7381 2.24675C14.7381 1.77602 15.108 1.39096 15.5602 1.39096H19.1779C19.6301 1.39096 20 1.77602 20 2.24675C20 2.71747 19.6301 3.10254 19.1779 3.10254H15.5602ZM14.7585 5.64877C14.7585 5.17805 15.1285 4.79298 15.5807 4.79298H18.2529C18.7051 4.79298 19.075 5.17805 19.075 5.64877C19.075 6.1195 18.7051 6.50456 18.2529 6.50456H15.5602C15.108 6.50456 14.7585 6.1195 14.7585 5.64877ZM14.7585 9.0508C14.7585 8.58007 15.1285 8.19501 15.5807 8.19501H17.2046C17.6568 8.19501 18.0267 8.58007 18.0267 9.0508C18.0267 9.52152 17.6568 9.90658 17.2046 9.90658H15.5601C15.1079 9.90658 14.7585 9.52152 14.7585 9.0508Z" />
                   </svg>
                   <span>Most Reacted Posts</span>
                 </div>
@@ -788,6 +802,24 @@ export default function GroupProfile() {
           </div>
         </section>
         <aside className={`${styles.side} ${styles.rightSide}`}>
+          <div className={styles.card}>
+            <div className={styles.profileMediaCard}>
+              <div className={styles.rightGroupTitleWrapper}>
+                <div className={styles.rightGroupTitle}>Recent Media</div>
+                <Image
+                  className={styles.rightGroupTitleIcon}
+                  alt="right arrow"
+                  src={rightArrowSvg}
+                />
+              </div>
+              <div className={styles.profileMedia}>
+                <Image
+                  alt='profile media'
+                  src={groupProfileMediaImg}
+                />
+              </div>
+            </div>
+          </div>
           <div className={styles.rightGroup}>
             <div className={styles.rightGroupInner}>
               <div className={styles.rightGroupTitleWrapper}>
@@ -1026,8 +1058,7 @@ export default function GroupProfile() {
                 </div>
               </div>
             </div>
-          </div>
-          
+          </div>          
         </aside>
       </main>
     </>

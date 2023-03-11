@@ -26,6 +26,15 @@
 }
 
 /* ----------------------------- LEFT ----------------------------------- */
+.tagsCard {
+
+}
+.tagsCardAvatar {
+
+}
+.tagsCardAvatarBack {
+
+}
 .titleAndDesc {
   display: flex;
   flex-direction: column;
@@ -232,6 +241,8 @@
 }
 
 .aboutCardTitle {
+  display: flex;
+  align-items: center;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -259,7 +270,7 @@
   gap: 25px;
 }
 
-.aboutCardBtn {
+.exploreBtn {
   background: #2C353D;
   border-radius: 4px;
   font-size: 14px;
@@ -270,12 +281,26 @@
   align-items: center;
   padding: 6px;
   gap: 5px;
+  fill: var(--main-font-color);
 }
 
-.aboutCardBtnSvg {
-  fill: var(--main-font-color);
-  width: 14px;
-  height: 14px;
+.exploreBtn.selected {
+  background: #E7FAF4;
+  color: #0ECC8D;
+  fill: #0ECC8D;
+}
+
+.exploreCardBtnSvg {
+  /* fill: var(--main-font-color); */
+  /* width: 14px;
+  height: 14px; */
+}
+
+.profileMediaCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 15px;
 }
 
 .postHome {
