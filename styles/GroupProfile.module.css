@@ -381,8 +381,8 @@
 }
 
 .exploreCardBtnSvg {
-  /* fill: var(--main-font-color); */
-  /* width: 14px;
+  /* fill: var(--main-font-color);
+  width: 14px;
   height: 14px; */
 }
 
@@ -632,10 +632,7 @@
 }
 
 .rightGroupTitleIcon {
-  position: relative;
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
+  stroke: var(--main-font-color);
 }
 
 .rightGroupItem {

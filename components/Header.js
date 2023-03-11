@@ -108,13 +108,13 @@ export default function Header() {
               </div>
           </div>
           <div className={styles.icons}>
-            <div className={styles.icon}>
+            <div className={styles.icon} onClick={() => router.push('/')}>
               <Image className={styles.homeIcon} alt="home icon" src={homeIconSvg} />
             </div>
-            <div className={styles.icon}>
+            <div className={styles.icon} onClick={() => router.push('/group-profile')}>
               <Image className={styles.groupIcon} alt="group icon" src={groupIconSvg} />
             </div>
-            <div className={styles.icon}>
+            <div className={styles.icon} onClick={() => router.push('/member-profile')}>
               <Image className={styles.sharpIcon} alt="sharp icon" src={sharpIconSvg} />
             </div>
           </div>
