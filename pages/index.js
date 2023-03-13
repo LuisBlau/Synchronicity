@@ -8,10 +8,8 @@ import starSvg from '../public/new.svg';
 import frameSvg from '../public/frame.svg';
 import followSvg from '../public/follow.svg';
 import postThumb from '../public/rectangle-24@2x.png';
-import postThumb2 from '../public/rectangle-241@2x.png';
 import avatarBack from '../public/ellipse-29.svg';
 import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import dotSvg from '../public/ellipse-30.svg';
 import rightArrowSvg from '../public/vector-17.svg';
 import commentSvg from '../public/comment.svg';
 import bookSvg from '../public/book.svg';
@@ -24,7 +22,6 @@ import heartSvg from '../public/heart.svg';
 import userSvg from '../public/user.svg';
 import adminSvg from '../public/admin.svg';
 
-// const inter = Source_Sans_Pro({ subsets: ['latin'], weight: '700' });
 
 export default function Home() {
   const router = useRouter();

@@ -1,18 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-// import { Source_Sans_Pro } from 'next/font/google';
 import Header from '../components/Header';
 import styles from '@/styles/GroupProfile.module.css';
-import starSvg from '../public/new.svg';
-import frameSvg from '../public/frame.svg';
-import followSvg from '../public/follow.svg';
 import postThumb from '../public/rectangle-24@2x.png';
-import postThumb2 from '../public/rectangle-241@2x.png';
 import avatarBack from '../public/ellipse-29.svg';
 import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import dotSvg from '../public/ellipse-30.svg';
-import rightArrowSvg from '../public/vector-17.svg';
 import commentSvg from '../public/comment.svg';
 import bookSvg from '../public/book.svg';
 import catSvg from '../public/cat.svg';
@@ -28,7 +21,6 @@ import groupAvatarSvg from '../public/group-avatar.svg';
 import groupCoverImg from '../public/group-cover.png';
 import groupProfileMediaImg from '../public/group-profile-media.png';
 
-// const inter = Source_Sans_Pro({ subsets: ['latin'], weight: '700' });
 
 export default function GroupProfile() {
   const router = useRouter();
@@ -63,7 +55,7 @@ export default function GroupProfile() {
               </div>
               <div className={styles.tagHeaderRight}>
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
             </div>
@@ -809,7 +801,7 @@ export default function GroupProfile() {
               <div className={styles.rightGroupTitleWrapper}>
                 <div className={styles.rightGroupTitle}>Recent Media</div>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div className={styles.profileMedia}>
@@ -825,7 +817,7 @@ export default function GroupProfile() {
               <div className={styles.rightGroupTitleWrapper}>
                 <div className={styles.rightGroupTitle}>Group Members</div>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div className={styles.rightGroupItem}>

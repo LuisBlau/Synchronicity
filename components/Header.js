@@ -108,14 +108,14 @@ export default function Header() {
               </div>
           </div>
           <div className={styles.icons}>
-            <div className={styles.icon} onClick={() => router.push('/')}>
-              <Image className={styles.homeIcon} alt="home icon" src={homeIconSvg} />
+            <div className={`${styles.icon} ${router.pathname === '/'? styles.selected: ""}`} onClick={() => router.push('/')}>
+              <Image className={styles.iconImg} alt="home icon" src={homeIconSvg} />
             </div>
-            <div className={styles.icon} onClick={() => router.push('/groups')}>
-              <Image className={styles.groupIcon} alt="group icon" src={groupIconSvg} />
+            <div className={`${styles.icon} ${router.pathname === '/groups'? styles.selected: ""}`} onClick={() => router.push('/groups')}>
+              <Image className={styles.iconImg} alt="group icon" src={groupIconSvg} />
             </div>
-            <div className={styles.icon} onClick={() => router.push('/tags')}>
-              <Image className={styles.sharpIcon} alt="sharp icon" src={sharpIconSvg} />
+            <div className={`${styles.icon} ${router.pathname === '/tags'? styles.selected: ""}`} onClick={() => router.push('/tags')}>
+              <Image className={styles.iconImg} alt="sharp icon" src={sharpIconSvg} />
             </div>
           </div>
         </div>

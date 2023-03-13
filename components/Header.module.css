@@ -90,6 +90,10 @@
     cursor: pointer;
 }
 
+.icon.selected {
+    background-color: var(--red-red);
+}
+
 .setting {
     position: relative;
 }
@@ -199,19 +203,7 @@
     background-color: var(--red-red);
 }
 
-.homeIcon {
-    position: relative;
-    width: 20px;
-    height: 20px;
-}
-
-.groupIcon {
-    position: relative;
-    width: 20px;
-    height: 20px;
-}
-
-.sharpIcon {
+.iconImg {
     position: relative;
     width: 20px;
     height: 20px;

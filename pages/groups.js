@@ -1,37 +1,24 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-// import { Source_Sans_Pro } from 'next/font/google';
 import Header from '../components/Header';
 import styles from '@/styles/Groups.module.css';
-import starSvg from '../public/new.svg';
-import frameSvg from '../public/frame.svg';
-import followSvg from '../public/follow.svg';
-import postThumb from '../public/rectangle-24@2x.png';
-import postThumb2 from '../public/rectangle-241@2x.png';
 import avatarBack from '../public/ellipse-29.svg';
 import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import dotSvg from '../public/ellipse-30.svg';
-import rightArrowSvg from '../public/vector-17.svg';
 import commentSvg from '../public/comment.svg';
 import bookSvg from '../public/book.svg';
 import catSvg from '../public/cat.svg';
 import musicSvg from '../public/music.svg';
 import sportSvg from '../public/football.svg';
-import shareSvg from '../public/share.svg';
-import viewSvg from '../public/view.svg';
 import heartSvg from '../public/heart.svg';
 import userSvg from '../public/user.svg';
 import adminSvg from '../public/admin.svg';
-import joinSvg from '../public/join.svg';
 import groupAvatarSvg from '../public/group-avatar.svg';
 import appleAvatarSvg from '../public/apple-avatar.svg';
 import robotAvatarSvg from '../public/robot-avatar.svg';
 import groupCoverImg from '../public/group-cover.png';
-import groupProfileMediaImg from '../public/group-profile-media.png';
 import searchIconSvg from '../public/search-icon.svg';
 
-// const inter = Source_Sans_Pro({ subsets: ['latin'], weight: '700' });
 
 export default function GroupProfile() {
   const router = useRouter();
@@ -863,7 +850,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -928,7 +915,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -993,7 +980,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -1058,7 +1045,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -1123,7 +1110,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -1188,7 +1175,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -1253,7 +1240,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>
@@ -1318,7 +1305,7 @@ export default function GroupProfile() {
                       />
                     </div>
                     <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle}>
+                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
                         Meditation
                       </div>
                       <div className={styles.tagCardDesc}>

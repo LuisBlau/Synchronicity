@@ -328,6 +328,11 @@
   font-size: 16px;
   line-height: 24px;
   color: var(--main-font-color);
+  cursor: pointer;
+}
+
+.tagCardTitle:hover {
+  text-decoration: underline;
 }
 
 .tagCardDesc {
