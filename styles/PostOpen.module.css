@@ -236,12 +236,49 @@
   height: 100%;
 }
 .postContent {
-  padding: 0 30px;
+  padding: 0 60px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
+}
+
+.postHeaderGroupTag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 10px;
+  max-width: fit-content;
+  background: var(--icon-back);
+  border-radius: 20px;
+}
+
+.groupAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #FDF4EA;
+  border: 2px solid #f7f7f7;
+  border-radius: 100px;
+}
+
+.groupAvatarImg {
+  width: 28px;
+  height: auto;
+  object-fit: cover;
+}
+
+.groupTitle {
+  max-width: 110px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #858EAD;
 }
 
 .h1 {
@@ -301,10 +338,10 @@
   align-items: center;
   justify-content: center;
 
-  font-weight: 400;
+  font-weight: 600;
   font-size: 14px;
   line-height: 24px;
-  color: var(--secondary-font-color);
+  color: var(--description-font-color);
   cursor: pointer;
 }
 
@@ -324,7 +361,7 @@
 
 .postReactions {
   font-weight: 600;
-  color: #ffffff;
+  color: var(--main-font-color);
   line-height: 24px;
   font-size: 18px;
 }

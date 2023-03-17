@@ -18,6 +18,7 @@ import shareSvg from '../public/share.svg';
 import viewSvg from '../public/view.svg';
 import heartSvg from '../public/heart.svg';
 import userSvg from '../public/user.svg';
+import groupAvatarSvg from '../public/group-avatar.svg';
 import thumbnilSvg from '../public/thumbnail.svg';
 
 export default function PostOpen() {
@@ -183,7 +184,18 @@ export default function PostOpen() {
                 />
               </div>
               <div className={styles.postContent}>
-                <div className={styles.h1}><div>H1</div></div>
+                <div className={styles.postHeaderGroupTag}>
+                  <div className={styles.groupAvatar}>
+                    <Image
+                      className={styles.groupAvatarImg}
+                      alt=""
+                      src={groupAvatarSvg}
+                    />
+                  </div>
+                  <div className={styles.groupTitle}>
+                    Meditation
+                  </div>
+                </div>
                 <div className={styles.postMain}>
                   <div className={styles.postTitleWrapper}>
                     <div className={styles.postTitle}>

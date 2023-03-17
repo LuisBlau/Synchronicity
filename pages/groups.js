@@ -37,19 +37,19 @@ export default function GroupProfile() {
             <div className={styles.tagsCardTitle}>Tags posted by Group</div>
             <div className={styles.tagHeader}>
               <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={groupAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Meditation
+                <div className={styles.tagsCardAvatar}>
+                  <Image
+                    className={styles.tagsCardAvatarImg}
+                    alt=""
+                    src={groupAvatarSvg}
+                  />
                 </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
+                <div className={styles.tagHeaderInfo}>
+                  <div className={styles.tagHeaderTitle}>
+                    Meditation
+                  </div>
+                  <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                </div>
               </div>
               <div className={styles.tagHeaderRight}>
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
