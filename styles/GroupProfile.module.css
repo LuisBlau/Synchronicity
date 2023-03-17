@@ -34,9 +34,11 @@
 
 .tagsCardTitle {
   font-size: 16px;
-  /* line-height: 24px; */
+  line-height: 24px;
+  font-weight: 600;
   color: var(--main-font-color);
   margin-bottom: 15px;
+  white-space: nowrap;
 }
 
 .tagHeader {
@@ -59,6 +61,7 @@
 .tagHeaderTitle {
   font-size: 12px;
   line-height: 18px;
+  font-weight: 600;
   color: var(--main-font-color);
 }
 
@@ -250,6 +253,7 @@
 .groupName {
   color: var(--main-font-color);
   font-size: 26px;
+  font-weight: 600;
   line-height: 38px;
 }
 .groupDate {
@@ -353,7 +357,7 @@
   border-radius: 4px;
   font-size: 14px;
   line-height: 22px;
-  color: var(--description-font-color);
+  color: var(--main-font-color);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -389,6 +393,7 @@
   padding: 20px;
   box-sizing: border-box;
   display: flex;
+  position: relative;
 }
 
 .postInner {
@@ -427,6 +432,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 20px;
 }
 
 .postTitleWrapper {
@@ -453,7 +461,7 @@
   display: flex;
   gap: 10px;
   font-size: 10px;
-  color: var(--secondary-font-color);
+  color: #858ead;
 }
 
 .postTag {
@@ -534,7 +542,7 @@
   position: relative;
   font-size: 10px;
   line-height: 16px;
-  color: var(--secondary-font-color);
+  color: #858ead;
 }
 
 .postActions {
@@ -578,7 +586,7 @@
   position: relative;
   font-size: 12px;
   line-height: 22px;
-  color: var(--description-font-color);
+  color: #858ead;
   text-align: left;
   cursor: pointer;
 }

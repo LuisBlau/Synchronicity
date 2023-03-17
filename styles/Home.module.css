@@ -168,6 +168,7 @@
   padding: 20px;
   box-sizing: border-box;
   display: flex;
+  position: relative;
 }
 
 .postInner {
@@ -206,6 +207,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 20px;
 }
 
 .postTitleWrapper {
@@ -232,7 +236,7 @@
   display: flex;
   gap: 10px;
   font-size: 10px;
-  color: var(--secondary-font-color);
+  color: #858ead;
 }
 
 .postTag {
@@ -313,7 +317,7 @@
   position: relative;
   font-size: 10px;
   line-height: 16px;
-  color: var(--secondary-font-color);
+  color: #858ead;
 }
 
 .postActions {
@@ -357,7 +361,7 @@
   position: relative;
   font-size: 12px;
   line-height: 22px;
-  color: var(--description-font-color);
+  color: #858ead;
   text-align: left;
   cursor: pointer;
 }
@@ -403,6 +407,8 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  fill: var(--main-font-color);
+  stroke: var(--main-font-color);
 }
 
 .rightGroupItem {

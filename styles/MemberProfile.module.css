@@ -64,7 +64,7 @@
   width: 130px;
   height: 130px;
   background: #F9DFC0;
-  border: 4px solid #262D34;
+  border: 4px solid var(--mode-switch-back-color);
   border-radius: 100px;
   box-sizing: border-box;
   display: flex;
@@ -221,8 +221,9 @@
   padding: 20px;
   box-sizing: border-box;
   align-items: center;
-  justify-content: space-around;
+  justify-content: start;
   display: flex;
+  gap: 52px;
 }
 .actionBar .selected {
   background-color: #ff6934;
@@ -230,8 +231,8 @@
 }
 .actionBtn {
   font-weight: 600;
-  font-size: 16px;
-  border-radius: 24px;
+  font-size: 18px;
+  border-radius: 26px;
   /* background-color: #ff6934; */
   display: flex;
   padding: 8px 20px;
@@ -251,6 +252,7 @@
   padding: 20px;
   box-sizing: border-box;
   display: flex;
+  position: relative;
 }
 
 .postInner {
@@ -289,6 +291,10 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  position: absolute;
+  right: 15px;
+  top: 20px;
 }
 
 .postTitleWrapper {
@@ -315,7 +321,7 @@
   display: flex;
   gap: 10px;
   font-size: 10px;
-  color: var(--secondary-font-color);
+  color: #858ead;
 }
 
 .postTag {
@@ -396,7 +402,7 @@
   position: relative;
   font-size: 10px;
   line-height: 16px;
-  color: var(--secondary-font-color);
+  color: #858ead;
 }
 
 .postActions {
@@ -440,7 +446,7 @@
   position: relative;
   font-size: 12px;
   line-height: 22px;
-  color: var(--description-font-color);
+  color: #858ead;
   text-align: left;
   cursor: pointer;
 }

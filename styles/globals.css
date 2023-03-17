@@ -219,3 +219,7 @@ body[data-theme="dark"] {
   align-items: center;
   justify-content: center;
 }
+
+input::placeholder {
+  color: var(--header-search-input-color);
+}

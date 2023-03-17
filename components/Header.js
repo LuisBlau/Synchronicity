@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import UserContext from "./store/UserContext";
 import logoSvg from '../public/favicon.svg';
 import searchIconSvg from '../public/search-icon.svg';
 import settingIconSvg from '../public/setting.svg';
@@ -54,24 +55,25 @@ const SharpIconSvg = ({fill}) => {
 }
 
 export default function Header() {
+  const context = useContext(UserContext);
   const router = useRouter();
   const clickedClass = 'clicked';
   const lightTheme = 'light';
   const darkTheme = 'dark';
-  const [theme, setTheme] = useState(lightTheme);
+  // const [theme, setTheme] = useState(lightTheme);
   const [body, setBody] = useState(null);
   const [showSetting, setShowSetting] = useState(false);
 
   useEffect(() => {
     setBody(document.body);
     if (localStorage) {
-      setTheme(localStorage.getItem('theme'));
+      context.setTheme(localStorage.getItem('theme'));
     }
-  }, []);
+  }, [context]);
 
   useEffect(()=> {
     if (body) {
-      if (theme === darkTheme) {
+      if (context.theme === darkTheme) {
         body.setAttribute('data-theme', "dark")
         // body.classList.add(theme);
       } else {
@@ -79,23 +81,23 @@ export default function Header() {
         body.removeAttribute("data-theme")
       }
     }
-  }, [theme, body]);
+  }, [context.theme, body]);
 
   const switchTheme = e => {
-    if (theme === darkTheme) {
+    if (context.theme === darkTheme) {
       // body.classList.replace(darkTheme, lightTheme);
       body.setAttribute('data-theme', "dark")
       e.target.classList.remove(clickedClass);
       localStorage.setItem('theme', 'light');
       // theme = lightTheme;
-      setTheme(lightTheme);
+      context.setTheme(lightTheme);
     } else {
       // body.classList.replace(lightTheme, darkTheme);
       body.removeAttribute("data-theme")
       e.target.classList.add(clickedClass);
       localStorage.setItem('theme', 'dark');
       // theme = darkTheme;
-      setTheme(darkTheme);
+      context.setTheme(darkTheme);
     }
   };
   return (
@@ -119,10 +121,10 @@ export default function Header() {
                   <div className={styles.settingLabel}>Interface</div>
                   <div className={styles.modeSwitch} onClick={e => switchTheme(e)}>
                     <div className={styles.sun}>
-                      {theme === 'dark' && (
+                      {context.theme === 'dark' && (
                         <Image src={sunSvg} width={16} height={16} alt="sun icon" />
                       )}
-                      {theme === 'light' && (
+                      {context.theme === 'light' && (
                         <Image src={sunLightSvg} width={16} height={16} alt="sun icon" />
                       )}
                     </div>

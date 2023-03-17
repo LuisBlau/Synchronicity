@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import React, { useEffect, useState, useContext } from "react";
 import { useRouter } from 'next/router';
 // import { Source_Sans_Pro } from 'next/font/google';
 import Header from '../components/Header';
+import UserContext from '@/components/store/UserContext';
 import styles from '@/styles/Home.module.css';
 import starSvg from '../public/new.svg';
 import frameSvg from '../public/frame.svg';
@@ -10,7 +12,6 @@ import followSvg from '../public/follow.svg';
 import postThumb from '../public/rectangle-24@2x.png';
 import avatarBack from '../public/ellipse-29.svg';
 import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import rightArrowSvg from '../public/vector-17.svg';
 import commentSvg from '../public/comment.svg';
 import bookSvg from '../public/book.svg';
 import catSvg from '../public/cat.svg';
@@ -22,9 +23,16 @@ import heartSvg from '../public/heart.svg';
 import userSvg from '../public/user.svg';
 import adminSvg from '../public/admin.svg';
 
-
+const RightArrowSvg = () => {
+  return (
+    <svg className={styles.rightGroupTitleIcon} width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
 export default function Home() {
   const router = useRouter();
+  const context = useContext(UserContext);
 
   return (
     <>
@@ -241,13 +249,13 @@ export default function Home() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -327,13 +335,13 @@ export default function Home() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -413,13 +421,13 @@ export default function Home() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -499,13 +507,13 @@ export default function Home() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -573,103 +581,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </section>
         <aside className={`${styles.side} ${styles.rightSide}`}>
           <div className={styles.rightGroup}>
             <div className={styles.rightGroupInner}>
               <div className={styles.rightGroupTitleWrapper}>
                 <div className={styles.rightGroupTitle}>Top Members</div>
-                <Image
-                  className={styles.rightGroupTitleIcon}
-                  alt="right arrow"
-                  src={rightArrowSvg}
-                />
+                <RightArrowSvg className={styles.rightGroupTitleIcon} />
               </div>
               <div className={styles.rightGroupItem}>
                 <div className={styles.postUserAvatar}>
@@ -904,11 +823,7 @@ export default function Home() {
             <div className={styles.rightGroupInner}>
               <div className={styles.rightGroupTitleWrapper}>
                 <div className={styles.rightGroupTitle}>Top Admins</div>
-                <Image
-                  className={styles.rightGroupTitleIcon}
-                  alt="right arrow"
-                  src={rightArrowSvg}
-                />
+                <RightArrowSvg className={styles.rightGroupTitleIcon} />
               </div>
               <div className={styles.rightGroupItem}>
                 <div className={styles.postUserAvatar}>

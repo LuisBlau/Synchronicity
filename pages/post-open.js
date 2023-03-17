@@ -339,11 +339,11 @@ export default function PostOpen() {
               </div>
             </div>
             <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon1}>
+              <div className={styles.actionItemIcon4}>
                 <Image
                   className={styles.iconImg}
-                  alt="corner svg"
-                  src={cornerSvg}
+                  alt="share svg"
+                  src={shareSvg}
                   width={20}
                   height={20}
                 />
@@ -353,7 +353,7 @@ export default function PostOpen() {
               </div>
             </div>
             <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon3}>
+              <div className={styles.actionItemIcon5}>
                 <Image
                   className={styles.iconImg}
                   alt="warning svg"

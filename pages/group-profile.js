@@ -514,7 +514,7 @@ export default function GroupProfile() {
               </span>
               <div className={styles.exploreCardBtnGroup}>
                 <div className={styles.exploreBtn}>
-                  <svg className={styles.exploreCardBtnSvg} width="17" height="17" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
+                  <svg className={styles.exploreCardBtnSvg} width="14" height="14" viewBox="0 0 10 13" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.63305 13L2.11305 9.1H0.573047V7.58H2.27305L2.59305 5H0.973047V3.48H2.79305L3.23305 -7.15256e-07H4.61305L4.19305 3.48H6.53305L6.99305 -7.15256e-07H8.35305L7.93305 3.48H9.53305V5H7.75305L7.43305 7.58H9.13305V9.1H7.25305L6.79305 13H5.39305L5.85305 9.1H3.51305L3.03305 13H1.63305ZM3.67305 7.58H6.03305L6.35305 5H3.99305L3.67305 7.58Z" />
                   </svg>
                   <span>All Tags</span>
