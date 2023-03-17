@@ -74,6 +74,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  width: 100%;
 }
 
 .subtitle {
@@ -83,18 +84,20 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  justify-content: space-between;
 }
 
 .description {
   font-size: 9px;
   line-height: 14px;
-  color: #97989D;
+  color: var(--sub-description-color);
 }
 
 .wrapperNumber {
   line-height: 14px;
   border-radius: 2px;
   background-color: #ff6934;
+  color: #FFFFFF;
   padding: 3px 6px;
   font-size: 9px;
 }
@@ -143,16 +146,12 @@
   display: flex;
 }
 
-.icon5 {
+.tagIconBack {
   border-radius: 4px;
-  background-color: #5a4f43;
-  padding: 6px;
   font-weight: 600;
-  width: 22px;
-  height: 22px;
+  width: 34px;
+  height: 34px;
   font-size: 18px;
-  color: #ea942c;
-  text-align: center;
 }
 
 .name1 {
@@ -358,7 +357,7 @@
   position: relative;
   font-size: 12px;
   line-height: 22px;
-  color: #97989D;
+  color: var(--description-font-color);
   text-align: left;
   cursor: pointer;
 }

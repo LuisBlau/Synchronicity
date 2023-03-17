@@ -49,7 +49,7 @@ export default function Home() {
                     />
                 </div>
                 <div className={styles.titleAndDesc}>
-                  <div className={styles.subtitle}>Newest and Recent Posts</div>
+                  <div className={styles.subtitle}>Recent Posts</div>
                   <div className={styles.description}>
                     Find the latest posts by members
                   </div>
@@ -173,10 +173,10 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.groups}>
-            <div className={styles.title}>Popular Tags</div>
+            <div className={styles.title}>Popular Tags(Global)</div>
             <div className={styles.tags}>
               <div className={styles.tag}>
-                <div className={styles.icon5}>
+                <div className="tagIconBack1">
                   #
                 </div>
                 <div className={styles.name1}>
@@ -185,7 +185,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>
+                <div className="tagIconBack2">
                   #
                 </div>
                 <div className={styles.name1}>
@@ -194,7 +194,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className="tagIconBack3">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#meditation</div>
                   <div className={styles.description}>
@@ -203,14 +203,14 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className="tagIconBack1">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#yoga</div>
                   <div className={styles.description}>48,029 Posted by this tag</div>
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className="tagIconBack4">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#messi</div>
                   <div className={styles.description}>
@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.icon5}>#</div>
+                <div className="tagIconBack5">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#video</div>
                   <div className={styles.description}>82,645 Posted by this tag</div>

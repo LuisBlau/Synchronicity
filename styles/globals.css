@@ -84,8 +84,20 @@
   --divider-color: #F4F6F8;
   --setting-effect-color: #97989D;
   --social-icon-color: #858EAD;
-  --description-font-color: #97989D;
+  --description-font-color: #858ead;
   --button-background-color: #f7f7f7;
+  --sub-description-color: #858ead;
+  --sharp-icon-color1: #EA942C;
+  --sharp-icon-color2: #FF8F67;
+  --sharp-icon-color3: #5D95E8;
+  --sharp-icon-color4: #0BA371;
+  --sharp-icon-color5: #515AC6;
+
+  --sharp-icon-back-color1: #FDF4EA;
+  --sharp-icon-back-color2: #FFECE6;
+  --sharp-icon-back-color3: #EBF2FC;
+  --sharp-icon-back-color4: #E7FAF4;
+  --sharp-icon-back-color5: #F0F1FE;
 }
 
 body {
@@ -126,6 +138,13 @@ body[data-theme="dark"] {
   --social-icon-color: #F4F6F8;
   --description-font-color: #97989D;
   --button-background-color: #2C353D;
+  --sub-description-color: #97989d;
+
+  --sharp-icon-back-color1: #5A4F43;
+  --sharp-icon-back-color2: #473E3B;
+  --sharp-icon-back-color3: #444F5F;
+  --sharp-icon-back-color4: #335248;
+  --sharp-icon-back-color5: #46475B;
 }
 
 .flex {
@@ -134,4 +153,69 @@ body[data-theme="dark"] {
 
 .pointer {
   cursor: pointer;
+}
+
+.tagIconBack1 {
+  border-radius: 4px;
+  background-color: var(--sharp-icon-back-color1);
+  font-weight: 600;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  color: var(--sharp-icon-color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagIconBack2 {
+  border-radius: 4px;
+  background-color: var(--sharp-icon-back-color2);
+  font-weight: 600;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  color: var(--sharp-icon-color2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagIconBack3 {
+  border-radius: 4px;
+  background-color: var(--sharp-icon-back-color3);
+  font-weight: 600;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  color: var(--sharp-icon-color3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagIconBack4 {
+  border-radius: 4px;
+  background-color: var(--sharp-icon-back-color4);
+  font-weight: 600;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  color: var(--sharp-icon-color4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagIconBack5 {
+  border-radius: 4px;
+  background-color: var(--sharp-icon-back-color5);
+  font-weight: 600;
+  width: 34px;
+  height: 34px;
+  font-size: 18px;
+  color: var(--sharp-icon-color5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

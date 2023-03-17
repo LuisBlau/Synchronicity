@@ -61,7 +61,7 @@ export default function GroupProfile() {
             </div>
             <div className={styles.tagsCardtags}>
               <div className={styles.tag}>
-                <div className={styles.tagsCardSharp}>
+                <div className="tagIconBack1">
                   #
                 </div>
                 <div className={styles.name1}>
@@ -70,7 +70,7 @@ export default function GroupProfile() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.tagsCardSharp}>#</div>
+                <div className="tagIconBack2">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#meditation</div>
                   <div className={styles.tagDescription}>
@@ -79,14 +79,14 @@ export default function GroupProfile() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.tagsCardSharp}>#</div>
+                <div className="tagIconBack3">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#yoga</div>
                   <div className={styles.tagDescription}>48,029 Posted by this tag</div>
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.tagsCardSharp}>#</div>
+                <div className="tagIconBack4">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#messi</div>
                   <div className={styles.tagDescription}>
@@ -95,7 +95,7 @@ export default function GroupProfile() {
                 </div>
               </div>
               <div className={styles.tag}>
-                <div className={styles.tagsCardSharp}>#</div>
+                <div className="tagIconBack5">#</div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>#video</div>
                   <div className={styles.tagDescription}>82,645 Posted by this tag</div>

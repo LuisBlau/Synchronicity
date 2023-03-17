@@ -176,7 +176,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #97989D;
+  color: var(--description-font-color);
   text-align: center;
   width: 65%;
 }
@@ -440,7 +440,7 @@
   position: relative;
   font-size: 12px;
   line-height: 22px;
-  color: #97989D;
+  color: var(--description-font-color);
   text-align: left;
   cursor: pointer;
 }
@@ -466,7 +466,7 @@
 .description {
   font-size: 9px;
   line-height: 14px;
-  color: #97989D;
+  color: var(--description-font-color);
 }
 
 .groups {
@@ -513,7 +513,7 @@
   display: flex;
 }
 
-.icon5 {
+.tagIconBack {
   border-radius: 4px;
   background-color: #5a4f43;
   padding: 6px;

@@ -80,7 +80,7 @@
 .tagHeaderDescription {
   font-size: 10px;
   line-height: 16px;
-  color: #97989D;
+  color: var(--description-font-color);
 }
 
 .tagHeaderRight {
@@ -119,7 +119,7 @@
 .tagDescription {
   font-size: 9px;
   line-height: 14px;
-  color: #97989D;
+  color: var(--description-font-color);
   max-width: 106px;
 }
 
@@ -153,13 +153,13 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #97989D;
+  color: var(--description-font-color);
 }
 
 .description {
   font-size: 9px;
   line-height: 14px;
-  color: #97989D;
+  color: var(--description-font-color);
 }
 
 .popularTagsCard {
@@ -214,7 +214,7 @@
   display: flex;
 }
 
-.icon5 {
+.tagIconBack {
   border-radius: 4px;
   background-color: #5a4f43;
   padding: 6px;
@@ -663,7 +663,7 @@
   position: relative;
   font-size: 12px;
   line-height: 22px;
-  color: #97989D;
+  color: var(--description-font-color);
   text-align: left;
   cursor: pointer;
 }
