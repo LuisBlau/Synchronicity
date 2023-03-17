@@ -69,9 +69,12 @@
     line-height: 22px;
     border: none;
     background: none;
-    color: var(--secondary-font-color);
+    color: var(--header-search-input-color);
     width: 100%;
 }
+.searchInput::placeholder {
+    color: var(--header-search-input-color);
+  }
 
 .searchIcon {
     width: 20.5px;
