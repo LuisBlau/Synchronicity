@@ -100,14 +100,32 @@ export default function Header() {
       context.setTheme(darkTheme);
     }
   };
+  const showMobileSearch = e => {
+    let obj = e.target.parentElement.parentElement;
+    //obj.classList.add(styles.show);
+  };
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <div className={styles.logo} onClick={() => router.push('/')}>
           <Image className={styles.favIcon} alt="logo" src={logoSvg} />
           <h1 className={styles.logoTitle}><span>Synchronicity</span><span className={styles.logoDot}>.</span></h1>
+          <div className={styles.searchMobile} onClick={e => showMobileSearch(e)}>
+            <div className={styles.searchInputWrapper}>
+              <input type="text" placeholder="Type here to search..."  className={styles.searchInput} />
+            </div>
+            <div className="flex pointer">
+              <Image
+                className={styles.searchIcon}
+                alt="search icon"
+                src={searchIconSvg}
+              />
+            </div>
         </div>
+        </div>
+        
         <div className={styles.contentRight}>
+          
           <div className={styles.setting}>
             <div className={styles.settingIcon} onClick={() => setShowSetting(!showSetting)}>
               <Image src={settingIconSvg} alt="setting icon" />

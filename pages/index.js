@@ -57,7 +57,11 @@ export default function Home() {
                     />
                 </div>
                 <div className={styles.titleAndDesc}>
-                  <div className={styles.subtitle}>Recent Posts</div>
+                  <div className={styles.subtitle}>
+                    <div className={styles.text}> Recent Posts </div>
+                    <div className={styles.forMobile}>Recent</div>
+                  </div>
+                  
                   <div className={styles.description}>
                     Find the latest posts by members
                   </div>
@@ -72,7 +76,10 @@ export default function Home() {
                     />
                   </div>
                   <div className={styles.titleAndDesc}>
-                    <div className={styles.subtitle}>Most Reacted Posts</div>
+                    <div className={styles.subtitle}>
+                      <div className={styles.text}>Most Reacted Posts</div>
+                      <div className={styles.forMobile}>Reacted</div>
+                    </div>
                     <div className={styles.description}>
                       Post most reacted by members
                     </div>
@@ -267,283 +274,29 @@ export default function Home() {
                   </div>
                 </div>
                 <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
+                  <div className={styles.postUserInfoWaraper}>
+                    <div className={styles.postUserAvatar}>
+                      <Image
+                        className={styles.postUserAvatarBack}
+                        alt=""
+                        src={avatarBack}
+                      />
+                      <Image
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        src={postUserAvatar}
+                      />
+                    </div>
                     <div className={styles.postUserInfo}>
                       <div className={styles.postUserName}>
                         Pavel Gvay
                       </div>
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
+                  
                   <div className={styles.postUserMain}>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
+                    
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
