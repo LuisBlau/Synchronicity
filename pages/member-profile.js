@@ -139,13 +139,19 @@ export default function Profile() {
             <div className={styles.profileSubDesc}>
               Hey there... I&apos;m AR Jakir! I&apos;m here to learn from and support the other members of this community!
             </div>
-            <div className={styles.profileWeb}>
+            <div className={`${styles.profileWeb} ${styles.desk}`}>
               <svg className={styles.webIcon} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.00049 0C3.14034 0 0 3.14019 0 7C0 10.8596 3.14039 14 7.00049 14C10.8601 14 14 10.8596 14 7C14 3.14024 10.8602 0 7.00049 0ZM12.8281 6.42882H10.771C10.6362 4.50643 9.82572 2.70745 8.5032 1.34539C10.8275 1.96413 12.5897 3.97409 12.8281 6.42882ZM7.00049 12.4772C5.48182 11.2832 4.53369 9.50278 4.37564 7.57132H9.62465C9.46661 9.50239 8.51852 11.2832 7.00039 12.4772H7.00049ZM4.37564 6.42882C4.53349 4.49776 5.48177 2.71632 7.00049 1.52335C8.51862 2.71632 9.4669 4.49776 9.62475 6.42882H4.37564ZM5.4972 1.34539C4.17447 2.7076 3.36423 4.50673 3.22944 6.42882H1.17173C1.41044 3.97399 3.17267 1.96378 5.4972 1.34539ZM1.17173 7.57118H3.22944C3.3642 9.49356 4.17447 11.2922 5.4972 12.6541C3.17267 12.0358 1.41045 10.0262 1.17173 7.57118ZM8.50339 12.6541C9.82592 11.2921 10.6364 9.49351 10.7711 7.57118H12.8283C12.59 10.0262 10.8277 12.0358 8.50339 12.6541Z"/>
               </svg>
               www.uikit.to
             </div>
             <div className={styles.socialIcons}>
+            <div className={`${styles.profileWeb} ${styles.mobile}`}>
+              <svg className={styles.webIcon} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.00049 0C3.14034 0 0 3.14019 0 7C0 10.8596 3.14039 14 7.00049 14C10.8601 14 14 10.8596 14 7C14 3.14024 10.8602 0 7.00049 0ZM12.8281 6.42882H10.771C10.6362 4.50643 9.82572 2.70745 8.5032 1.34539C10.8275 1.96413 12.5897 3.97409 12.8281 6.42882ZM7.00049 12.4772C5.48182 11.2832 4.53369 9.50278 4.37564 7.57132H9.62465C9.46661 9.50239 8.51852 11.2832 7.00039 12.4772H7.00049ZM4.37564 6.42882C4.53349 4.49776 5.48177 2.71632 7.00049 1.52335C8.51862 2.71632 9.4669 4.49776 9.62475 6.42882H4.37564ZM5.4972 1.34539C4.17447 2.7076 3.36423 4.50673 3.22944 6.42882H1.17173C1.41044 3.97399 3.17267 1.96378 5.4972 1.34539ZM1.17173 7.57118H3.22944C3.3642 9.49356 4.17447 11.2922 5.4972 12.6541C3.17267 12.0358 1.41045 10.0262 1.17173 7.57118ZM8.50339 12.6541C9.82592 11.2921 10.6364 9.49351 10.7711 7.57118H12.8283C12.59 10.0262 10.8277 12.0358 8.50339 12.6541Z"/>
+              </svg>
+              www.uikit.to
+            </div>
               <svg className={styles.socialIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1_7144)">
                   <path d="M14 3C13.2422 2.99986 12.0408 3.42427 11.5 4C10.9592 4.57573 10.7226 5.4207 10.7087 6.24238V7.52004C10.7071 7.61148 10.6877 7.70151 10.6517 7.78422C10.6157 7.86694 10.564 7.94047 10.5 8C10.436 8.05953 10.3611 8.1037 10.2802 8.12963C10.1993 8.15555 10.1143 8.16264 10.0307 8.15043L8.5 8C6.45204 7.69724 4.38245 6.20086 2.5 4.5C1.90376 8.07905 2.69527 11.3785 5.5 13.2913L7.22043 14.4785C7.30319 14.5349 7.37195 14.6125 7.42069 14.7044C7.46942 14.7962 7.49665 14.8997 7.5 15.0056C7.50335 15.1116 7.4827 15.2168 7.43987 15.3121C7.39705 15.4074 7.33334 15.4898 7.25433 15.5522L5.5 17C6.5 17.5 8.25619 17.16 9 17C13.7041 15.9814 17 11.832 17 5.5C17 4.98315 15.9223 3 14 3ZM8.97851 6.20237C8.99592 5.16007 9.29646 4.14649 9.84252 3.28855C10.3886 2.4306 11.1559 1.76642 12.0484 1.37916C12.9409 0.991891 13.9188 0.898755 14.8599 1.11141C15.801 1.32406 16.6633 1.83306 17.3389 2.57466C18.0478 2.56925 18.651 2.76389 20 1.87723C19.666 3.65054 19.5015 4.42041 18.7896 5.47899C18.7896 13.7422 14.1064 17.7602 9.3544 18.7885C6.09602 19.4935 1.35799 18.3355 0 16.7979C0.691959 16.7395 3.50366 16.4119 5.12887 15.1219C3.75393 14.139 -1.71893 10.6465 1.87746 1.25657C3.56548 3.39427 5.27743 4.84968 7.01231 5.62172C8.16691 6.13533 8.45007 6.12452 8.97951 6.20345L8.97851 6.20237Z" />
@@ -203,13 +209,13 @@ export default function Profile() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -221,25 +227,29 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
+                  <div className={styles.postUserInfoWaraper}>
+                    <div className={styles.postUserAvatar}>
+                      <Image
+                        className={styles.postUserAvatarBack}
+                        alt=""
+                        src={avatarBack}
+                      />
+                      <Image
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        src={postUserAvatar}
+                      />
+                    </div>
                     <div className={styles.postUserInfo}>
                       <div className={styles.postUserName}>
                         Pavel Gvay
                       </div>
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
+                  </div>
+                  
+                  <div className={styles.postUserMain}>
+                    
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -289,13 +299,13 @@ export default function Profile() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -307,25 +317,29 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
+                  <div className={styles.postUserInfoWaraper}>
+                    <div className={styles.postUserAvatar}>
+                      <Image
+                        className={styles.postUserAvatarBack}
+                        alt=""
+                        src={avatarBack}
+                      />
+                      <Image
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        src={postUserAvatar}
+                      />
+                    </div>
                     <div className={styles.postUserInfo}>
                       <div className={styles.postUserName}>
                         Pavel Gvay
                       </div>
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
+                  </div>
+                  
+                  <div className={styles.postUserMain}>
+                    
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -375,13 +389,13 @@ export default function Profile() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -393,25 +407,29 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
+                  <div className={styles.postUserInfoWaraper}>
+                    <div className={styles.postUserAvatar}>
+                      <Image
+                        className={styles.postUserAvatarBack}
+                        alt=""
+                        src={avatarBack}
+                      />
+                      <Image
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        src={postUserAvatar}
+                      />
+                    </div>
                     <div className={styles.postUserInfo}>
                       <div className={styles.postUserName}>
                         Pavel Gvay
                       </div>
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
+                  </div>
+                  
+                  <div className={styles.postUserMain}>
+                    
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -461,13 +479,13 @@ export default function Profile() {
                     </div>
                     <div className={styles.postTags}>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>finance</div>
+                        <div className={styles.postTagText}>#finance</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>bitcoin</div>
+                        <div className={styles.postTagText}>#bitcoin</div>
                       </div>
                       <div className={styles.postTag}>
-                        <div className={styles.postTagText}>crypto</div>
+                        <div className={styles.postTagText}>#crypto</div>
                       </div>
                     </div>
                   </div>
@@ -479,25 +497,29 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className={styles.postUser}>
-                  <div className={styles.postUserAvatar}>
-                    <Image
-                      className={styles.postUserAvatarBack}
-                      alt=""
-                      src={avatarBack}
-                    />
-                    <Image
-                      className={styles.postUserAvatarImg}
-                      alt=""
-                      src={postUserAvatar}
-                    />
-                  </div>
-                  <div className={styles.postUserMain}>
+                  <div className={styles.postUserInfoWaraper}>
+                    <div className={styles.postUserAvatar}>
+                      <Image
+                        className={styles.postUserAvatarBack}
+                        alt=""
+                        src={avatarBack}
+                      />
+                      <Image
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        src={postUserAvatar}
+                      />
+                    </div>
                     <div className={styles.postUserInfo}>
                       <div className={styles.postUserName}>
                         Pavel Gvay
                       </div>
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
+                  </div>
+                  
+                  <div className={styles.postUserMain}>
+                    
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image

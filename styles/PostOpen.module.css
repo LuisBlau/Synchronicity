@@ -551,3 +551,95 @@
 .postDateHighLight {
   color: #5D95E8;
 }
+/* For Mobile */
+.mobile{
+  display: none;
+}
+@media (max-width: 768px) {
+  .main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 80px;
+  }
+  .desk{
+    display:none;
+  }
+  .mobile{
+    display: flex;
+  }
+  .side,
+  .centerSide{
+    padding-right: 0;
+    width: 100%;
+  }
+  /* profile */
+  .profileName {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .memberTag {
+    padding: 2px 8px;
+    height: 22px;
+  }
+  .profileMemberOf {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .profileSubDesc {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* left side 
+  */
+
+  .leftSide{
+    width: 100%;
+  }
+  /* center side 
+  */
+  .profileCard{
+    width: 100%;
+    max-width: 100%;
+  }
+  .postCard {
+    background: none;
+    gap: 20px;
+  }
+  .post,
+  .actionGroup,
+  .comments{
+    background-color: var(--header-back-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 16px;
+  }
+  .actionGroup.mobile{
+    width: 100%;
+  }
+  /* right side 
+  */
+  .rightSide{
+    width: 100%;
+  }
+  /* profile */
+  .profileSubDesc {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .viewProfileBtn,
+  .joinDate {
+    display: none;
+  }
+  /* profile Info card */
+  .infoCard {
+    margin-top: -40px;
+    max-width: 100%;
+  }
+}

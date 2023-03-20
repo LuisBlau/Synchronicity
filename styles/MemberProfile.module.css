@@ -535,3 +535,133 @@
   flex-direction: column;
   display: flex;
 }
+/* For Mobile */
+.mobile{
+  display: none;
+}
+@media (max-width: 768px) {
+  .main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 80px;
+  }
+  .desk{
+    display:none;
+  }
+  .mobile{
+    display: flex;
+  }
+  .side,
+  .centerSide{
+    padding-right: 0;
+    width: 100%;
+  }
+  /* profile */
+  .profileName {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .memberTag {
+    padding: 2px 8px;
+    height: 22px;
+  }
+  .profileMemberOf {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .profileSubDesc {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* left side 
+  */
+
+  .leftSide{
+    width: 100%;
+  }
+  /* Action Bar*/
+  .actionBar {
+    gap: 0px;
+    justify-content: space-evenly;
+    padding: 10px;
+  }
+  .actionBtn {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  /* center side 
+  */
+  .profileCard{
+    width: 100%;
+    max-width: 100%;
+  }
+  .postHome, 
+  .rightGroup{
+    padding: 20px;
+  }
+  .postHome .postInner img{
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+  }
+  .postHome .postInner .postMoreIcon img{
+    width: 28px;
+    height: 28px;
+  }
+  .postHome .postInner .postData {
+    width: 200px;
+    display: initial;
+  }
+  .postHome .postInner .postData .postTitle {
+    font-size: 16px;
+    max-height: 48px;
+    overflow: hidden;
+  }
+  .postHome .postInner .postData .postTags {
+    margin-left: -75px;
+    margin-top: 17px;
+  }
+  .postHome .postInner .postData .postUser{
+    margin-left: -75px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .postHome .postInner .postData .postUser .postUserAvatar .postUserAvatarBack{
+    width: 30px;
+    height: 30px;
+  }
+  .postHome .postInner .postData .postUser .postUserAvatar .postUserAvatarImg{
+    width: 20px;
+    height: 25px;
+  }
+  .postHome .postInner .postData .postUser .postUserInfoWaraper{
+      padding-top: 15px
+  } 
+  .postHome .postInner .postData .postUser .postUserMain{
+    padding-top: 5px;
+  }
+  .postHome .postInner .postData .postUser .postUserMain img,
+  .postHome .postInner .postData .postUser .postUserMain .postActionIcon1,
+  .postHome .postInner .postData .postUser .postUserMain .postActionIcon2,
+  .postHome .postInner .postData .postUser .postUserMain .postActionIcon3{
+    width: 16px;
+    height: 16px;
+  }
+  .postHome .postInner .postData .postUser .postUserMain .postActionDesc{
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+  }
+  /* right side 
+  */
+  .rightSide{
+    display:none;
+  }
+  
+}

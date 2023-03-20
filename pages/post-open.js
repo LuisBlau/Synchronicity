@@ -32,7 +32,8 @@ export default function PostOpen() {
       </Head>
       <Header />
       <main className={styles.main}>
-        <aside className={`${styles.side} ${styles.leftSide}`}>
+        
+      <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.profileCard}>
             <div className={styles.profileUserAvatar}>
               <Image
@@ -260,6 +261,78 @@ export default function PostOpen() {
                 </div>
               </div>
             </div>
+            <div className={`${styles.actionGroup} ${styles.mobile}`}>
+            <div className={styles.actionItem}>
+              <div className={styles.actionItemIcon1}>
+                <Image
+                  className={styles.iconImg}
+                  alt="view svg"
+                  src={viewSvg}
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div className={styles.actionItemText}>
+                56,111 Views
+              </div>
+            </div>
+            <div className={styles.actionItem}>
+              <div className={styles.actionItemIcon2}>
+                <Image
+                  className={styles.iconImg}
+                  alt="heart svg"
+                  src={heartSvg}
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div className={styles.actionItemText}>
+                24,111 Heart
+              </div>
+            </div>
+            <div className={styles.actionItem}>
+              <div className={styles.actionItemIcon3}>
+                <Image
+                  className={styles.iconImg}
+                  alt="comment svg"
+                  src={commentSvg}
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div className={styles.actionItemText}>
+                3,111 Comments
+              </div>
+            </div>
+            <div className={styles.actionItem}>
+              <div className={styles.actionItemIcon4}>
+                <Image
+                  className={styles.iconImg}
+                  alt="share svg"
+                  src={shareSvg}
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div className={styles.actionItemText}>
+                20 Share
+              </div>
+            </div>
+            <div className={styles.actionItem}>
+              <div className={styles.actionItemIcon5}>
+                <Image
+                  className={styles.iconImg}
+                  alt="warning svg"
+                  src={warningSvg}
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <div className={styles.actionItemText}>
+                Report
+              </div>
+            </div>
+          </div>
             <div className={styles.comments}>
               <div className={styles.comment}>
                 <div className={styles.commentLeft}>
@@ -307,7 +380,7 @@ export default function PostOpen() {
           </div>
         </section>
         <aside className={`${styles.side} ${styles.rightSide}`}>
-          <div className={styles.actionGroup}>
+          <div className={`${styles.actionGroup} ${styles.desk}`}>
             <div className={styles.actionItem}>
               <div className={styles.actionItemIcon1}>
                 <Image
@@ -385,6 +458,7 @@ export default function PostOpen() {
             </div>
           </div>
         </aside>
+               
       </main>
     </>
   )

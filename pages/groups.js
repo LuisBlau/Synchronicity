@@ -32,9 +32,26 @@ export default function GroupProfile() {
       </Head>
       <Header />
       <main className={styles.main}>
+        <div className={`${styles.card} ${styles.mobile} ${styles.search}`}>
+          <div className={styles.searchBar}>
+            <input className={styles.searchBarInput} type="text" placeholder='Search Groups' />
+            <Image
+                className={styles.searchIcon}
+                alt="search icon"
+                src={searchIconSvg}
+              />
+          </div>         
+        </div>
         <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.tagsBar}>
-            <div className={styles.tagsCardTitle}>Tags posted by Group</div>
+            <div className={styles.tagsCardTitle}>
+              <span>Tags posted by Group </span>
+              <div className={`${styles.tagHeaderRight} ${styles.mobile}`}>
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
             <div className={styles.tagHeader}>
               <div className={styles.tagHeaderLeft}>
                 <div className={styles.tagsCardAvatar}>
@@ -827,7 +844,7 @@ export default function GroupProfile() {
           </div>
         </aside>
         <section className={`${styles.side} ${styles.centerSide}`}>
-          <div className={styles.card}>
+          <div className={`${styles.card} ${styles.desk}`}>
             <div className={styles.searchBar}>
               <input className={styles.searchBarInput} type="text" placeholder='Search Groups' />
               <Image
@@ -835,8 +852,7 @@ export default function GroupProfile() {
                   alt="search icon"
                   src={searchIconSvg}
                 />
-            </div>
-            
+            </div>          
           </div>
           <div className={styles.centerDown}>
             <div className={styles.groupsBoard}>

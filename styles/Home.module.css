@@ -515,7 +515,7 @@
     flex-wrap: wrap;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 80px;
   }
   .leftSide, .centerSide, .rightSide{
     width: 100%;

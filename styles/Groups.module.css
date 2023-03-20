@@ -46,7 +46,6 @@
   line-height: 24px;
   font-weight: 600;
   color: var(--main-font-color);
-  margin-bottom: 15px;
   white-space: nowrap;
 }
 
@@ -794,4 +793,80 @@
 
 .rightGroupItemAdmin {
   color: var(--red-red-80);
+}
+
+/* For mobile */
+.mobile{
+  display: none;
+}
+.search{
+  width: 100%;
+  height: 66px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.mobile .searchBar{
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 80px;
+  }
+  .side,
+  .groupsBoard{
+    padding-right: 0;
+  }
+  /* search bar*/
+  .mobile{
+    display: flex;
+  }
+
+  .desk{
+    display: none;
+  }
+  /* left side */
+  .leftSide{
+    width: 100%;
+  }
+  .popularTags{
+    display: none;
+  }
+  .tagsBar{
+    max-width: 100%;
+    border-radius: 16px;
+    padding-left: 75px;
+    padding-right:75px;
+  }
+  .tagsCardTitle{
+    justify-content: space-between;
+    display: flex;
+  }
+  .tagHeader,
+  .tagsCardTags{
+    display: auto;
+  }
+  .tagsCardTitle + .tagHeader{
+    margin-top: 15px;
+  }
+
+
+  .groupCoverImgWrapper {
+    height: 72px;
+  }
+  /* center side */
+  .groupCard{
+    width: 100%;
+    max-width: 100%;
+  }
+  /* right side */
+  .rightSide{
+    display:none;
+  }
+  
 }
