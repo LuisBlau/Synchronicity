@@ -286,7 +286,7 @@
   justify-content: center;
   width: 85px;
   height: 85px;
-  background-color: #335248;
+  background-color: var(--sharp-icon-back-color4);
   color: #0BA371;
   border-radius: 4px;
   font-size: 50px;

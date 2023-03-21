@@ -551,6 +551,12 @@
 .postDateHighLight {
   color: #5D95E8;
 }
+
+.postReactionsWaraper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 /* For Mobile */
 .mobile{
   display: none;
@@ -612,8 +618,7 @@
     gap: 20px;
   }
   .post,
-  .actionGroup,
-  .comments{
+  .actionGroup{
     background-color: var(--header-back-color);
     padding-top: 20px;
     padding-bottom: 20px;
@@ -622,24 +627,56 @@
   .actionGroup.mobile{
     width: 100%;
   }
+  .postImage {
+    height: 117px;
+  }
+  .postTitle,
+  .infoTitle{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .postText,
+  .actionItemText{
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .postTag{
+    font-size: 10px;
+  }
+  .postReactions{
+    font-size: 12px;
+    line-height: 24px;
+    order:2;
+  }
+  .postReactionsWaraper {
+    flex-direction: row;
+  }
+  .postIcon1, 
+  .postIcon2 {
+    width: 20px;
+    height: 20px;
+  }
+
   /* right side 
   */
   .rightSide{
     width: 100%;
   }
   /* profile */
-  .profileSubDesc {
+  .profileSubDesc,
+  .viewProfileBtn,
+  .joinDate  {
     font-weight: 600;
     font-size: 12px;
     line-height: 18px;
   }
-  .viewProfileBtn,
-  .joinDate {
-    display: none;
+  #parent{
+    display:flex;
+    flex-flow: column;
   }
   /* profile Info card */
   .infoCard {
-    margin-top: -40px;
     max-width: 100%;
   }
 }

@@ -385,6 +385,7 @@
 .postUserInfo {
   display: flex;
   flex-direction: column;
+  min-width: 120px;
 }
 
 .postUserName {
@@ -535,6 +536,13 @@
   flex-direction: column;
   display: flex;
 }
+
+.postUserInfoWaraper{
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  align-items: center;
+}
 /* For Mobile */
 .mobile{
   display: none;
@@ -561,6 +569,9 @@
     width: 100%;
   }
   /* profile */
+  .profileCardHeader img{
+    height: 106px;
+  }
   .profileName {
     font-size: 16px;
     line-height: 24px;

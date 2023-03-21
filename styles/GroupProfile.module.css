@@ -525,6 +525,7 @@
 .postUserInfo {
   display: flex;
   flex-direction: column;
+  min-width: 120px;
 }
 
 .postUserName {
@@ -724,9 +725,33 @@
   }
   /* center side 
   */
+  .centerSide,
   .groupCard{
     width: 100%;
     max-width: 100%;
+  }
+  .mobile .exploreCard{
+    width: 100%;
+  }
+  .mobile > .tagsCardTitle{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .tagHeader,
+  .tagsCardTags{
+    display: auto;
+  }
+  .tagsCardTitle + .tagHeader{
+    margin-top: 15px;
+  }
+
+  /* Buttons */
+  .exploreBtn{
+    font-size: 12px;
+  }
+  .exploreCardBtnGroup {
+    gap: 12px;
   }
   /* profile card */
   .profileCard{
@@ -790,11 +815,26 @@
     font-size: 10px;
     line-height: 16px;
   }
+
+  .mobile.groups {
+    max-width: 100%;
+  }
   /* right side 
   */
-  .rightSide{
+  .rightSide,
+  .groupMember{
     width: 100%;
     max-width: 100%;
+  }
+  .recentMedia{
+    order:2;
+  }
+  .groupMember{
+    order:1;
+  }
+  .profileMedia img{
+    /* text-align: center; */
+    width: 100%;
   }
   
 }

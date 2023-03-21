@@ -33,7 +33,7 @@ export default function PostOpen() {
       <Header />
       <main className={styles.main}>
         
-      <aside className={`${styles.side} ${styles.leftSide}`}>
+        <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.profileCard}>
             <div className={styles.profileUserAvatar}>
               <Image
@@ -142,7 +142,7 @@ export default function PostOpen() {
             </div>
           </div>
 
-          <div className={styles.infoCard}>
+          <div className={`${styles.infoCard} ${styles.desk}`}>
             <div className={styles.infoTitle}>
               More from Mansurul Haque
             </div>
@@ -226,113 +226,121 @@ export default function PostOpen() {
                     <p>You can also pay merchants directly through the app. After successfully any transaction you can see details about your payment. History details include: -Transaction ID.</p>
                     <p>What will you get? - 200+ Beautiful Screens design - Figma, XD & Sketch Files 100% editable and scalable. Thank You For Your Time.</p>
                   </div>
-                  <div className={styles.postReactions}>
-                    24,056 Reactions
-                  </div>
-                  <div className={styles.postIcons}>
-                    <div className={styles.postIcon1}>
-                      <Image
-                        className={styles.iconImg}
-                        alt="thumbnail svg"
-                        src={thumbnilSvg}
-                        width={20}
-                        height={20}
-                      />
+                  <div className={styles.postReactionsWaraper}>
+                    <div className={styles.postReactions}>
+                      24,056 Reactions
                     </div>
-                    <div className={styles.postIcon2}>
-                      <Image
-                        className={styles.iconImg}
-                        alt="heart svg"
-                        src={heartSvg}
-                        width={20}
-                        height={20}
-                      />
-                    </div>
-                    <div className={styles.postIcon2}>
-                      <Image
-                        className={styles.iconImg}
-                        alt="smile svg"
-                        src={smileSvg}
-                        width={20}
-                        height={20}
-                      />
+                    <div className={styles.postIcons}>
+                      <div className={styles.postIcon1}>
+                        <Image
+                          className={styles.iconImg}
+                          alt="thumbnail svg"
+                          src={thumbnilSvg}
+                          width={20}
+                          height={20}
+                        />
+                      </div>
+                      <div className={styles.postIcon2}>
+                        <Image
+                          className={styles.iconImg}
+                          alt="heart svg"
+                          src={heartSvg}
+                          width={20}
+                          height={20}
+                        />
+                      </div>
+                      <div className={styles.postIcon2}>
+                        <Image
+                          className={styles.iconImg}
+                          alt="smile svg"
+                          src={smileSvg}
+                          width={20}
+                          height={20}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className={`${styles.actionGroup} ${styles.mobile}`}>
-            <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon1}>
-                <Image
-                  className={styles.iconImg}
-                  alt="view svg"
-                  src={viewSvg}
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div className={styles.actionItemText}>
-                56,111 Views
+              <div className={styles.postDate}>
+                <span className={styles.postDateHighLight}>Mansurul Haque</span> Posted on February 21,2022
               </div>
             </div>
-            <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon2}>
-                <Image
-                  className={styles.iconImg}
-                  alt="heart svg"
-                  src={heartSvg}
-                  width={20}
-                  height={20}
-                />
+            <div className={`${styles.actionGroup} ${styles.mobile}`}>
+              <div className={styles.actionItem}>
+                <div className={styles.actionItemIcon1}>
+                  <Image
+                    className={styles.iconImg}
+                    alt="view svg"
+                    src={viewSvg}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div className={styles.actionItemText}>
+                  56,111 Views
+                </div>
               </div>
-              <div className={styles.actionItemText}>
-                24,111 Heart
+              <div className={styles.actionItem}>
+                <div className={styles.actionItemIcon2}>
+                  <Image
+                    className={styles.iconImg}
+                    alt="heart svg"
+                    src={heartSvg}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div className={styles.actionItemText}>
+                  24,111 Heart
+                </div>
+              </div>
+              <div className={styles.actionItem}>
+                <div className={styles.actionItemIcon3}>
+                  <Image
+                    className={styles.iconImg}
+                    alt="comment svg"
+                    src={commentSvg}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div className={styles.actionItemText}>
+                  3,111 Comments
+                </div>
+              </div>
+              <div className={styles.actionItem}>
+                <div className={styles.actionItemIcon4}>
+                  <Image
+                    className={styles.iconImg}
+                    alt="share svg"
+                    src={shareSvg}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div className={styles.actionItemText}>
+                  20 Share
+                </div>
+              </div>
+              <div className={styles.actionItem}>
+                <div className={styles.actionItemIcon5}>
+                  <Image
+                    className={styles.iconImg}
+                    alt="warning svg"
+                    src={warningSvg}
+                    width={20}
+                    height={20}
+                  />
+                </div>
+                <div className={styles.actionItemText}>
+                  Report
+                </div>
               </div>
             </div>
-            <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon3}>
-                <Image
-                  className={styles.iconImg}
-                  alt="comment svg"
-                  src={commentSvg}
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div className={styles.actionItemText}>
-                3,111 Comments
-              </div>
-            </div>
-            <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon4}>
-                <Image
-                  className={styles.iconImg}
-                  alt="share svg"
-                  src={shareSvg}
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div className={styles.actionItemText}>
-                20 Share
-              </div>
-            </div>
-            <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon5}>
-                <Image
-                  className={styles.iconImg}
-                  alt="warning svg"
-                  src={warningSvg}
-                  width={20}
-                  height={20}
-                />
-              </div>
-              <div className={styles.actionItemText}>
-                Report
-              </div>
-            </div>
-          </div>
+          
             <div className={styles.comments}>
               <div className={styles.comment}>
                 <div className={styles.commentLeft}>
@@ -452,9 +460,41 @@ export default function PostOpen() {
               </div>
             </div>
           </div>
-          <div className={styles.actionGroup}>
+          <div className={`${styles.actionGroup} ${styles.desk}`}>
             <div className={styles.postDate}>
               <span className={styles.postDateHighLight}>Mansurul Haque</span> Posted on February 21,2022
+            </div>
+          </div>
+          <div className={`${styles.infoCard} ${styles.mobile}`}>
+            <div className={styles.infoTitle}>
+              More from Mansurul Haque
+            </div>
+            <div className={styles.divider} />
+            <div>
+              <div className={styles.infoPrimary}>
+                Self-Taught Developer Journal, Day 51: TOP Building Rock Paper Scissors UI cont.
+              </div>
+              <div className={styles.infoSecondary}>
+                #webdev #beginners #codenewbie #devjournal
+              </div>
+            </div>
+            <div className={styles.divider} />
+            <div>
+              <div className={styles.infoPrimary}>
+                Learn Nginx and its basics in 2022
+              </div>
+              <div className={styles.infoSecondary}>
+                #webdev #nginx #node #javascript
+              </div>
+            </div>
+            <div className={styles.divider} />
+            <div>
+              <div className={styles.infoPrimary}>
+                My Learning Path for Programming Tello Drones
+              </div>
+              <div className={styles.infoSecondary}>
+                #tello #python #python3 #beginners
+              </div>
             </div>
           </div>
         </aside>
