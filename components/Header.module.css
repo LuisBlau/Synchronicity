@@ -1,5 +1,5 @@
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 3;
     height: 80px;
@@ -263,6 +263,22 @@
     .searchMobile{
         display: flex;
     }
+    .settingDropDown {
+        left: -140px;
+        height: 55px;
+        top: 40px;
+    }
+    .effect {
+        top: 40px;
+        bottom: -60px;
+        left: -150px;
+        right: 0px;
+
+    }
+    .border {
+        left: 145px;
+        top: -8px;
+    }
     .searchInputWrapper{
         display: none;
     }
@@ -276,6 +292,15 @@
         width: 100%;
         z-index: 3;
         background-color: var(--header-back-color);
+    }
+    .iconHome {
+        order: 2;
+    }
+    .iconGroups {
+        order: 1;
+    }
+    .iconTags{
+        order: 3;
     }
   } 
   /*

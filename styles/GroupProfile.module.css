@@ -246,10 +246,6 @@
   height: 50px;
 }
 
-.groupInfo {
-  
-}
-
 .groupName {
   color: var(--main-font-color);
   font-size: 26px;
@@ -730,6 +726,32 @@
     width: 100%;
     max-width: 100%;
   }
+
+  .groupAvatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    box-sizing: border-box;
+  }
+  .coverCardLeft{
+    gap: 14px;
+  }
+  .groupName {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .groupDate{
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 16px;
+  }
+  .joinBtn{
+    padding: auto;
+    font-size: 10px;
+    line-height: 16px;
+    padding: 5px;
+    gap: 5px;
+  }
   .mobile .exploreCard{
     width: 100%;
   }
@@ -745,7 +767,11 @@
   .tagsCardTitle + .tagHeader{
     margin-top: 15px;
   }
+  .coverCardImg img{
+    height: 72px;
+  }
 
+  
   /* Buttons */
   .exploreBtn{
     font-size: 12px;
@@ -753,6 +779,7 @@
   .exploreCardBtnGroup {
     gap: 12px;
   }
+
   /* profile card */
   .profileCard{
     width: 100%;
@@ -761,21 +788,30 @@
   .postHome, 
   .rightGroup{
     padding: 20px;
+    padding: 14px;
   }
   .postHome .postInner img{
     width: 56px;
     height: 56px;
     border-radius: 4px;
   }
+  .postHome .postInner .postMoreIcon{
+    display: inline;
+  }
   .postHome .postInner .postMoreIcon img{
-    width: 28px;
-    height: 28px;
+    width: 20px;
+    height: 20px;
   }
   .postHome .postInner .postData {
-    width: 200px;
+    width: calc(100% - 76px);
     display: initial;
   }
+  .postHome .postInner .postData .postDataUpper{
+    justify-content: flex-start;
+    gap: 20px;
+  }
   .postHome .postInner .postData .postTitle {
+    width: calc(100% - 35px);
     font-size: 16px;
     max-height: 48px;
     overflow: hidden;
@@ -800,9 +836,14 @@
   .postHome .postInner .postData .postUser .postUserInfoWaraper{
       padding-top: 15px
   } 
+  
   .postHome .postInner .postData .postUser .postUserMain{
     padding-top: 5px;
   }
+  .postHome .postInner .postData .postUser .postUserMain .postActions{
+    gap: 13px;
+  }
+  
   .postHome .postInner .postData .postUser .postUserMain img,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon1,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon2,
@@ -835,6 +876,7 @@
   .profileMedia img{
     /* text-align: center; */
     width: 100%;
+    height: auto;
   }
   
 }

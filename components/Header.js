@@ -168,13 +168,13 @@ export default function Header() {
               </div>
           </div>
           <div className={styles.icons}>
-            <div className={`${styles.icon} ${router.pathname === '/'? styles.selected: ""}`} onClick={() => router.push('/')}>
+            <div className={`${styles.icon} ${styles.iconHome} ${router.pathname === '/'? styles.selected: ""}`} onClick={() => router.push('/')}>
               <HomeIconSvg className={styles.iconImg} fill={router.pathname === '/'? "#FFFFFF": "#C5D0E6"} />
             </div>
-            <div className={`${styles.icon} ${router.pathname === '/groups'? styles.selected: ""}`} onClick={() => router.push('/groups')}>
+            <div className={`${styles.icon} ${styles.iconGroups} ${router.pathname === '/groups'? styles.selected: ""}`} onClick={() => router.push('/groups')}>
               <GroupIconSvg className={styles.iconImg} fill={router.pathname === '/groups'? "#FFFFFF": "#C5D0E6"} />
             </div>
-            <div className={`${styles.icon} ${router.pathname === '/tags'? styles.selected: ""}`} onClick={() => router.push('/tags')}>
+            <div className={`${styles.icon} ${styles.iconTags} ${router.pathname === '/tags'? styles.selected: ""}`} onClick={() => router.push('/tags')}>
               <SharpIconSvg className={styles.iconImg} fill={router.pathname === '/tags'? "#FFFFFF": "#C5D0E6"} />
             </div>
           </div>
