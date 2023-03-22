@@ -256,6 +256,11 @@
   border-radius: 20px;
 }
 
+.postHeaderGroupWaraper{
+  display: flex;
+  justify-content: space-between;
+}
+
 .groupAvatar {
   display: flex;
   align-items: center;
@@ -670,10 +675,6 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 18px;
-  }
-  .postHeaderGroupWaraper{
-    display: flex;
-    justify-content: space-between;
   }
   
   .postContent {
