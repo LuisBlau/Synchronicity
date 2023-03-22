@@ -185,28 +185,31 @@ export default function PostOpen() {
                 />
               </div>
               <div className={styles.postContent}>
-                <div className={styles.postHeaderGroupTag}>
-                  <div className={styles.groupAvatar}>
-                    <Image
-                      className={styles.groupAvatarImg}
-                      alt=""
-                      src={groupAvatarSvg}
-                    />
+                <div>
+                  <div className={styles.postHeaderGroupTag}>
+                    <div className={styles.groupAvatar}>
+                      <Image
+                        className={styles.groupAvatarImg}
+                        alt=""
+                        src={groupAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.groupTitle}>
+                      Meditation
+                    </div>
+                    
                   </div>
-                  <div className={styles.groupTitle}>
-                    Meditation
+                  <div className={styles.postShareIcon}>
+                    <Image
+                      alt="share svg"
+                      src={shareSvg}
+                    />
                   </div>
                 </div>
                 <div className={styles.postMain}>
                   <div className={styles.postTitleWrapper}>
                     <div className={styles.postTitle}>
                       OnePay - Online Payment Processing Web App
-                    </div>
-                    <div className={styles.postShareIcon}>
-                      <Image
-                        alt="share svg"
-                        src={shareSvg}
-                      />
                     </div>
                   </div>
                   <div className={styles.postTags}>
@@ -263,6 +266,7 @@ export default function PostOpen() {
                 </div>
               </div>
             </div>
+
             <div className={`${styles.actionGroup} ${styles.mobile}`}>
               <div className={styles.postDate}>
                 <span className={styles.postDateHighLight}>Mansurul Haque</span> Posted on February 21,2022

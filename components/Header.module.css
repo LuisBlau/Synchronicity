@@ -1,5 +1,5 @@
 .header {
-    position: static;
+    position: sticky;
     top: 0;
     z-index: 3;
     height: 80px;
@@ -253,10 +253,14 @@
     /*  */
     .header{
         height: 62px;
+        width: 100%;
     }
     .headerContent {
-        padding: 11px 40px;
+        padding: 11px 20px;
       }
+    .settingIcon {
+        padding: 0;
+    }
    .search{
         display: none;
     }
@@ -264,7 +268,7 @@
         display: flex;
     }
     .settingDropDown {
-        left: -140px;
+        left: -150px;
         height: 55px;
         top: 40px;
     }

@@ -671,9 +671,13 @@
     font-size: 12px;
     line-height: 18px;
   }
-  #parent{
-    display:flex;
-    flex-flow: column;
+  .postHeaderGroupWaraper{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .postContent {
+    padding: 0 35px;
   }
   /* profile Info card */
   .infoCard {
