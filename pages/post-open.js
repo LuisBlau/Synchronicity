@@ -185,7 +185,7 @@ export default function PostOpen() {
                 />
               </div>
               <div className={styles.postContent}>
-                <div>
+                <div className={styles.postHeaderGroupWaraper}>
                   <div className={styles.postHeaderGroupTag}>
                     <div className={styles.groupAvatar}>
                       <Image
