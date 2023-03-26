@@ -54,6 +54,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tagsCardTitle + .tagHeader{
+  margin-top: 15px;
 }
 
 .tagHeader:hover {
@@ -846,6 +851,7 @@
   .tagsCardTitle{
     justify-content: space-between;
     display: flex;
+    cursor: pointer;
   }
   .tagHeader,
   .tagsCardTags{

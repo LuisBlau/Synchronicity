@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import React, { useEffect, useState, useContext } from "react";
+import UserContext from "@/store/UserContext";
 import Header from '../components/Header';
 import styles from '@/styles/Tags.module.css';
 import avatarBack from '../public/ellipse-29.svg';
@@ -18,11 +20,15 @@ import searchIconSvg from '../public/search-icon.svg';
 
 export default function GroupProfile() {
   const router = useRouter();
+  const context = useContext(UserContext);
+  const [openGroupTags, setOpenGroupTags] = useState(true);
+  const [openGroupTag, setOpenGroupTag] = useState(true);
+  const [openPopularTag, setOpenPopularTag] = useState(true);
 
   return (
     <>
       <Head>
-        <title>Group Search</title>
+        <title>Tag Search</title>
         <meta name="description" content="Synchronicity is social website." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
@@ -40,7 +46,10 @@ export default function GroupProfile() {
         </div>
         <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.tagsBar}>
-            <div className={styles.tagsCardTitle}>
+            <div
+              className={styles.tagsCardTitle}
+              onClick={() => setOpenGroupTags(!openGroupTags)}
+            >
               <span>Tags posted by Group </span>
               <div className={`${styles.tagHeaderRight} ${styles.mobile}`}>
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,429 +57,443 @@ export default function GroupProfile() {
                 </svg>
               </div>
             </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={groupAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Meditation
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagsCardTags}>
-              <div className={styles.tag}>
-                <div className='tagIconBack1'>
-                  #
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#music</div>
-                  <div className={styles.tagDescription}>65,523 Posted • Trending</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack2'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#meditation</div>
-                  <div className={styles.tagDescription}>
-                    51,354 • Trending in Bangladesh
+            {
+              (context.isMobile && openGroupTags || !context.isMobile) && (
+                <>
+                  <div
+                    className={styles.tagHeader}
+                    onClick={() => setOpenGroupTag(!openGroupTag)}
+                  >
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={groupAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Meditation
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack3'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#yoga</div>
-                  <div className={styles.tagDescription}>48,029 Posted by this tag</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack1'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#messi</div>
-                  <div className={styles.tagDescription}>
-                    51,354 • Trending in Bangladesh
+                  {openGroupTag && (
+                  <div className={styles.tagsCardTags}>
+                    <div className={styles.tag}>
+                      <div className='tagIconBack1'>
+                        #
+                      </div>
+                      <div className={styles.name1}>
+                        <div className={styles.subtitle}>#music</div>
+                        <div className={styles.tagDescription}>65,523 Posted • Trending</div>
+                      </div>
+                    </div>
+                    <div className={styles.tag}>
+                      <div className='tagIconBack2'>#</div>
+                      <div className={styles.name1}>
+                        <div className={styles.subtitle}>#meditation</div>
+                        <div className={styles.tagDescription}>
+                          51,354 • Trending in Bangladesh
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.tag}>
+                      <div className='tagIconBack3'>#</div>
+                      <div className={styles.name1}>
+                        <div className={styles.subtitle}>#yoga</div>
+                        <div className={styles.tagDescription}>48,029 Posted by this tag</div>
+                      </div>
+                    </div>
+                    <div className={styles.tag}>
+                      <div className='tagIconBack1'>#</div>
+                      <div className={styles.name1}>
+                        <div className={styles.subtitle}>#messi</div>
+                        <div className={styles.tagDescription}>
+                          51,354 • Trending in Bangladesh
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.tag}>
+                      <div className='tagIconBack4'>#</div>
+                      <div className={styles.name1}>
+                        <div className={styles.subtitle}>#video</div>
+                        <div className={styles.tagDescription}>82,645 Posted by this tag</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack4'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#video</div>
-                  <div className={styles.tagDescription}>82,645 Posted by this tag</div>
-                </div>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={sportSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Sports
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={appleAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Lifestyle
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={robotAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Artificial Intelligence
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={catSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Cat
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={sportSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Sports
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={appleAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Lifestyle
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={robotAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Artificial Intelligence
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={catSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Cat
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={sportSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Sports
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={appleAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Lifestyle
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={robotAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Artificial Intelligence
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={catSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Cat
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={sportSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Sports
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={appleAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Lifestyle
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={robotAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Artificial Intelligence
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
-            <div className={styles.tagHeader}>
-              <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={catSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Cat
-                </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
-              </div>
-              <div className={styles.tagHeaderRight}>
-                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-            </div>
+                  )}
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={sportSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Sports
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={appleAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Lifestyle
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={robotAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Artificial Intelligence
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={catSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Cat
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={sportSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Sports
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={appleAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Lifestyle
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={robotAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Artificial Intelligence
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={catSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Cat
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={sportSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Sports
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={appleAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Lifestyle
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={robotAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Artificial Intelligence
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={catSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Cat
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={sportSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Sports
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={appleAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Lifestyle
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={robotAvatarSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Artificial Intelligence
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div className={styles.tagHeader}>
+                    <div className={styles.tagHeaderLeft}>
+                    <div className={styles.tagsCardAvatar}>
+                      <Image
+                        className={styles.tagsCardAvatarImg}
+                        alt=""
+                        src={catSvg}
+                      />
+                    </div>
+                    <div className={styles.tagHeaderInfo}>
+                      <div className={styles.tagHeaderTitle}>
+                        Cat
+                      </div>
+                      <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                    </div>
+                    </div>
+                    <div className={styles.tagHeaderRight}>
+                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </>
+              )
+            }
           </div>
         </aside>
         <aside className={`${styles.side} ${styles.popularTags} ${styles.leftSide}`}>
           <div className={`${styles.card} ${styles.popularTagsCard}`}>
             <div className={styles.tagsCardTitle}>Popular Tags (Global)</div>
-            <div className={styles.tagHeader}>
+            <div
+              className={styles.tagHeader}
+              onClick={() => setOpenPopularTag(!openPopularTag)}
+            >
               <div className={styles.tagHeaderLeft}>
                 <div className={styles.tag}>
                   <div className='tagIconBack1'>
@@ -488,49 +511,51 @@ export default function GroupProfile() {
                 </svg>
               </div>
             </div>
-            <div className={styles.tagsCardTags}>
-              <div className={styles.tag}>
-                <div className='tagIconBack2'>
-                  #
+            { openPopularTag && (
+              <div className={styles.tagsCardTags}>
+                <div className={styles.tag}>
+                  <div className='tagIconBack2'>
+                    #
+                  </div>
+                  <div className={styles.name1}>
+                    <div className={styles.subtitle}>#music</div>
+                    <div className={styles.tagDescription}>65,523 Posted • Trending</div>
+                  </div>
                 </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#music</div>
-                  <div className={styles.tagDescription}>65,523 Posted • Trending</div>
+                <div className={styles.tag}>
+                  <div className='tagIconBack3'>#</div>
+                  <div className={styles.name1}>
+                    <div className={styles.subtitle}>#meditation</div>
+                    <div className={styles.tagDescription}>
+                      51,354 • Trending in Bangladesh
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack3'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#meditation</div>
-                  <div className={styles.tagDescription}>
-                    51,354 • Trending in Bangladesh
+                <div className={styles.tag}>
+                  <div className='tagIconBack4'>#</div>
+                  <div className={styles.name1}>
+                    <div className={styles.subtitle}>#yoga</div>
+                    <div className={styles.tagDescription}>48,029 Posted by this tag</div>
+                  </div>
+                </div>
+                <div className={styles.tag}>
+                  <div className='tagIconBack5'>#</div>
+                  <div className={styles.name1}>
+                    <div className={styles.subtitle}>#messi</div>
+                    <div className={styles.tagDescription}>
+                      51,354 • Trending in Bangladesh
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.tag}>
+                  <div className='tagIconBack1'>#</div>
+                  <div className={styles.name1}>
+                    <div className={styles.subtitle}>#video</div>
+                    <div className={styles.tagDescription}>82,645 Posted by this tag</div>
                   </div>
                 </div>
               </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack4'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#yoga</div>
-                  <div className={styles.tagDescription}>48,029 Posted by this tag</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack5'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#messi</div>
-                  <div className={styles.tagDescription}>
-                    51,354 • Trending in Bangladesh
-                  </div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className='tagIconBack1'>#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#video</div>
-                  <div className={styles.tagDescription}>82,645 Posted by this tag</div>
-                </div>
-              </div>
-            </div>
+            )}
             <div className={styles.tagHeader}>
               <div className={styles.tagHeaderLeft}>
                 <div className={styles.tag}>

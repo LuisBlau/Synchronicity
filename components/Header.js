@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import UserContext from "./store/UserContext";
+import UserContext from "../store/UserContext";
 import logoSvg from '../public/favicon.svg';
 import searchIconSvg from '../public/search-icon.svg';
 import settingIconSvg from '../public/setting.svg';
