@@ -243,6 +243,10 @@
   flex-direction: column;
   gap: 20px;
 }
+.postHeaderGroupWaraper{
+  display: flex;
+  justify-content: space-between;
+}
 
 .postHeaderGroupTag {
   display: flex;
@@ -254,11 +258,6 @@
   max-width: fit-content;
   background: var(--icon-back);
   border-radius: 20px;
-}
-
-.postHeaderGroupWaraper{
-  display: flex;
-  justify-content: space-between;
 }
 
 .groupAvatar {
@@ -662,7 +661,19 @@
     width: 20px;
     height: 20px;
   }
-
+/* comment */
+  .comments,
+  .comment,
+  .comment2{
+    padding: 0;
+  }
+  .comment2 {
+    padding-left: 60px;
+  }
+  .commentLeftLine,
+  .commentLeftLine2 {
+    left: 20px;
+  }
   /* right side 
   */
   .rightSide{
@@ -676,6 +687,7 @@
     font-size: 12px;
     line-height: 18px;
   }
+  
   
   .postContent {
     padding: 0 35px;
