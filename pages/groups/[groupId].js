@@ -1,32 +1,46 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Header from '../components/Header';
+import React, { useEffect, useState, useContext } from 'react';
+import Header from '@/components/Header';
 import styles from '@/styles/GroupProfile.module.css';
-import postThumb from '../public/rectangle-24@2x.png';
-import avatarBack from '../public/ellipse-29.svg';
-import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import commentSvg from '../public/comment.svg';
-import bookSvg from '../public/book.svg';
-import catSvg from '../public/cat.svg';
-import musicSvg from '../public/music.svg';
-import sportSvg from '../public/football.svg';
-import shareSvg from '../public/share.svg';
-import viewSvg from '../public/view.svg';
-import heartSvg from '../public/heart.svg';
-import userSvg from '../public/user.svg';
-import adminSvg from '../public/admin.svg';
-import adminWSvg from '../public/admin-woman.svg';
-import mediaSvg from '../public/media-icon.svg'
-import joinSvg from '../public/join.svg';
-import groupAvatarSvg from '../public/group-avatar.svg';
-import groupCoverImg from '../public/group-cover.png';
-import groupProfileMediaImg from '../public/group-profile-media.png';
+import postThumb from '@/public/rectangle-24@2x.png';
+import avatarBack from '@/public/ellipse-29.svg';
+import postUserAvatar from '@/public/memoji-boys-315@2x.png';
+import commentSvg from '@/public/comment.svg';
+import bookSvg from '@/public/book.svg';
+import catSvg from '@/public/cat.svg';
+import musicSvg from '@/public/music.svg';
+import sportSvg from '@/public/football.svg';
+import shareSvg from '@/public/share.svg';
+import viewSvg from '@/public/view.svg';
+import heartSvg from '@/public/heart.svg';
+import userSvg from '@/public/user.svg';
+import adminSvg from '@/public/admin.svg';
+import adminWSvg from '@/public/admin-woman.svg';
+import mediaSvg from '@/public/media-icon.svg'
+import joinSvg from '@/public/join.svg';
+import groupAvatarSvg from '@/public/group-avatar.svg';
+import groupCoverImg from '@/public/group-cover.png';
+import groupProfileMediaImg from '@/public/group-profile-media.png';
 
 
 export default function GroupProfile() {
   const router = useRouter();
-
+  const { groupId } = router.query;
+  const [data, setData] = useState({});
+  const [isLoading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    if (groupId) {
+      fetch(`/api/groups/${groupId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setData(data)
+          setLoading(false)
+        });
+    }
+  }, [groupId]);
   return (
     <>
       <Head>
@@ -41,23 +55,25 @@ export default function GroupProfile() {
             <div className={styles.tagsCardTitle}>Tags posted in this Group</div>
             <div className={styles.tagHeader}>
               <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={groupAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Meditation
+                <div className={styles.tagsCardAvatar}>
+                  <Image
+                    className={styles.tagsCardAvatarImg}
+                    width={28}
+                    height={28}
+                    alt=""
+                    src={data?.profile_picture_group??groupAvatarSvg}
+                  />
                 </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
+                <div className={styles.tagHeaderInfo}>
+                  <div className={styles.tagHeaderTitle}>
+                    {data?.group_name}
+                  </div>
+                  <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                </div>
               </div>
               <div className={styles.tagHeaderRight}>
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </div>
@@ -128,7 +144,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -185,7 +201,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -242,7 +258,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -299,7 +315,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -340,7 +356,7 @@ export default function GroupProfile() {
             </div>
           </div>
           <div className={styles.groups}>
-              <div className={styles.title}>Recommended Groups</div>
+            <div className={styles.title}>Recommended Groups</div>
             <div className={styles.tags}>
               <div className={styles.tag}>
                 <div className={styles.icon}>
@@ -412,7 +428,7 @@ export default function GroupProfile() {
                     src={sportSvg}
                     width={16}
                     height={16}
-                  />  
+                  />
                 </div>
                 <div className={styles.name1}>
                   <div className={styles.subtitle}>Sports</div>
@@ -437,14 +453,21 @@ export default function GroupProfile() {
               <div className={styles.coverCardContent}>
                 <div className={styles.coverCardLeft}>
                   <div className={styles.groupAvatar}>
-                    <Image alt="group avatar" className={styles.groupAvatarImg} src={groupAvatarSvg} />
+                    <Image
+                      alt="group avatar"
+                      width={83}
+                      height={83}
+                      className={styles.groupAvatarImg}
+                      src={data?.profile_picture_group??groupAvatarSvg}
+                    />
                   </div>
                   <div className={styles.groupInfo}>
                     <div className={styles.groupName}>
-                      Meditation
+                      {data?.group_name}
                     </div>
                     <div className={styles.groupDate}>
-                      Created on 14/12/2022 at 18:00 UTC-4
+                      {/* Created on 14/12/2022 at 18:00 UTC-4 */}
+                      {`Created on ${new Date(data.creation_date).toLocaleDateString()} at ${new Date(data.creation_date).getHours()}:${new Date(data.creation_date).getMinutes()}`}
                     </div>
                     <div className={styles.profileTags}>
                       <div className={styles.profileTag}>
@@ -456,7 +479,7 @@ export default function GroupProfile() {
                             width={12}
                             height={12}
                           />
-                          <span>3256</span>
+                          <span>{data?.files??0}</span>
                         </div>
                       </div>
                       <div className={styles.profileTag}>
@@ -468,7 +491,7 @@ export default function GroupProfile() {
                             width={12}
                             height={12}
                           />
-                          <span>25</span>
+                          <span>{data?.total_messages??0}</span>
                         </div>
                       </div>
                       <div className={styles.profileTag}>
@@ -480,7 +503,7 @@ export default function GroupProfile() {
                             width={12}
                             height={12}
                           />
-                          <span>32</span>
+                          <span>{data?.members??0}</span>
                         </div>
                       </div>
                     </div>
@@ -502,19 +525,19 @@ export default function GroupProfile() {
 
           <div className={`${styles.card} ${styles.mobile}`}>
             <div className={styles.exploreCard}>
-                <div className={styles.exploreBtn}>
-                  <Image className={styles.exploreCardBtnSvg} src={adminWSvg} />
-                  <span>Admins</span>
-                </div>
-                <div className={`${styles.exploreBtn}`}>
-                  <Image className={styles.exploreCardBtnSvg} src={userSvg} />
-                  <span>Members</span>
-                </div>
-                <div className={styles.exploreBtn}>
-                  <Image className={styles.exploreCardBtnSvg} src={mediaSvg} />
-                  <span>Media</span>
-                </div>
+              <div className={styles.exploreBtn}>
+                <Image alt="" className={styles.exploreCardBtnSvg} src={adminWSvg} />
+                <span>Admins</span>
               </div>
+              <div className={`${styles.exploreBtn}`}>
+                <Image alt="" className={styles.exploreCardBtnSvg} src={userSvg} />
+                <span>Members</span>
+              </div>
+              <div className={styles.exploreBtn}>
+                <Image alt="" className={styles.exploreCardBtnSvg} src={mediaSvg} />
+                <span>Media</span>
+              </div>
+            </div>
 
           </div>
 
@@ -524,39 +547,40 @@ export default function GroupProfile() {
                 About
               </div>
               <div className={styles.aboutCardContentText}>
-                The group focuses on spiritual well-being and meditation practice, sharing information on techniques and providing support and feedback. Resources are shared to help members deepen their practice and achieve greater inner peace and harmony. The main goal is to create a community where meditation and spiritual awakening can be openly discussed.
+                {/* The group focuses on spiritual well-being and meditation practice, sharing information on techniques and providing support and feedback. Resources are shared to help members deepen their practice and achieve greater inner peace and harmony. The main goal is to create a community where meditation and spiritual awakening can be openly discussed. */}
+                {data?.description??''}
               </div>
             </div>
           </div>
 
           <div className={`${styles.card} ${styles.tagsCard} ${styles.mobile}`}>
-            <div className={styles.tagsCardTitle}>             
+            <div className={styles.tagsCardTitle}>
               <span>Tags posted in this Group</span>
               <div className={`${styles.tagHeaderRight} ${styles.mobile}`}>
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </div>
             <div className={styles.tagHeader}>
               <div className={styles.tagHeaderLeft}>
-              <div className={styles.tagsCardAvatar}>
-                <Image
-                  className={styles.tagsCardAvatarImg}
-                  alt=""
-                  src={groupAvatarSvg}
-                />
-              </div>
-              <div className={styles.tagHeaderInfo}>
-                <div className={styles.tagHeaderTitle}>
-                  Meditation
+                <div className={styles.tagsCardAvatar}>
+                  <Image
+                    className={styles.tagsCardAvatarImg}
+                    alt=""
+                    src={groupAvatarSvg}
+                  />
                 </div>
-                <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
-              </div>
+                <div className={styles.tagHeaderInfo}>
+                  <div className={styles.tagHeaderTitle}>
+                    Meditation
+                  </div>
+                  <div className={styles.tagHeaderDescription}>48,092 • Tags posted</div>
+                </div>
               </div>
               <div className={styles.tagHeaderRight}>
                 <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path className={styles.tagHeaderDownArrow} d="M10.5 1.75L6 6.25L1.5 1.75" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
             </div>
@@ -687,9 +711,9 @@ export default function GroupProfile() {
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
                   </div>
-                  
+
                   <div className={styles.postUserMain}>
-                    
+
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -777,9 +801,9 @@ export default function GroupProfile() {
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
                   </div>
-                  
+
                   <div className={styles.postUserMain}>
-                    
+
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -867,9 +891,9 @@ export default function GroupProfile() {
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
                   </div>
-                  
+
                   <div className={styles.postUserMain}>
-                    
+
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -957,9 +981,9 @@ export default function GroupProfile() {
                       <div className={styles.postDate}>3 weeks ago</div>
                     </div>
                   </div>
-                  
+
                   <div className={styles.postUserMain}>
-                    
+
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -1021,7 +1045,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -1078,7 +1102,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -1135,7 +1159,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -1192,7 +1216,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel</div>
                     <div className={styles.rightGroupItemAdminTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={adminSvg}
@@ -1239,7 +1263,7 @@ export default function GroupProfile() {
               <div className={styles.rightGroupTitleWrapper}>
                 <div className={styles.rightGroupTitle}>Recent Media</div>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <div className={styles.profileMedia}>
@@ -1255,7 +1279,7 @@ export default function GroupProfile() {
               <div className={styles.rightGroupTitleWrapper}>
                 <div className={styles.rightGroupTitle}>Group Members</div>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <div className={styles.rightGroupItem}>
@@ -1276,7 +1300,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel Gvay</div>
                     <div className={styles.rightGroupItemTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={userSvg}
@@ -1333,7 +1357,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel Gvay</div>
                     <div className={styles.rightGroupItemTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={userSvg}
@@ -1390,7 +1414,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel Gvay</div>
                     <div className={styles.rightGroupItemTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={userSvg}
@@ -1447,7 +1471,7 @@ export default function GroupProfile() {
                     <div className={styles.rightGroupItemName}>Pavel Gvay</div>
                     <div className={styles.rightGroupItemTag}>
                       <div className={styles.profileTagInner}>
-                      <Image
+                        <Image
                           className={styles.iconImg}
                           alt="user svg"
                           src={userSvg}
@@ -1486,7 +1510,7 @@ export default function GroupProfile() {
                 </div>
               </div>
             </div>
-          </div>          
+          </div>
         </aside>
       </main>
     </>

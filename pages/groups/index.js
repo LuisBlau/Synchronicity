@@ -1,33 +1,47 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from 'react';
+// import {formatMoment} from 'moment';
 import UserContext from "@/store/UserContext";
-import Header from '../components/Header';
+import Header from '@/components/Header';
 import styles from '@/styles/Groups.module.css';
-import avatarBack from '../public/ellipse-29.svg';
-import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import commentSvg from '../public/comment.svg';
-import bookSvg from '../public/book.svg';
-import catSvg from '../public/cat.svg';
-import musicSvg from '../public/music.svg';
-import sportSvg from '../public/football.svg';
-import heartSvg from '../public/heart.svg';
-import userSvg from '../public/user.svg';
-import adminSvg from '../public/admin.svg';
-import groupAvatarSvg from '../public/group-avatar.svg';
-import appleAvatarSvg from '../public/apple-avatar.svg';
-import robotAvatarSvg from '../public/robot-avatar.svg';
-import groupCoverImg from '../public/group-cover.png';
-import searchIconSvg from '../public/search-icon.svg';
+import avatarBack from '@/public/ellipse-29.svg';
+import postUserAvatar from '@/public/memoji-boys-315@2x.png';
+import commentSvg from '@/public/comment.svg';
+import bookSvg from '@/public/book.svg';
+import catSvg from '@/public/cat.svg';
+import musicSvg from '@/public/music.svg';
+import sportSvg from '@/public/football.svg';
+import heartSvg from '@/public/heart.svg';
+import userSvg from '@/public/user.svg';
+import adminSvg from '@/public/admin.svg';
+import groupAvatarSvg from '@/public/group-avatar.svg';
+import appleAvatarSvg from '@/public/apple-avatar.svg';
+import robotAvatarSvg from '@/public/robot-avatar.svg';
+import groupCoverImg from '@/public/group-cover.png';
+import searchIconSvg from '@/public/search-icon.svg';
 
 
-export default function GroupProfile() {
+export default function Groups() {
   const router = useRouter();
   const context = useContext(UserContext);
   const [openGroupTags, setOpenGroupTags] = useState(true);
   const [openGroupTag, setOpenGroupTag] = useState(true);
   const [openPopularTag, setOpenPopularTag] = useState(true);
+
+  const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('/api/groups')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data/* .slice(0, 10) */)
+        setLoading(false)
+      });
+  }, []);
 
   return (
     <>
@@ -881,526 +895,77 @@ export default function GroupProfile() {
           </div>
           <div className={styles.centerDown}>
             <div className={styles.groupsBoard}>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
+              {data.map((item, index) => (
+                <div key={index} className={`${styles.groupCard} ${styles.card}`}>
+                  <div className={styles.groupCardInner}>
+                    <div className={styles.groupCardMain}>
+                      <div className={styles.groupCardAvatar}>
+                        <Image
+                          width={83}
+                          height={83}
+                          alt='grout avatar'
+                          src={item.profile_picture_group??groupAvatarSvg}
+                        />
+                      </div>
+                      <div className={styles.groupCardData}>
+                        <div className={styles.tagCardTitle} title={item.group_name} onClick={()=>router.push(`/groups/${item._id}`)}>
+                          {item.group_name}
+                        </div>
+                        <div className={styles.tagCardDesc}>
+                          {/* Created on 14/12/2022 at 20:18 UTC-4 */}
+                          {`Created on ${new Date(item.creation_date).toLocaleDateString()} at ${new Date(item.creation_date).getHours()}:${new Date(item.creation_date).getMinutes()}`}
+                        </div>
+                        <div className={styles.profileTags}>
+                          <div className={styles.profileTag}>
+                            <div className={styles.profileTagInner}>
+                              <Image
+                                className={styles.iconImg}
+                                alt="heart svg"
+                                src={heartSvg}
+                                width={12}
+                                height={12}
+                              />
+                              <span>{item.files}</span>
+                            </div>
+                          </div>
+                          <div className={styles.profileTag}>
+                            <div className={styles.profileTagInner}>
+                              <Image
+                                className={styles.iconImg}
+                                alt="comment svg"
+                                src={commentSvg}
+                                width={12}
+                                height={12}
+                              />
+                              <span>{item.total_messages}</span>
+                            </div>
+                          </div>
+                          <div className={styles.profileTag}>
+                            <div className={styles.profileTagInner}>
+                              <Image
+                                className={styles.iconImg}
+                                alt="user svg"
+                                src={userSvg}
+                                width={12}
+                                height={12}
+                              />
+                              <span>{item.members}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.groupCoverImgWrapper}>
                       <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
+                        className={styles.groupCoverImg}
+                        alt="group cover image"
+                        src={groupCoverImg}
                       />
                     </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
                   </div>
                 </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.groupCard} ${styles.card}`}>
-                <div className={styles.groupCardInner}>
-                  <div className={styles.groupCardMain}>
-                    <div className={styles.groupCardAvatar}>
-                      <Image
-                        alt='grout avatar'
-                        src={groupAvatarSvg}
-                      />
-                    </div>
-                    <div className={styles.groupCardData}>
-                      <div className={styles.tagCardTitle} onClick={()=>router.push('/group-profile')}>
-                        Meditation
-                      </div>
-                      <div className={styles.tagCardDesc}>
-                        Created on 14/12/2022 at 20:18 UTC-4
-                      </div>
-                      <div className={styles.profileTags}>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="heart svg"
-                              src={heartSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>3256</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="comment svg"
-                              src={commentSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                        <div className={styles.profileTag}>
-                          <div className={styles.profileTagInner}>
-                            <Image
-                              className={styles.iconImg}
-                              alt="user svg"
-                              src={userSvg}
-                              width={12}
-                              height={12}
-                            />
-                            <span>25</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.groupCoverImgWrapper}>
-                    <Image
-                      className={styles.groupCoverImg}
-                      alt="group cover image"
-                      src={groupCoverImg}
-                    />
-                  </div>
-                </div>
-              </div>
+              ))}
+              
             </div>
 
             <aside className={`${styles.side} ${styles.rightSide}`}>

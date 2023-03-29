@@ -18,7 +18,7 @@ import appleAvatarSvg from '../public/apple-avatar.svg';
 import robotAvatarSvg from '../public/robot-avatar.svg';
 import searchIconSvg from '../public/search-icon.svg';
 
-export default function GroupProfile() {
+export default function Tags() {
   const router = useRouter();
   const context = useContext(UserContext);
   const [openGroupTags, setOpenGroupTags] = useState(true);
