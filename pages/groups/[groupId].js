@@ -49,6 +49,14 @@ export default function GroupProfile() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />
+      {!data.group_name && (
+        <div className="container-div">
+          <div className="loader-element">
+            <div></div>
+          </div>
+        </div>
+      )}
+      {data.group_name && (
       <main className={styles.main}>
         <aside className={`${styles.side} ${styles.leftSide} ${styles.desk}`}>
           <div className={`${styles.card} ${styles.tagsCard}`}>
@@ -1513,6 +1521,7 @@ export default function GroupProfile() {
           </div>
         </aside>
       </main>
+      )}
     </>
   )
 }
