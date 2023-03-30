@@ -5,7 +5,7 @@ import { ObjectId } from 'mongodb';
 export default async function handler(req, res) {
   const { groupId } = req.query;
   const client = await clientPromise;
-  const db = client.db('syncronicity');
+  const db = client.db();
   const query = { _id: new ObjectId(groupId) };
   const group = await db
             .collection("groups")

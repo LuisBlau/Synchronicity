@@ -467,7 +467,7 @@ export default function GroupProfile() {
                     </div>
                     <div className={styles.groupDate}>
                       {/* Created on 14/12/2022 at 18:00 UTC-4 */}
-                      {`Created on ${new Date(data.creation_date).toLocaleDateString()} at ${new Date(data.creation_date).getHours()}:${new Date(data.creation_date).getMinutes()}`}
+                      {`Created on ${new Date(data?.creation_date).toLocaleDateString()} at ${new Date(data?.creation_date).getHours()}:${new Date(data?.creation_date).getMinutes()}`}
                     </div>
                     <div className={styles.profileTags}>
                       <div className={styles.profileTag}>

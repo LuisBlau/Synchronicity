@@ -3,7 +3,7 @@ import clientPromise from '@/utility/mongodb';
 
 export default async function handler(req, res) {
   const client = await clientPromise;
-  const db = client.db("syncronicity");
+  const db = client.db();
   const groups = await db
             .collection("groups")
             .find({})
