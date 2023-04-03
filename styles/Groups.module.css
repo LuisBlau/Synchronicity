@@ -744,6 +744,7 @@
 }
 
 .rightGroupItemName {
+  max-width: 45px;
   line-height: 18px;
   font-size: 12px;
   font-weight: 600;

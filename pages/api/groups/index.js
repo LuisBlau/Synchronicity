@@ -19,7 +19,6 @@ export default async function handler(req, res) {
       }
     }
   }
-  console.log(sort);
   if (query && query.limit && Number(query.limit) > 0) limit = Number(query.limit);
   const groups = await db
             .collection("groups")

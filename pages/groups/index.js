@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState, useContext } from 'react';
 // import {formatMoment} from 'moment';
@@ -21,7 +22,6 @@ import appleAvatarSvg from '@/public/apple-avatar.svg';
 import robotAvatarSvg from '@/public/robot-avatar.svg';
 import groupCoverImg from '@/public/group-cover.png';
 import searchIconSvg from '@/public/search-icon.svg';
-import Link from 'next/link';
 
 
 export default function Groups() {
@@ -64,7 +64,7 @@ export default function Groups() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />
-      {data.length === 0 && (
+      {isLoading && (
         <div className="container-div">
           <div className="loader-element">
             <div></div>
@@ -1011,87 +1011,6 @@ export default function Groups() {
                   </div>
                 ))}
                 </div>
-              {/* <div className={styles.tags}>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="comment svg"
-                      src={commentSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>General Chat</div>
-                    <div className={styles.description}>82,645 Posted by this tag</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="book svg"
-                      src={bookSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Books</div>
-                    <div className={styles.description}>65,523 Posted • Trending</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="cat svg"
-                      src={catSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Cats</div>
-                    <div className={styles.description}>
-                      51,354 • Trending in Bangladesh
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="music svg"
-                      src={musicSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Music</div>
-                    <div className={styles.description}>48,029 Posted by this tag</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="sport svg"
-                      src={sportSvg}
-                      width={16}
-                      height={16}
-                    />  
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Sports</div>
-                    <div className={styles.description}>
-                      51,354 • Trending in Bangladesh
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
               <div className={styles.groups}>
                 <div className={styles.rightGroupInner}>
