@@ -252,7 +252,6 @@ input::placeholder {
 .loader-element div {
   animation: loader-element 1s linear infinite;
   top: 100px;
-  left: 100px;
 }
 
 .demo {
@@ -268,5 +267,5 @@ input::placeholder {
   z-index: 999999 !important;
   position: absolute;
   top: 35vh;
-  left: 43vw;
+  left: 50vw;
 }
