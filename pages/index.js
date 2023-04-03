@@ -242,10 +242,90 @@ export default function Home() {
                   <div className={styles.postUserInfoWaraper}>
                     <div className={styles.postUserAvatar}>
                       <Image
-                        className={styles.postUserAvatarBack}
+                        className={styles.postUserAvatarImg}
                         alt=""
-                        src={avatarBack}
+                        src={postUserAvatar}
                       />
+                    </div>
+                    <div className={styles.postUserInfo}>
+                      <div className={styles.postUserName}>
+                        Pavel Gvay
+                      </div>
+                      <div className={styles.postDate}>3 weeks ago</div>
+                    </div>
+                  </div>
+                  
+                  <div className={styles.postUserMain}>
+                    
+                    <div className={styles.postActions}>
+                      <div className={styles.postActionIcon1}>
+                        <Image
+                          className={styles.iconImg}
+                          alt="view svg"
+                          src={viewSvg}
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                      <div className={styles.postActionDesc}>651,324 Views</div>
+                      <div className={styles.postActionIcon2}>
+                        <Image
+                          className={styles.iconImg}
+                          alt="heart svg"
+                          src={heartSvg}
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
+                      <div className={styles.postActionIcon3}>
+                        <Image
+                          className={styles.iconImg}
+                          alt="comment svg"
+                          src={commentSvg}
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                      <div className={styles.postActionDesc}>56 Comments</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.postHome}>
+            <div className={styles.postInner}>
+              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
+              <div className={styles.postData}>
+                <div className={styles.postDataUpper}>
+                  <div className={styles.postTitleWrapper}>
+                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
+                      Bitcoin has tumbled from its record high of $58,000 after
+                      words from three wise men and women...
+                    </div>
+                    <div className={styles.postTags}>
+                      <div className={styles.postTag}>
+                        <div className={styles.postTagText}>#finance</div>
+                      </div>
+                      <div className={styles.postTag}>
+                        <div className={styles.postTagText}>#bitcoin</div>
+                      </div>
+                      <div className={styles.postTag}>
+                        <div className={styles.postTagText}>#crypto</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
+                    <Image
+                      alt="share svg"
+                      src={shareSvg}
+                    />
+                  </div>
+                </div>
+                <div className={styles.postUser}>
+                  <div className={styles.postUserInfoWaraper}>
+                    <div className={styles.postUserAvatar}>
                       <Image
                         className={styles.postUserAvatarImg}
                         alt=""
@@ -332,11 +412,6 @@ export default function Home() {
                   <div className={styles.postUserInfoWaraper}>
                     <div className={styles.postUserAvatar}>
                       <Image
-                        className={styles.postUserAvatarBack}
-                        alt=""
-                        src={avatarBack}
-                      />
-                      <Image
                         className={styles.postUserAvatarImg}
                         alt=""
                         src={postUserAvatar}
@@ -421,101 +496,6 @@ export default function Home() {
                 <div className={styles.postUser}>
                   <div className={styles.postUserInfoWaraper}>
                     <div className={styles.postUserAvatar}>
-                      <Image
-                        className={styles.postUserAvatarBack}
-                        alt=""
-                        src={avatarBack}
-                      />
-                      <Image
-                        className={styles.postUserAvatarImg}
-                        alt=""
-                        src={postUserAvatar}
-                      />
-                    </div>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                  </div>
-                  
-                  <div className={styles.postUserMain}>
-                    
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserInfoWaraper}>
-                    <div className={styles.postUserAvatar}>
-                      <Image
-                        className={styles.postUserAvatarBack}
-                        alt=""
-                        src={avatarBack}
-                      />
                       <Image
                         className={styles.postUserAvatarImg}
                         alt=""
@@ -577,233 +557,68 @@ export default function Home() {
                 <div className={styles.rightGroupTitle}>Top Members</div>
                 <RightArrowSvg className={styles.rightGroupTitleIcon} />
               </div>
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemTag}>
-                      <div className={styles.rightGroupItemTagInner}>
+              {admins.map((admin, index) => (
+                <>
+                  <div className={styles.rightGroupItem}>
+                    <div className={styles.postUserAvatar}>
                       <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={userSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemMember}> Member</span>
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        width={34}
+                        height={34}
+                        src={admin.profile_picture??postUserAvatar}
+                      />
+                    </div>
+                    <div className={styles.rightGroupItemData}>
+                      <div className={styles.rightGroupItemTitle}>
+                        <div className={styles.rightGroupItemName}>
+                          <Link href={`/members/${admin._id}`}>
+                            {admin.name}
+                          </Link>
+                        </div>
+                        <div className={styles.rightGroupItemTag}>
+                          <div className={styles.rightGroupItemTagInner}>
+                          <Image
+                              className={styles.iconImg}
+                              alt="user svg"
+                              src={userSvg}
+                              width={14}
+                              height={14}
+                            /><span className={styles.rightGroupItemMember}> Member</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.memberProfileTags}>
+                        <div className={styles.memberProfileTag}>
+                          <div className={styles.rightGroupItemTagInner}>
+                            <Image
+                              className={styles.iconImg}
+                              alt="heart svg"
+                              src={heartSvg}
+                              width={12}
+                              height={12}
+                            />
+                            <span>3256</span>
+                          </div>
+                        </div>
+                        <div className={styles.memberProfileTag}>
+                          <div className={styles.rightGroupItemTagInner}>
+                            <Image
+                              className={styles.iconImg}
+                              alt="comment svg"
+                              src={commentSvg}
+                              width={12}
+                              height={12}
+                            />
+                            <span>25</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.divider} />
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                      <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={userSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemMember}> Member</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.divider} />
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                      <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={userSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemMember}> Member</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.divider} />
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                      <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={userSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemMember}> Member</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {index !== (admins.length - 1) && (<div className={styles.divider} key={index} />)}
+                </>
+              ))}
             </div>
           </div>
           <div className={styles.rightGroup}>
@@ -812,233 +627,68 @@ export default function Home() {
                 <div className={styles.rightGroupTitle}>Top Admins</div>
                 <RightArrowSvg className={styles.rightGroupTitleIcon} />
               </div>
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemAdminTag}>
-                      <div className={styles.rightGroupItemTagInner}>
+              {admins.map((admin, index) => (
+                <>
+                  <div key={admin._id} className={styles.rightGroupItem}>
+                    <div className={styles.postUserAvatar}>
                       <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={adminSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemAdmin}> Admin</span>
+                        className={styles.postUserAvatarImg}
+                        alt=""
+                        width={34}
+                        height={34}
+                        src={admin.profile_picture??postUserAvatar}
+                      />
+                    </div>
+                    <div className={styles.rightGroupItemData}>
+                      <div className={styles.rightGroupItemTitle}>
+                        <div className={styles.rightGroupItemName}>
+                          <Link href={`/members/${admin._id}`}>
+                            {admin.name}
+                          </Link>
+                        </div>
+                        <div className={styles.rightGroupItemAdminTag}>
+                          <div className={styles.rightGroupItemTagInner}>
+                          <Image
+                              className={styles.iconImg}
+                              alt="user svg"
+                              src={adminSvg}
+                              width={14}
+                              height={14}
+                            /><span className={styles.rightGroupItemAdmin}> Admin</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.memberProfileTags}>
+                        <div className={styles.memberProfileTag}>
+                          <div className={styles.rightGroupItemTagInner}>
+                            <Image
+                              className={styles.iconImg}
+                              alt="heart svg"
+                              src={heartSvg}
+                              width={12}
+                              height={12}
+                            />
+                            <span>3256</span>
+                          </div>
+                        </div>
+                        <div className={styles.memberProfileTag}>
+                          <div className={styles.rightGroupItemTagInner}>
+                            <Image
+                              className={styles.iconImg}
+                              alt="comment svg"
+                              src={commentSvg}
+                              width={12}
+                              height={12}
+                            />
+                            <span>25</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.divider} />
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemAdminTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                      <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={adminSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemAdmin}> Admin</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.divider} />
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemAdminTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                      <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={adminSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemAdmin}> Admin</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={styles.divider} />
-              <div className={styles.rightGroupItem}>
-                <div className={styles.postUserAvatar}>
-                  <Image
-                    className={styles.postUserAvatarBack}
-                    alt=""
-                    src={avatarBack}
-                  />
-                  <Image
-                    className={styles.postUserAvatarImg}
-                    alt=""
-                    src={postUserAvatar}
-                  />
-                </div>
-                <div className={styles.rightGroupItemData}>
-                  <div className={styles.rightGroupItemTitle}>
-                    <div className={styles.rightGroupItemName}>Pavel Gvay</div>
-                    <div className={styles.rightGroupItemAdminTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                      <Image
-                          className={styles.iconImg}
-                          alt="user svg"
-                          src={adminSvg}
-                          width={14}
-                          height={14}
-                        /><span className={styles.rightGroupItemAdmin}> Admin</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.memberProfileTags}>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.memberProfileTag}>
-                      <div className={styles.rightGroupItemTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                  {index !== (admins.length - 1) && (<div className={styles.divider} key={index} />)}
+                </>
+              ))}
             </div>
           </div>
         </aside>
