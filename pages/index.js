@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState, useContext } from "react";
 import { useRouter } from 'next/router';
 // import { Source_Sans_Pro } from 'next/font/google';
@@ -33,6 +34,24 @@ const RightArrowSvg = () => {
 export default function Home() {
   const router = useRouter();
   const context = useContext(UserContext);
+  const [popularGroups, setPopularGroups] = useState([]);
+  const [admins, setAdmins] = useState([]);
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    fetch('/api/members?limit=4')
+      .then((res) => res.json())
+      .then((data) => {
+        setAdmins(data);
+      });
+    fetch('/api/groups?limit=5&sort=members:desc')
+      .then((res) => res.json())
+      .then((data) => {
+        setPopularGroups(data);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <>
@@ -42,6 +61,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />
+      {isLoading && (
+        <div className="container-div">
+          <div className="loader-element">
+            <div></div>
+          </div>
+        </div>
+      )}
+      {!isLoading && (
       <main className={styles.main}>
         <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.explore}>
@@ -106,85 +133,23 @@ export default function Home() {
           <div className={styles.groups}>
               <div className={styles.title}>Popular Groups</div>
             <div className={styles.tags}>
-              <div className={styles.tag}>
+            {popularGroups.map((group, index) => (
+              <div key={index} className={styles.tag}>
                 <div className={styles.icon}>
                   <Image
                     className={styles.iconImg}
                     alt="comment svg"
-                    src={commentSvg}
-                    width={16}
-                    height={16}
+                    src={group.profile_picture_group??commentSvg}
+                    width={24}
+                    height={24}
                   />
                 </div>
                 <div className={styles.name1}>
-                  <div className={styles.subtitle}>General Chat</div>
+                  <div className={styles.subtitle}>{group.group_name}</div>
                   <div className={styles.description}>82,645 Posted by this tag</div>
                 </div>
               </div>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    className={styles.iconImg}
-                    alt="book svg"
-                    src={bookSvg}
-                    width={16}
-                    height={16}
-                  />
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>Books</div>
-                  <div className={styles.description}>65,523 Posted • Trending</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    className={styles.iconImg}
-                    alt="cat svg"
-                    src={catSvg}
-                    width={16}
-                    height={16}
-                  />
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>Cats</div>
-                  <div className={styles.description}>
-                    51,354 • Trending in Bangladesh
-                  </div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    className={styles.iconImg}
-                    alt="music svg"
-                    src={musicSvg}
-                    width={16}
-                    height={16}
-                  />
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>Music</div>
-                  <div className={styles.description}>48,029 Posted by this tag</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    className={styles.iconImg}
-                    alt="sport svg"
-                    src={sportSvg}
-                    width={16}
-                    height={16}
-                  />  
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>Sports</div>
-                  <div className={styles.description}>
-                    51,354 • Trending in Bangladesh
-                  </div>
-                </div>
-              </div>
+            ))}
             </div>
           </div>
           <div className={styles.groups}>
@@ -1078,6 +1043,7 @@ export default function Home() {
           </div>
         </aside>
       </main>
+      )}
     </>
   )
 }
