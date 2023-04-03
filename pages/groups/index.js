@@ -32,6 +32,7 @@ export default function Groups() {
   const [openPopularTag, setOpenPopularTag] = useState(true);
 
   const [data, setData] = useState([]);
+  const [popularGroups, setPopularGroups] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
@@ -41,6 +42,11 @@ export default function Groups() {
       .then((res) => res.json())
       .then((data) => {
         setAdmins(data);
+      });
+    fetch('/api/groups?limit=5&sort=members:desc')
+      .then((res) => res.json())
+      .then((data) => {
+        setPopularGroups(data);
       });
     fetch('/api/groups')
       .then((res) => res.json())
@@ -986,7 +992,26 @@ export default function Groups() {
             <aside className={`${styles.side} ${styles.rightSide}`}>
               <div className={styles.groups}>
                 <div className={styles.title}>Popular Groups</div>
-              <div className={styles.tags}>
+                <div className={styles.tags}>
+                {popularGroups.map((group, index) => (
+                  <div key={index} className={styles.tag}>
+                    <div className={styles.icon}>
+                      <Image
+                        className={styles.iconImg}
+                        alt="comment svg"
+                        src={group.profile_picture_group??commentSvg}
+                        width={24}
+                        height={24}
+                      />
+                    </div>
+                    <div className={styles.name1}>
+                      <div className={styles.subtitle}>{group.group_name}</div>
+                      <div className={styles.description}>82,645 Posted by this tag</div>
+                    </div>
+                  </div>
+                ))}
+                </div>
+              {/* <div className={styles.tags}>
                 <div className={styles.tag}>
                   <div className={styles.icon}>
                     <Image
@@ -1066,7 +1091,7 @@ export default function Groups() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
               <div className={styles.groups}>
                 <div className={styles.rightGroupInner}>
