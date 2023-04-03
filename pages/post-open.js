@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Header from '../components/Header';
 import styles from '@/styles/PostOpen.module.css';
@@ -134,9 +135,9 @@ export default function PostOpen() {
                 />
               </div>
             </div>
-            <button className={styles.viewProfileBtn} onClick={() => router.push('/member-profile')}>
-              View Profile
-            </button>
+              <Link className={styles.viewProfileBtn} href="/members/642369d3f37287fe1d21ccb2">
+                View Profile
+              </Link>
             <div className={styles.joinDate}>
             joined 6 months ago
             </div>
