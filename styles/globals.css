@@ -153,6 +153,11 @@ body[data-theme="dark"] {
   --sharp-icon-back-color5: #46475B;
 }
 
+body[data-theme="dark"] .react-loading-skeleton {
+  --base-color: #484e54;
+  --highlight-color: #3e4244;
+}
+
 .flex {
   display: flex;
 }

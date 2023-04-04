@@ -4,6 +4,8 @@ import Link from 'next/link';
 import React, { useEffect, useState, useContext } from "react";
 import { useRouter } from 'next/router';
 // import { Source_Sans_Pro } from 'next/font/google';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import Header from '../components/Header';
 import UserContext from '@/store/UserContext';
 import styles from '@/styles/Home.module.css';
@@ -61,14 +63,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />
-      {isLoading && (
-        <div className="container-div">
-          <div className="loader-element">
-            <div></div>
-          </div>
-        </div>
-      )}
-      {!isLoading && (
       <main className={styles.main}>
         <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.explore}>
@@ -133,6 +127,15 @@ export default function Home() {
           <div className={styles.groups}>
               <div className={styles.title}>Popular Groups</div>
             <div className={styles.tags}>
+              {isLoading && (
+                <>
+                <Skeleton height={30} />
+                <Skeleton height={30} />
+                <Skeleton height={30} />
+                <Skeleton height={30} />
+                <Skeleton height={30} />
+                </>
+              )}
             {popularGroups.map((group, index) => (
               <div key={index} className={styles.tag}>
                 <div className={styles.icon}>
@@ -209,7 +212,30 @@ export default function Home() {
           </div>
         </aside>
         <section className={`${styles.side} ${styles.centerSide}`}>
-          <div className={styles.postHome}>
+          {isLoading && [0,1,2,3].map((index) => (
+            <div key={index} className={styles.postHome}>
+              <div className={styles.postInner}>
+                <Skeleton width={150} height={150} />
+                <div className={styles.postData}>
+                  <div className={styles.postDataUpper}>
+                    <div className={styles.postTitleWrapper}>
+                      <div className={styles.postTitle}>
+                        <Skeleton count={2} />
+                      </div>
+                      <div className={styles.postTitle}>
+                        <Skeleton height={10} />
+                      </div>
+                      <div className={styles.postTitle}>
+                        <Skeleton />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+          {!isLoading && [0,1,2,3].map((index) => (
+          <div key={index} className={styles.postHome}>
             <div className={styles.postInner}>
               <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
               <div className={styles.postData}>
@@ -294,261 +320,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserInfoWaraper}>
-                    <div className={styles.postUserAvatar}>
-                      <Image
-                        className={styles.postUserAvatarImg}
-                        alt=""
-                        src={postUserAvatar}
-                      />
-                    </div>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                  </div>
-                  
-                  <div className={styles.postUserMain}>
-                    
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserInfoWaraper}>
-                    <div className={styles.postUserAvatar}>
-                      <Image
-                        className={styles.postUserAvatarImg}
-                        alt=""
-                        src={postUserAvatar}
-                      />
-                    </div>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                  </div>
-                  
-                  <div className={styles.postUserMain}>
-                    
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.postHome}>
-            <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
-              <div className={styles.postData}>
-                <div className={styles.postDataUpper}>
-                  <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
-                    </div>
-                    <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
-                  </div>
-                </div>
-                <div className={styles.postUser}>
-                  <div className={styles.postUserInfoWaraper}>
-                    <div className={styles.postUserAvatar}>
-                      <Image
-                        className={styles.postUserAvatarImg}
-                        alt=""
-                        src={postUserAvatar}
-                      />
-                    </div>
-                    <div className={styles.postUserInfo}>
-                      <div className={styles.postUserName}>
-                        Pavel Gvay
-                      </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
-                    </div>
-                  </div>
-                  
-                  <div className={styles.postUserMain}>
-                    
-                    <div className={styles.postActions}>
-                      <div className={styles.postActionIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="view svg"
-                          src={viewSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>651,324 Views</div>
-                      <div className={styles.postActionIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
-                      <div className={styles.postActionIcon3}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </section>
         <aside className={`${styles.side} ${styles.rightSide}`}>
           <div className={styles.rightGroup}>
@@ -557,6 +329,15 @@ export default function Home() {
                 <div className={styles.rightGroupTitle}>Top Members</div>
                 <RightArrowSvg className={styles.rightGroupTitleIcon} />
               </div>
+              {isLoading && (
+                <>
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                </>
+              )}
               {admins.map((admin, index) => (
                 <>
                   <div className={styles.rightGroupItem}>
@@ -627,6 +408,15 @@ export default function Home() {
                 <div className={styles.rightGroupTitle}>Top Admins</div>
                 <RightArrowSvg className={styles.rightGroupTitleIcon} />
               </div>
+              {isLoading && (
+                <>
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                <Skeleton height={40} />
+                </>
+              )}
               {admins.map((admin, index) => (
                 <>
                   <div key={admin._id} className={styles.rightGroupItem}>
@@ -693,7 +483,6 @@ export default function Home() {
           </div>
         </aside>
       </main>
-      )}
     </>
   )
 }

@@ -213,6 +213,7 @@
 }
 
 .postTitleWrapper {
+  width: 100%;
   flex-direction: column;
   display: flex;
   gap: 10px;
