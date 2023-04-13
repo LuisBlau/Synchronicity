@@ -38,6 +38,7 @@ export default function Home() {
   const context = useContext(UserContext);
   const [popularGroups, setPopularGroups] = useState([]);
   const [admins, setAdmins] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -51,6 +52,13 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         setPopularGroups(data);
+        setLoading(false);
+      });
+    setLoading(true);
+    fetch('/api/messages?limit=5')
+      .then((res) => res.json())
+      .then((data) => {
+        setPosts(data);
         setLoading(false);
       });
   }, []);
@@ -82,7 +90,6 @@ export default function Home() {
                     <div className={styles.text}> Recent Posts </div>
                     <div className={styles.forMobile}>Recent</div>
                   </div>
-                  
                   <div className={styles.description}>
                     Find the latest posts by members
                   </div>
@@ -234,27 +241,28 @@ export default function Home() {
               </div>
             </div>
           ))}
-          {!isLoading && [0,1,2,3].map((index) => (
+          {!isLoading && posts.map((post, index) => (
           <div key={index} className={styles.postHome}>
             <div className={styles.postInner}>
-              <Image className={styles.postThumb} alt="post thumb" src={postThumb} />
+              <Image
+                className={styles.postThumb}
+                alt="post thumb"
+                width={156}
+                height={156}
+                src={post.files_media??postThumb}
+              />
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
                     <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      Bitcoin has tumbled from its record high of $58,000 after
-                      words from three wise men and women...
+                      {post.title}
                     </div>
                     <div className={styles.postTags}>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#finance</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#bitcoin</div>
-                      </div>
-                      <div className={styles.postTag}>
-                        <div className={styles.postTagText}>#crypto</div>
-                      </div>
+                      {post.hashtag.map((tag, index) => (
+                        <div className={styles.postTag} key={index}>
+                          <div className={styles.postTagText}>{tag}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
@@ -275,14 +283,12 @@ export default function Home() {
                     </div>
                     <div className={styles.postUserInfo}>
                       <div className={styles.postUserName}>
-                        Pavel Gvay
+                        {post.name}
                       </div>
-                      <div className={styles.postDate}>3 weeks ago</div>
+                      <div className={styles.postDate}>{new Date(post.date).toLocaleDateString()}{/*3 weeks ago*/}</div>
                     </div>
                   </div>
-                  
                   <div className={styles.postUserMain}>
-                    
                     <div className={styles.postActions}>
                       <div className={styles.postActionIcon1}>
                         <Image
@@ -303,7 +309,7 @@ export default function Home() {
                           height={16}
                         />
                       </div>
-                      <div className={styles.postActionDesc}>36,6545 Reactions</div>
+                      <div className={styles.postActionDesc}>{post.total_reactions} Reactions</div>
                       <div className={styles.postActionIcon3}>
                         <Image
                           className={styles.iconImg}
@@ -313,7 +319,7 @@ export default function Home() {
                           height={16}
                         />
                       </div>
-                      <div className={styles.postActionDesc}>56 Comments</div>
+                      <div className={styles.postActionDesc}>{post.reactions.length} Comments</div>
                     </div>
                   </div>
                 </div>
@@ -379,7 +385,7 @@ export default function Home() {
                               width={12}
                               height={12}
                             />
-                            <span>3256</span>
+                            <span>{admin.total_reactions}</span>
                           </div>
                         </div>
                         <div className={styles.memberProfileTag}>
@@ -391,7 +397,7 @@ export default function Home() {
                               width={12}
                               height={12}
                             />
-                            <span>25</span>
+                            <span>{admin.total_title}</span>
                           </div>
                         </div>
                       </div>
@@ -458,7 +464,7 @@ export default function Home() {
                               width={12}
                               height={12}
                             />
-                            <span>3256</span>
+                            <span>{admin.total_reactions}</span>
                           </div>
                         </div>
                         <div className={styles.memberProfileTag}>
@@ -470,7 +476,7 @@ export default function Home() {
                               width={12}
                               height={12}
                             />
-                            <span>25</span>
+                            <span>{admin.total_title}</span>
                           </div>
                         </div>
                       </div>

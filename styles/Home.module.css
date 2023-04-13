@@ -189,6 +189,7 @@
   flex-direction: column;
   gap: 30px;
   display: flex;
+  justify-content: space-between;
 }
 
 .postDataUpper {
