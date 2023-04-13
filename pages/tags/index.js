@@ -6,7 +6,6 @@ import React, { useEffect, useState, useContext } from "react";
 import UserContext from "@/store/UserContext";
 import Header from '@/components/Header';
 import styles from '@/styles/Tags.module.css';
-import avatarBack from '@/public/ellipse-29.svg';
 import postUserAvatar from '@/public/memoji-boys-315@2x.png';
 import commentSvg from '@/public/comment.svg';
 import catSvg from '@/public/cat.svg';
@@ -1525,7 +1524,6 @@ export default function Tags() {
             </aside>
           </div>
         </section>
-        
       </main>
       )}
     </>

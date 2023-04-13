@@ -83,7 +83,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  gap: 10px;  
+  gap: 10px;
 }
 
 .memberTag {
@@ -457,10 +457,6 @@
 }
 
 /* ----------------------------- RIGHT ----------------------------------- */
-
-.iconImg {
-}
-
 .subtitle {
   font-size: 12px;
   line-height: 18px;
@@ -590,7 +586,7 @@
     line-height: 18px;
   }
 
-  /* left side 
+  /* left side
   */
 
   .leftSide{
@@ -606,13 +602,13 @@
     font-size: 14px;
     padding: 8px 10px;
   }
-  /* center side 
+  /* center side
   */
   .profileCard{
     width: 100%;
     max-width: 100%;
   }
-  .postHome, 
+  .postHome,
   .rightGroup{
     padding: 20px;
     padding: 14px;
@@ -662,15 +658,15 @@
   }
   .postHome .postInner .postData .postUser .postUserInfoWaraper{
       padding-top: 15px
-  } 
-  
+  }
+
   .postHome .postInner .postData .postUser .postUserMain{
     padding-top: 5px;
   }
   .postHome .postInner .postData .postUser .postUserMain .postActions{
     gap: 13px;
   }
-  
+
   .postHome .postInner .postData .postUser .postUserMain img,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon1,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon2,
@@ -683,10 +679,9 @@
     font-size: 10px;
     line-height: 16px;
   }
-  /* right side 
+  /* right side
   */
   .rightSide{
     display:none;
   }
-  
 }

@@ -370,12 +370,6 @@
   fill: #0ECC8D;
 }
 
-.exploreCardBtnSvg {
-  /* fill: var(--main-font-color);
-  width: 14px;
-  height: 14px; */
-}
-
 .profileMediaCard {
   display: flex;
   flex-direction: column;
@@ -709,12 +703,12 @@
   .desk{
     display: none;
   }
-  /* left side 
+  /* left side
   */
   .leftSide{
     width: 100%;
   }
-  /* center side 
+  /* center side
   */
   .centerSide,
   .groupCard{
@@ -769,7 +763,6 @@
     height: 72px;
   }
 
-  
   /* Buttons */
   .exploreBtn{
     font-size: 12px;
@@ -783,7 +776,7 @@
     width: 100%;
     max-width: 100%;
   }
-  .postHome, 
+  .postHome,
   .rightGroup{
     padding: 20px;
     padding: 14px;
@@ -833,15 +826,15 @@
   }
   .postHome .postInner .postData .postUser .postUserInfoWaraper{
       padding-top: 15px
-  } 
-  
+  }
+
   .postHome .postInner .postData .postUser .postUserMain{
     padding-top: 5px;
   }
   .postHome .postInner .postData .postUser .postUserMain .postActions{
     gap: 13px;
   }
-  
+
   .postHome .postInner .postData .postUser .postUserMain img,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon1,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon2,
@@ -858,7 +851,7 @@
   .mobile.groups {
     max-width: 100%;
   }
-  /* right side 
+  /* right side
   */
   .rightSide,
   .groupMember{
@@ -876,5 +869,4 @@
     width: 100%;
     height: auto;
   }
-  
 }

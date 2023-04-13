@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import UserContext from "../store/UserContext";
-import logoSvg from '../public/favicon.svg';
-import searchIconSvg from '../public/search-icon.svg';
-import settingIconSvg from '../public/setting.svg';
-import sunSvg from '../public/sun.svg';
-import sunLightSvg from '../public/sun-light.svg';
-import moonSvg from '../public/moon.svg';
+import UserContext from "@/store/UserContext";
+import logoSvg from '@/public/favicon.svg';
+import searchIconSvg from '@/public/search-icon.svg';
+import settingIconSvg from '@/public/setting.svg';
+import sunSvg from '@/public/sun.svg';
+import sunLightSvg from '@/public/sun-light.svg';
+import moonSvg from '@/public/moon.svg';
 import styles from './Header.module.css';
 
 const HomeIconSvg = ({fill}) => {
@@ -123,9 +123,7 @@ export default function Header() {
             </div>
         </div>
         </div>
-        
         <div className={styles.contentRight}>
-          
           <div className={styles.setting}>
             <div className={styles.settingIcon} onClick={() => setShowSetting(!showSetting)}>
               <Image src={settingIconSvg} alt="setting icon" />

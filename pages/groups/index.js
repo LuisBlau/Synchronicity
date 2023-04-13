@@ -3,16 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState, useContext } from 'react';
-// import {formatMoment} from 'moment';
 import UserContext from "@/store/UserContext";
 import Header from '@/components/Header';
 import styles from '@/styles/Groups.module.css';
-import avatarBack from '@/public/ellipse-29.svg';
 import postUserAvatar from '@/public/memoji-boys-315@2x.png';
 import commentSvg from '@/public/comment.svg';
-import bookSvg from '@/public/book.svg';
 import catSvg from '@/public/cat.svg';
-import musicSvg from '@/public/music.svg';
 import sportSvg from '@/public/football.svg';
 import heartSvg from '@/public/heart.svg';
 import userSvg from '@/public/user.svg';
@@ -82,7 +78,7 @@ export default function Groups() {
                 alt="search icon"
                 src={searchIconSvg}
               />
-          </div>         
+          </div>
         </div>
         <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.tagsBar}>
@@ -987,7 +983,6 @@ export default function Groups() {
                   </div>
                 </div>
               ))}
-              
             </div>
 
             <aside className={`${styles.side} ${styles.rightSide}`}>
@@ -1085,7 +1080,6 @@ export default function Groups() {
             </aside>
           </div>
         </section>
-        
       </main>
       )}
     </>

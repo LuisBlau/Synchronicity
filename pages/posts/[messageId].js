@@ -264,33 +264,6 @@ export default function PostOpen() {
                           {reaction}
                         </div>
                       ))}
-                      {/* <div className={styles.postIcon1}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="thumbnail svg"
-                          src={thumbnilSvg}
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-                      <div className={styles.postIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={20}
-                          height={20}
-                        />
-                      </div>
-                      <div className={styles.postIcon2}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="smile svg"
-                          src={smileSvg}
-                          width={20}
-                          height={20}
-                        />
-                      </div> */}
                     </div>
                   </div>
                 </div>

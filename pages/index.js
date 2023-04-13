@@ -6,25 +6,20 @@ import { useRouter } from 'next/router';
 // import { Source_Sans_Pro } from 'next/font/google';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import Header from '../components/Header';
+import Header from '@/components/Header';
 import UserContext from '@/store/UserContext';
 import styles from '@/styles/Home.module.css';
-import starSvg from '../public/new.svg';
-import frameSvg from '../public/frame.svg';
-import followSvg from '../public/follow.svg';
-import postThumb from '../public/rectangle-24@2x.png';
-import avatarBack from '../public/ellipse-29.svg';
-import postUserAvatar from '../public/memoji-boys-315@2x.png';
-import commentSvg from '../public/comment.svg';
-import bookSvg from '../public/book.svg';
-import catSvg from '../public/cat.svg';
-import musicSvg from '../public/music.svg';
-import sportSvg from '../public/football.svg';
-import shareSvg from '../public/share.svg';
-import viewSvg from '../public/view.svg';
-import heartSvg from '../public/heart.svg';
-import userSvg from '../public/user.svg';
-import adminSvg from '../public/admin.svg';
+import starSvg from '@/public/new.svg';
+import frameSvg from '@/public/frame.svg';
+import followSvg from '@/public/follow.svg';
+import postThumb from '@/public/rectangle-24@2x.png';
+import postUserAvatar from '@/public/memoji-boys-315@2x.png';
+import commentSvg from '@/public/comment.svg';
+import shareSvg from '@/public/share.svg';
+import viewSvg from '@/public/view.svg';
+import heartSvg from '@/public/heart.svg';
+import userSvg from '@/public/user.svg';
+import adminSvg from '@/public/admin.svg';
 
 const RightArrowSvg = () => {
   return (

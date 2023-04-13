@@ -67,9 +67,6 @@
   height: 20px;
 }
 
-.iconImg {
-}
-
 .titleAndDesc {
   display: flex;
   flex-direction: column;
@@ -536,7 +533,7 @@
     display: none;
   }
   /* center side */
-  .postHome, 
+  .postHome,
   .rightGroup{
     padding: 20px;
     padding: 14px;
@@ -586,15 +583,15 @@
   }
   .postHome .postInner .postData .postUser .postUserInfoWaraper{
       padding-top: 15px
-  } 
-  
+  }
+
   .postHome .postInner .postData .postUser .postUserMain{
     padding-top: 5px;
   }
   .postHome .postInner .postData .postUser .postUserMain .postActions{
     gap: 13px;
   }
-  
+
   .postHome .postInner .postData .postUser .postUserMain img,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon1,
   .postHome .postInner .postData .postUser .postUserMain .postActionIcon2,
@@ -611,5 +608,4 @@
   .rightSide .rightGroup{
     max-width: 100%;
   }
-  
-} 
+}

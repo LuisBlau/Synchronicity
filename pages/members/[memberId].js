@@ -272,9 +272,7 @@ export default function Profile() {
                         <div className={styles.postDate}>3 weeks ago</div>
                       </div>
                     </div>
-                    
                     <div className={styles.postUserMain}>
-                      
                       <div className={styles.postActions}>
                         <div className={styles.postActionIcon1}>
                           <Image
@@ -362,9 +360,7 @@ export default function Profile() {
                         <div className={styles.postDate}>3 weeks ago</div>
                       </div>
                     </div>
-                    
                     <div className={styles.postUserMain}>
-                      
                       <div className={styles.postActions}>
                         <div className={styles.postActionIcon1}>
                           <Image
@@ -452,9 +448,7 @@ export default function Profile() {
                         <div className={styles.postDate}>3 weeks ago</div>
                       </div>
                     </div>
-                    
                     <div className={styles.postUserMain}>
-                      
                       <div className={styles.postActions}>
                         <div className={styles.postActionIcon1}>
                           <Image
@@ -542,9 +536,7 @@ export default function Profile() {
                         <div className={styles.postDate}>3 weeks ago</div>
                       </div>
                     </div>
-                    
                     <div className={styles.postUserMain}>
-                      
                       <div className={styles.postActions}>
                         <div className={styles.postActionIcon1}>
                           <Image
@@ -657,7 +649,7 @@ export default function Profile() {
                       src={sportSvg}
                       width={16}
                       height={16}
-                    />  
+                    />
                   </div>
                   <div className={styles.name1}>
                     <div className={styles.subtitle}>Sports</div>

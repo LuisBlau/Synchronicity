@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import useCheckMobileScreen from "../utility/useCheckMobileScreen";
+import useCheckMobileScreen from "@/utility/useCheckMobileScreen";
 
 const UserContext = React.createContext();
 

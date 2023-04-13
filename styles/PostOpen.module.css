@@ -61,7 +61,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  gap: 10px;  
+  gap: 10px;
 }
 
 .memberTag {
@@ -633,13 +633,13 @@
     line-height: 18px;
   }
 
-  /* left side 
+  /* left side
   */
 
   .leftSide{
     width: 100%;
   }
-  /* center side 
+  /* center side
   */
   .profileCard{
     width: 100%;
@@ -672,7 +672,7 @@
     font-size: 12px;
     line-height: 18px;
   }
-  
+
   .postTag{
     font-size: 10px;
   }
@@ -684,7 +684,7 @@
   .postReactionsWaraper {
     flex-direction: row;
   }
-  .postIcon1, 
+  .postIcon1,
   .postIcon2 {
     width: 20px;
     height: 20px;
@@ -702,7 +702,7 @@
   .commentLeftLine2 {
     left: 20px;
   }
-  /* right side 
+  /* right side
   */
   .rightSide{
     width: 100%;
@@ -715,8 +715,7 @@
     font-size: 12px;
     line-height: 18px;
   }
-  
-  
+
   .postContent {
     padding: 0 35px;
   }

@@ -314,7 +314,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
-  color: var(--description-font-color); 
+  color: var(--description-font-color);
   margin-bottom: 5px;
   overflow: hidden;
 }
@@ -453,12 +453,6 @@
   background: #E7FAF4;
   color: #0ECC8D;
   fill: #0ECC8D;
-}
-
-.exploreCardBtnSvg {
-  /* fill: var(--main-font-color);
-  width: 14px;
-  height: 14px; */
 }
 
 .profileMediaCard {
@@ -847,5 +841,4 @@
   .rightSide{
     display:none;
   }
-  
 }

@@ -355,10 +355,6 @@
   height: 50px;
 }
 
-.groupInfo {
-  
-}
-
 .groupName {
   color: var(--main-font-color);
   font-size: 26px;
@@ -478,12 +474,6 @@
   background: #E7FAF4;
   color: #0ECC8D;
   fill: #0ECC8D;
-}
-
-.exploreCardBtnSvg {
-  /* fill: var(--main-font-color);
-  width: 14px;
-  height: 14px; */
 }
 
 .profileMediaCard {
@@ -870,5 +860,4 @@
   .rightSide{
     display:none;
   }
-  
 }
