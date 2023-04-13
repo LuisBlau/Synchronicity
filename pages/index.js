@@ -254,8 +254,10 @@ export default function Home() {
               <div className={styles.postData}>
                 <div className={styles.postDataUpper}>
                   <div className={styles.postTitleWrapper}>
-                    <div className={styles.postTitle} onClick={() => router.push('/post-open')}>
-                      {post.title}
+                    <div className={styles.postTitle}>
+                      <Link href={`/posts/${post._id}`}>
+                        {post.title}
+                      </Link>
                     </div>
                     <div className={styles.postTags}>
                       {post.hashtag.map((tag, index) => (
@@ -265,11 +267,13 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                  <div className={styles.postMoreIcon} onClick={() => router.push('/post-open')}>
-                    <Image
-                      alt="share svg"
-                      src={shareSvg}
-                    />
+                  <div className={styles.postMoreIcon}>
+                    <Link href={`/posts/${post._id}`}>
+                      <Image
+                        alt="share svg"
+                        src={shareSvg}
+                      />
+                    </Link>
                   </div>
                 </div>
                 <div className={styles.postUser}>

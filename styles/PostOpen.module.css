@@ -40,27 +40,20 @@
 }
 
 .profileUserAvatar {
-  position: relative;
   width: 100px;
   height: 100px;
-}
-
-.profileUserAvatarBack {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  /* cursor: pointer; */
+  border-radius: 100px;
+  border: 1px solid #F7F7F7;
+  background-color: #FDF4EA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profileUserAvatarImg {
-  position: absolute;
   border-radius: 50%;
   width: 80px;
   height: 80px;
-  left: 10px;
-  top: 10px;
 }
 
 .profileMain {
