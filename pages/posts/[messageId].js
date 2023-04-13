@@ -5,28 +5,25 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState, useContext } from 'react';
 import Header from '@/components/Header';
 import styles from '@/styles/PostOpen.module.css';
-import cornerSvg from '@/public/corner.svg';
-import smileSvg from '@/public/smileface.svg';
+import { numberWithCommas, dateString } from '@/utility/format';
 import warningSvg from '@/public/warning.svg';
 import postImg from '@/public/image-73@2x.png';
 import postUserAvatar from '@/public/boyAvatar.png';
 import commentSvg from '@/public/comment.svg';
-import bookSvg from '@/public/book.svg';
-import catSvg from '@/public/cat.svg';
-import musicSvg from '@/public/music.svg';
-import sportSvg from '@/public/football.svg';
 import shareSvg from '@/public/share.svg';
 import viewSvg from '@/public/view.svg';
 import heartSvg from '@/public/heart.svg';
 import userSvg from '@/public/user.svg';
+import adminSvg from '@/public/admin.svg';
 import groupAvatarSvg from '@/public/group-avatar.svg';
-import thumbnilSvg from '@/public/thumbnail.svg';
 
 export default function PostOpen() {
   const router = useRouter();
   const { messageId } = router.query;
   const [data, setData] = useState({});
   const [member, setMember] = useState({});
+  const [mainGroup, setMainGroup] = useState({});
+  const [groups, setGroups] = useState([]);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
@@ -34,7 +31,6 @@ export default function PostOpen() {
       fetch(`/api/messages/${messageId}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           setData(data)
           setLoading(false)
         });
@@ -51,6 +47,27 @@ export default function PostOpen() {
         });
     }
   }, [data]);
+  useEffect(() => {
+    async function fetchGroups() {
+      if (member.groups_in_common_by_id) {
+        let tmp = [];
+        for (const groupId of member.groups_in_common_by_id) {
+          await fetch(`/api/groups/${groupId}`)
+            .then((res) => res.json())
+            .then((group) => {
+              tmp.push(group);
+              if (group.group_name === data.group) {
+                setMainGroup(group);
+              }
+              if (tmp.length === member.groups_in_common_by_id.length) {
+                setGroups(tmp);
+              }
+            });
+        }
+      }
+    }
+    fetchGroups();
+  }, [member, data]);
   return (
     <>
       <Head>
@@ -80,16 +97,30 @@ export default function PostOpen() {
               />
             </div>
             <div className={styles.profileMain}>
-              <div className={styles.memberTag}>
-                <Image
-                  className={styles.iconImg}
-                  alt="user svg"
-                  src={userSvg}
-                  width={14}
-                  height={14}
-                />
-                <span className={styles.memberText}> Member</span>
-              </div>
+              {mainGroup.admins_by_phone_number?.indexOf(member.phone_number_id) > -1 && (
+                <div className={styles.adminTag}>
+                  <Image
+                    className={styles.iconImg}
+                    alt=""
+                    src={adminSvg}
+                    width={14}
+                    height={14}
+                  />
+                  <span className={styles.adminText}> Admin</span>
+                </div>
+              )}
+              {mainGroup.admins_by_phone_number?.indexOf(member.phone_number_id) === -1 && (
+                <div className={styles.memberTag}>
+                  <Image
+                    className={styles.iconImg}
+                    alt=""
+                    src={userSvg}
+                    width={14}
+                    height={14}
+                  />
+                  <span className={styles.memberText}> Member</span>
+                </div>
+              )}
               <div className={styles.profileName}>
                 {member.name}
               </div>
@@ -120,53 +151,19 @@ export default function PostOpen() {
               </div>
             </div>
             <div className={styles.profileIcons}>
-              <div className={styles.profileIcon}>
-                <Image
-                  className={styles.iconImg}
-                  alt="comment svg"
-                  src={commentSvg}
-                  width={14}
-                  height={14}
-                />
-              </div>
-              <div className={styles.profileIcon}>
-                <Image
-                  className={styles.iconImg}
-                  alt="book svg"
-                  src={bookSvg}
-                  width={14}
-                  height={14}
-                />
-              </div>
-              <div className={styles.profileIcon}>
-                <Image
-                  className={styles.iconImg}
-                  alt="cat svg"
-                  src={catSvg}
-                  width={14}
-                  height={14}
-                />
-              </div>
-              <div className={styles.profileIcon}>
-                <Image
-                  className={styles.iconImg}
-                  alt="music svg"
-                  src={musicSvg}
-                  width={14}
-                  height={14}
-                />
-              </div>
-              <div className={styles.profileIcon}>
-                <Image
-                  className={styles.iconImg}
-                  alt="sport svg"
-                  src={sportSvg}
-                  width={14}
-                  height={14}
-                />
-              </div>
+              {groups.map((group, index) => (
+                <div className={styles.profileIcon} key={index}>
+                  <Image
+                    className={styles.iconImg}
+                    alt=""
+                    src={group.profile_picture_group??commentSvg}
+                    width={14}
+                    height={14}
+                  />
+                </div>
+              ))}
             </div>
-              <Link className={styles.viewProfileBtn} href="/members/642369d3f37287fe1d21ccb2">
+              <Link className={styles.viewProfileBtn} href={`/members/${member?._id}`}>
                 View Profile
               </Link>
             <div className={styles.joinDate}>
@@ -176,7 +173,7 @@ export default function PostOpen() {
 
           <div className={`${styles.infoCard} ${styles.desk}`}>
             <div className={styles.infoTitle}>
-              More from Mansurul Haque
+              More from {data.name}
             </div>
             <div className={styles.divider} />
             <div>
@@ -212,7 +209,9 @@ export default function PostOpen() {
             <div className={styles.post}>
               <div className={styles.postImage}>
                 <Image
-                  src={postImg}
+                  src={data.files_media??postImg}
+                  width={783}
+                  height={276}
                   alt="post image"
                 />
               </div>
@@ -223,13 +222,14 @@ export default function PostOpen() {
                       <Image
                         className={styles.groupAvatarImg}
                         alt=""
-                        src={groupAvatarSvg}
+                        width={28}
+                        height={28}
+                        src={mainGroup.profile_picture_group??groupAvatarSvg}
                       />
                     </div>
                     <div className={styles.groupTitle}>
-                      Meditation
+                      {data.group}
                     </div>
-                    
                   </div>
                   <div className={styles.postShareIcon}>
                     <Image
@@ -252,17 +252,19 @@ export default function PostOpen() {
                     ))}
                   </div>
                   <div className={styles.postText}>
-                    <p>OnePay is a modern, easy-to-use Online Payment Processing Web App UI Kit template that will help you build a web app for your payment/marketplace platform. OnePay, a multi-payment platform to facilitate payments online.</p>
-                    <p>In this app, you can submit a request for a certain product or service online and one of our agents will contact you back with an offer.</p>
-                    <p>You can also pay merchants directly through the app. After successfully any transaction you can see details about your payment. History details include: -Transaction ID.</p>
-                    <p>What will you get? - 200+ Beautiful Screens design - Figma, XD & Sketch Files 100% editable and scalable. Thank You For Your Time.</p>
+                      {data.message}
                   </div>
                   <div className={styles.postReactionsWaraper}>
                     <div className={styles.postReactions}>
-                      24,056 Reactions
+                      {numberWithCommas(data.total_reactions)} Reactions
                     </div>
                     <div className={styles.postIcons}>
-                      <div className={styles.postIcon1}>
+                      {data.reactions.map((reaction, index) => (
+                        <div key={index} className={styles.postIcon1}>
+                          {reaction}
+                        </div>
+                      ))}
+                      {/* <div className={styles.postIcon1}>
                         <Image
                           className={styles.iconImg}
                           alt="thumbnail svg"
@@ -288,7 +290,7 @@ export default function PostOpen() {
                           width={20}
                           height={20}
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -297,7 +299,7 @@ export default function PostOpen() {
 
             <div className={`${styles.actionGroup} ${styles.mobile}`}>
               <div className={styles.postDate}>
-                <span className={styles.postDateHighLight}>Mansurul Haque</span> Posted on February 21,2022
+                <span className={styles.postDateHighLight}>{data.name}</span> Posted on {dateString(data.date)}
               </div>
             </div>
             <div className={`${styles.actionGroup} ${styles.mobile}`}>
@@ -326,7 +328,7 @@ export default function PostOpen() {
                   />
                 </div>
                 <div className={styles.actionItemText}>
-                  24,111 Heart
+                {numberWithCommas(data.total_reactions)} Heart
                 </div>
               </div>
               <div className={styles.actionItem}>
@@ -372,51 +374,57 @@ export default function PostOpen() {
                 </div>
               </div>
             </div>
-          
-            <div className={styles.comments}>
-              <div className={styles.comment}>
-                <div className={styles.commentLeft}>
-                  <div className={styles.commentAvatar}>
-                    <Image
-                      className={styles.commentAvatar}
-                      alt="comment avatar"
-                      src={postUserAvatar}
-                    />
+            {data.reply_to_id === "No Reply" && (
+              <div className={styles.noComment}>
+                {data.reply_to_id}
+              </div>
+            )}
+            {data.reply_to_id !== "No Reply" && (
+              <div className={styles.comments}>
+                <div className={styles.comment}>
+                  <div className={styles.commentLeft}>
+                    <div className={styles.commentAvatar}>
+                      <Image
+                        className={styles.commentAvatar}
+                        alt="comment avatar"
+                        src={postUserAvatar}
+                      />
+                    </div>
+                    <div className={styles.commentLeftLine}></div>
                   </div>
-                  <div className={styles.commentLeftLine}></div>
+                  <div className={styles.commentBox}>
+                    <div className={styles.commentTitle}>
+                      <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
+                    </div>
+                    <div className={styles.postText}>
+                      <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
+                      <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.commentBox}>
-                  <div className={styles.commentTitle}>
-                    <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
+                <div className={styles.comment2}>
+                  <div className={styles.commentLeft2}>
+                    <div className={styles.commentLeftLine2}></div>
+                    <div className={styles.commentAvatar}>
+                      <Image
+                        className={styles.commentAvatar}
+                        alt="comment avatar"
+                        src={postUserAvatar}
+                      />
+                    </div>
                   </div>
-                  <div className={styles.postText}>
-                    <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
-                    <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
+                  <div className={styles.commentBox}>
+                    <div className={styles.commentTitle}>
+                      <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
+                    </div>
+                    <div className={styles.postText}>
+                      <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
+                      <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div className={styles.comment2}>
-                <div className={styles.commentLeft2}>
-                  <div className={styles.commentLeftLine2}></div>
-                  <div className={styles.commentAvatar}>
-                    <Image
-                      className={styles.commentAvatar}
-                      alt="comment avatar"
-                      src={postUserAvatar}
-                    />
-                  </div>
-                </div>
-                <div className={styles.commentBox}>
-                  <div className={styles.commentTitle}>
-                    <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
-                  </div>
-                  <div className={styles.postText}>
-                    <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
-                    <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </section>
         <aside className={`${styles.side} ${styles.rightSide}`}>
@@ -446,7 +454,7 @@ export default function PostOpen() {
                 />
               </div>
               <div className={styles.actionItemText}>
-                24,111 Heart
+              {numberWithCommas(data.total_reactions)} Heart
               </div>
             </div>
             <div className={styles.actionItem}>
@@ -460,7 +468,7 @@ export default function PostOpen() {
                 />
               </div>
               <div className={styles.actionItemText}>
-                3,111 Comments
+                {numberWithCommas(data.total_replies??0)} Comments
               </div>
             </div>
             <div className={styles.actionItem}>
@@ -494,12 +502,12 @@ export default function PostOpen() {
           </div>
           <div className={`${styles.actionGroup} ${styles.desk}`}>
             <div className={styles.postDate}>
-              <span className={styles.postDateHighLight}>Mansurul Haque</span> Posted on February 21,2022
+              <span className={styles.postDateHighLight}>{data.name}</span> Posted on {dateString(data.date)}
             </div>
           </div>
           <div className={`${styles.infoCard} ${styles.mobile}`}>
             <div className={styles.infoTitle}>
-              More from Mansurul Haque
+              More from {data.name}
             </div>
             <div className={styles.divider} />
             <div>

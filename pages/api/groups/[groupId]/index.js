@@ -6,9 +6,18 @@ export default async function handler(req, res) {
   const { groupId } = req.query;
   const client = await clientPromise;
   const db = client.db();
-  const query = { _id: new ObjectId(groupId) };
+  let query ={};
+  let status = 200;
+  if (!isNaN(groupId)) {
+    query = { groupId: parseInt(groupId) };
+  } else {
+    query = { _id: new ObjectId(groupId) };
+  }
   const group = await db
             .collection("groups")
             .findOne(query);
-  res.status(200).json(group);
+  if (!group) {
+    status = 404;
+  }
+  res.status(status).json(group);
 }
