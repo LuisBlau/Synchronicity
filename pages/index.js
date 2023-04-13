@@ -55,7 +55,7 @@ export default function Home() {
         setLoading(false);
       });
     setLoading(true);
-    fetch('/api/messages?limit=5')
+    fetch('/api/messages?limit=50')
       .then((res) => res.json())
       .then((data) => {
         setPosts(data);
@@ -281,8 +281,10 @@ export default function Home() {
                     <div className={styles.postUserAvatar}>
                       <Image
                         className={styles.postUserAvatarImg}
+                        width={34}
+                        height={34}
                         alt=""
-                        src={postUserAvatar}
+                        src={post.profile_picture??postUserAvatar}
                       />
                     </div>
                     <div className={styles.postUserInfo}>

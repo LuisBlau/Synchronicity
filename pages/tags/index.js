@@ -18,6 +18,7 @@ import groupAvatarSvg from '@/public/group-avatar.svg';
 import appleAvatarSvg from '@/public/apple-avatar.svg';
 import robotAvatarSvg from '@/public/robot-avatar.svg';
 import searchIconSvg from '@/public/search-icon.svg';
+import { numberWithCommas } from '@/utility/format';
 
 export default function Tags() {
   const router = useRouter();
@@ -907,7 +908,7 @@ export default function Tags() {
                   alt="search icon"
                   src={searchIconSvg}
                 />
-            </div>          
+            </div>
           </div>
           <div className={styles.centerDown}>
             <div className={styles.tagsBoard}>
@@ -1429,7 +1430,7 @@ export default function Tags() {
                                   width={12}
                                   height={12}
                                 />
-                                <span>3256</span>
+                                <span>{numberWithCommas(admin.total_reactions)}</span>
                               </div>
                             </div>
                             <div className={styles.profileTag}>
@@ -1441,7 +1442,7 @@ export default function Tags() {
                                   width={12}
                                   height={12}
                                 />
-                                <span>25</span>
+                                <span>{numberWithCommas(admin.total_title)}</span>
                               </div>
                             </div>
                           </div>
@@ -1498,7 +1499,7 @@ export default function Tags() {
                                   width={12}
                                   height={12}
                                 />
-                                <span>3256</span>
+                                <span>{numberWithCommas(admin.total_reactions)}</span>
                               </div>
                             </div>
                             <div className={styles.profileTag}>
@@ -1510,7 +1511,7 @@ export default function Tags() {
                                   width={12}
                                   height={12}
                                 />
-                                <span>25</span>
+                                <span>{numberWithCommas(admin.total_title)}</span>
                               </div>
                             </div>
                           </div>
