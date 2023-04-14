@@ -20,6 +20,7 @@ import viewSvg from '@/public/view.svg';
 import heartSvg from '@/public/heart.svg';
 import userSvg from '@/public/user.svg';
 import adminSvg from '@/public/admin.svg';
+import { numberWithCommas } from '@/utility/format';
 
 const RightArrowSvg = () => {
   return (
@@ -310,7 +311,7 @@ export default function Home() {
                           height={16}
                         />
                       </div>
-                      <div className={styles.postActionDesc}>{post.total_reactions} Reactions</div>
+                      <div className={styles.postActionDesc}>{numberWithCommas(post.total_reactions)} Reactions</div>
                       <div className={styles.postActionIcon3}>
                         <Image
                           className={styles.iconImg}
@@ -320,7 +321,7 @@ export default function Home() {
                           height={16}
                         />
                       </div>
-                      <div className={styles.postActionDesc}>{post.reactions.length} Comments</div>
+                      <div className={styles.postActionDesc}>{numberWithCommas(post.reactions.length)} Comments</div>
                     </div>
                   </div>
                 </div>
