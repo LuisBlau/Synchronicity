@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState, useContext } from 'react';
 import Header from '@/components/Header';
 import styles from '@/styles/PostOpen.module.css';
-import { numberWithCommas, dateString } from '@/utility/format';
+import { numberWithCommas, dateString, shortDateString } from '@/utility/format';
 import warningSvg from '@/public/warning.svg';
 import postImg from '@/public/image-73@2x.png';
 import postUserAvatar from '@/public/boyAvatar.png';
@@ -21,6 +21,7 @@ export default function PostOpen() {
   const router = useRouter();
   const { messageId } = router.query;
   const [data, setData] = useState({});
+  const [replyMessage, setReplyMessage] = useState({});
   const [member, setMember] = useState({});
   const [mainGroup, setMainGroup] = useState({});
   const [groups, setGroups] = useState([]);
@@ -44,6 +45,13 @@ export default function PostOpen() {
         .then((member) => {
           setMember(member)
           setLoading(false)
+        });
+    }
+    if (data.reply_to_id && (data.reply_to_id !== "No Reply")) {
+      fetch(`/api/messages/${data.reply_to_id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setReplyMessage(data)
         });
     }
   }, [data]);
@@ -352,7 +360,7 @@ export default function PostOpen() {
                 {data.reply_to_id}
               </div>
             )}
-            {data.reply_to_id !== "No Reply" && (
+            {(data.reply_to_id !== "No Reply" && replyMessage.name) && (
               <div className={styles.comments}>
                 <div className={styles.comment}>
                   <div className={styles.commentLeft}>
@@ -360,22 +368,25 @@ export default function PostOpen() {
                       <Image
                         className={styles.commentAvatar}
                         alt="comment avatar"
-                        src={postUserAvatar}
+                        width={45}
+                        height={45}
+                        src={replyMessage.profile_picture??postUserAvatar}
                       />
                     </div>
-                    <div className={styles.commentLeftLine}></div>
+                    {/* <div className={styles.commentLeftLine}></div> */}
                   </div>
                   <div className={styles.commentBox}>
                     <div className={styles.commentTitle}>
-                      <b>Mishacreatrix •</b> Fab 01 • Edited on Fab 01
+                      <b>{replyMessage.name} •</b> {shortDateString(replyMessage.date)} • Edited on {shortDateString(replyMessage.date)}
                     </div>
                     <div className={styles.postText}>
-                      <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
-                      <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
+                      {replyMessage.message}
+                      {/* <p>As an ex-dev, I believed nocode to be only useful for small prototypes or things like landing pages/portfolio pages etc</p>
+                      <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p> */}
                     </div>
                   </div>
                 </div>
-                <div className={styles.comment2}>
+                {/* <div className={styles.comment2}>
                   <div className={styles.commentLeft2}>
                     <div className={styles.commentLeftLine2}></div>
                     <div className={styles.commentAvatar}>
@@ -395,7 +406,7 @@ export default function PostOpen() {
                       <p>After tinkering around with Bubble for a bit, I now see that you can indeed build fully fledged apps! It is still not ideal, but I reckon nocode builders will only get more powerful as time goes by</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             )}
           </div>

@@ -7,3 +7,7 @@ export function numberWithCommas(x) {
 export function dateString(date) {
     return moment(date).format('MMMM DD, YYYY');
 }
+
+export function shortDateString(date) {
+    return moment(date).format('MMM DD');
+}
