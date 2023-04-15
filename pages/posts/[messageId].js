@@ -105,7 +105,7 @@ export default function PostOpen() {
               />
             </div>
             <div className={styles.profileMain}>
-              {mainGroup.admins_by_phone_number?.indexOf(member.phone_number_id) > -1 && (
+              {mainGroup.admins_by_member_id?.indexOf(member.memberid) > -1 && (
                 <div className={styles.adminTag}>
                   <Image
                     className={styles.iconImg}
@@ -117,7 +117,7 @@ export default function PostOpen() {
                   <span className={styles.adminText}> Admin</span>
                 </div>
               )}
-              {mainGroup.admins_by_phone_number?.indexOf(member.phone_number_id) === -1 && (
+              {mainGroup.admins_by_member_id?.indexOf(member.memberid) === -1 && (
                 <div className={styles.memberTag}>
                   <Image
                     className={styles.iconImg}

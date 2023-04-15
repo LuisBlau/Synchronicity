@@ -10,9 +10,9 @@ export default async function handler(req, res) {
   const group = await db
             .collection("groups")
             .findOne(query);
-  const adminPhones = group.admins_by_phone_number;
-  const admins = await Promise.all(adminPhones.map(item => {
-    let query = { phone_number: item };
+  const adminIds = group.admins_by_member_id;
+  const admins = await Promise.all(adminIds.map(item => {
+    let query = { memberid: item };
     const admin = db
               .collection("members")
               .findOne(query)

@@ -21,10 +21,10 @@ export default async function handler(req, res) {
   }
   if (query && query.limit && Number(query.limit) > 0) limit = Number(query.limit);
   const groups = await db
-            .collection("groups")
-            .find({})
-            .sort(sort)
-            .limit(limit)
-            .toArray();
+    .collection("groups")
+    .find({})
+    .sort(sort)
+    .limit(limit)
+    .toArray();
   res.status(200).json(groups);
 }
