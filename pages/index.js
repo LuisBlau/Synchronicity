@@ -51,7 +51,7 @@ export default function Home() {
         setLoading(false);
       });
     setLoading(true);
-    fetch('/api/messages?limit=50&sort=date:-1')
+    fetch('/api/messages?sort=date:-1')
       .then((res) => res.json())
       .then((data) => {
         if (data.length !== undefined) {
