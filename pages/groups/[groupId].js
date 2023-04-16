@@ -58,7 +58,7 @@ export default function GroupProfile() {
         .then((res) => res.json())
         .then((messages) => {
           if (messages.length !== undefined) {
-            setMessages(messages.filter(item => (!!item.title) && (item.hashtag.length > 0)));
+            setMessages(messages.filter(item => item.contains_title !== 'No'));
           }
           setLoading(false);
         });

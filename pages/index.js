@@ -55,7 +55,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => {
         if (data.length !== undefined) {
-          setPosts(data.filter(item => (!!item.title) && (item.hashtag.length > 0)));
+          setPosts(data.filter(item => item.contains_title !== 'No'));
         }
         setLoading(false);
       });
