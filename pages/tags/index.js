@@ -918,7 +918,7 @@ export default function Tags() {
                     #
                   </div>
                   <div className={styles.tagCardData}>
-                    <div className={styles.tagCardTitle}>
+                    <div className={styles.tagCardTitle} title={tag.hashtag}>
                       {tag.hashtag}
                     </div>
                     <div className={styles.tagCardDesc}>

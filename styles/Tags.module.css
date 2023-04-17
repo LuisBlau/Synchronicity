@@ -308,6 +308,8 @@
   font-size: 26px;
   line-height: 38px;
   color: var(--description-font-color);
+  max-width: 185px;
+  overflow: hidden;
 }
 
 .tagCardDesc {
