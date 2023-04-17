@@ -26,6 +26,7 @@ export default function Tags() {
   const [openGroupTag, setOpenGroupTag] = useState(true);
   const [openPopularTag, setOpenPopularTag] = useState(true);
 
+  const [data, setData] = useState([]);
   const [popularGroups, setPopularGroups] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -43,12 +44,12 @@ export default function Tags() {
         setPopularGroups(data);
         setLoading(false);
       });
-   /*  fetch('/api/groups')
+    fetch('/api/tags')
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         setLoading(false);
-      }); */
+      });
   }, []);
 
   return (
@@ -76,7 +77,7 @@ export default function Tags() {
                 alt="search icon"
                 src={searchIconSvg}
               />
-          </div>         
+          </div>
         </div>
         <aside className={`${styles.side} ${styles.leftSide}`}>
           <div className={styles.tagsBar}>
@@ -911,474 +912,47 @@ export default function Tags() {
           </div>
           <div className={styles.centerDown}>
             <div className={styles.tagsBoard}>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
+              {data.map((tag, index) => (
+                <div className={`${styles.tagCard} ${styles.card}`} key={index}>
+                  <div className={styles.tagCardAvatar}>
+                    #
                   </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
+                  <div className={styles.tagCardData}>
+                    <div className={styles.tagCardTitle}>
+                      {tag.hashtag}
                     </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
+                    <div className={styles.tagCardDesc}>
+                      {numberWithCommas(tag.count)} • Posted by this tag
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
+                    <div className={styles.profileTags}>
+                      <div className={styles.profileTag}>
+                        <div className={styles.profileTagInner}>
+                          <Image
+                            className={styles.iconImg}
+                            alt="heart svg"
+                            src={heartSvg}
+                            width={12}
+                            height={12}
+                          />
+                          <span>{numberWithCommas(tag.total_title_messages)}</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
+                      <div className={styles.profileTag}>
+                        <div className={styles.profileTagInner}>
+                          <Image
+                            className={styles.iconImg}
+                            alt="comment svg"
+                            src={commentSvg}
+                            width={12}
+                            height={12}
+                          />
+                          <span>{numberWithCommas(tag.total_reactions)}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`${styles.tagCard} ${styles.card}`}>
-                <div className={styles.tagCardAvatar}>
-                  #
-                </div>
-                <div className={styles.tagCardData}>
-                  <div className={styles.tagCardTitle}>
-                    #Messi
-                  </div>
-                  <div className={styles.tagCardDesc}>
-                    51,354 • Posted by this tag
-                  </div>
-                  <div className={styles.profileTags}>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="heart svg"
-                          src={heartSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>3256</span>
-                      </div>
-                    </div>
-                    <div className={styles.profileTag}>
-                      <div className={styles.profileTagInner}>
-                        <Image
-                          className={styles.iconImg}
-                          alt="comment svg"
-                          src={commentSvg}
-                          width={12}
-                          height={12}
-                        />
-                        <span>25</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             <aside className={`${styles.side} ${styles.rightSide}`}>
