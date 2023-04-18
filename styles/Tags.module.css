@@ -310,6 +310,8 @@
   color: var(--description-font-color);
   max-width: 185px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .tagCardDesc {

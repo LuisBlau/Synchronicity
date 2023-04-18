@@ -323,6 +323,7 @@
   white-space: nowrap;
   max-width: 190px;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tagCardTitle:hover {
@@ -333,7 +334,7 @@
   font-weight: 400;
   font-size: 10px;
   line-height: 16px;
-  color: var(--description-font-color); 
+  color: var(--description-font-color);
   margin-bottom: 5px;
   overflow: hidden;
   max-width: 98px;
