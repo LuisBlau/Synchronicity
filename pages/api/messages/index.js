@@ -27,6 +27,9 @@ export default async function handler(req, res) {
   if (query.memberId) {
     condition.member_id = query.memberId;
   }
+  if (query.tagName) {
+    condition.hashtag = { $in : [query.tagName]  };
+  }
   const messages = await db
     .collection("messages")
     .find(condition)

@@ -919,7 +919,9 @@ export default function Tags() {
                   </div>
                   <div className={styles.tagCardData}>
                     <div className={styles.tagCardTitle} title={tag.hashtag}>
-                      {tag.hashtag}
+                      <Link href={`/tags/${tag._id}`}>
+                        {tag.hashtag}
+                      </Link>
                     </div>
                     <div className={styles.tagCardDesc}>
                       {numberWithCommas(tag.count)} • Posted by this tag
