@@ -101,7 +101,7 @@ export default function PostOpen() {
                 alt=""
                 width={80}
                 height={80}
-                src={member?.profile_picture??postUserAvatar}
+                src={member?.profile_picture??data?.profile_picture??postUserAvatar}
               />
             </div>
             <div className={styles.profileMain}>
@@ -285,7 +285,7 @@ export default function PostOpen() {
             </div>
             <div className={`${styles.actionGroup} ${styles.mobile}`}>
               <div className={styles.actionItem}>
-                <div className={styles.actionItemIcon1}>
+                {/* <div className={styles.actionItemIcon1}>
                   <Image
                     className={styles.iconImg}
                     alt="view svg"
@@ -296,7 +296,7 @@ export default function PostOpen() {
                 </div>
                 <div className={styles.actionItemText}>
                   56,111 Views
-                </div>
+                </div> */}
               </div>
               <div className={styles.actionItem}>
                 <div className={styles.actionItemIcon2}>
@@ -414,7 +414,7 @@ export default function PostOpen() {
         <aside className={`${styles.side} ${styles.rightSide}`}>
           <div className={`${styles.actionGroup} ${styles.desk}`}>
             <div className={styles.actionItem}>
-              <div className={styles.actionItemIcon1}>
+              {/* <div className={styles.actionItemIcon1}>
                 <Image
                   className={styles.iconImg}
                   alt="view svg"
@@ -425,7 +425,7 @@ export default function PostOpen() {
               </div>
               <div className={styles.actionItemText}>
                 56,111 Views
-              </div>
+              </div> */}
             </div>
             <div className={styles.actionItem}>
               <div className={styles.actionItemIcon2}>

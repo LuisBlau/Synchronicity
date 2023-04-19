@@ -362,7 +362,7 @@ export default function Tag() {
                       <div className={styles.postUserMain}>
 
                         <div className={styles.postActions}>
-                          <div className={styles.postActionIcon1}>
+                          {/* <div className={styles.postActionIcon1}>
                             <Image
                               className={styles.iconImg}
                               alt="view svg"
@@ -371,7 +371,7 @@ export default function Tag() {
                               height={16}
                             />
                           </div>
-                          <div className={styles.postActionDesc}>651,324 Views</div>
+                          <div className={styles.postActionDesc}>651,324 Views</div> */}
                           <div className={styles.postActionIcon2}>
                             <Image
                               className={styles.iconImg}
