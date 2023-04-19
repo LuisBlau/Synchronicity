@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState, useContext } from 'react';
 import Header from '@/components/Header';
 import styles from '@/styles/PostOpen.module.css';
-import { numberWithCommas, dateString, shortDateString } from '@/utility/format';
+import { numberWithCommas, dateString, shortDateString, urlify } from '@/utility/format';
 import warningSvg from '@/public/warning.svg';
 import postImg from '@/public/image-73@2x.png';
 import postUserAvatar from '@/public/boyAvatar.png';
@@ -259,8 +259,7 @@ export default function PostOpen() {
                       </div>
                     ))}
                   </div>
-                  <div className={styles.postText}>
-                      {data.message}
+                  <div className={styles.postText} dangerouslySetInnerHTML={{ __html: urlify(data.message) }}>
                   </div>
                   <div className={styles.postReactionsWaraper}>
                     <div className={styles.postReactions}>
