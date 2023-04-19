@@ -11,13 +11,7 @@ import commentSvg from '@/public/comment.svg';
 import shareSvg from '@/public/share.svg';
 import viewSvg from '@/public/view.svg';
 import heartSvg from '@/public/heart.svg';
-import userSvg from '@/public/user.svg';
 import adminSvg from '@/public/admin.svg';
-import adminWSvg from '@/public/admin-woman.svg';
-import mediaSvg from '@/public/media-icon.svg'
-import joinSvg from '@/public/join.svg';
-import groupAvatarSvg from '@/public/group-avatar.svg';
-import groupCoverImg from '@/public/group-cover.png';
 import groupProfileMediaImg from '@/public/group-profile-media.png';
 import { numberWithCommas } from '@/utility/format';
 
@@ -74,7 +68,7 @@ export default function Tag() {
           </div>
         </div>
       )}
-      {data.hashtag && (
+      {data?.hashtag && (
         <main className={styles.main}>
           <aside className={`${styles.side} ${styles.leftSide} ${styles.desk}`}>
             <div className={`${styles.card} ${styles.tagsCard}`}>
