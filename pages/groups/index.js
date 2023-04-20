@@ -40,7 +40,7 @@ export default function Groups() {
       .then((data) => {
         setAdmins(data);
       });
-    fetch('/api/groups?limit=5&sort=members:desc')
+    fetch('/api/groups?limit=5&sort=total_messages:desc')
       .then((res) => res.json())
       .then((data) => {
         setPopularGroups(data);
@@ -1002,7 +1002,7 @@ export default function Groups() {
                     </div>
                     <div className={styles.name1}>
                       <div className={styles.subtitle}>{group.group_name}</div>
-                      <div className={styles.description}>82,645 Posted by this tag</div>
+                      <div className={styles.description}>{numberWithCommas(group.total_messages)} Posted by this group</div>
                     </div>
                   </div>
                 ))}

@@ -9,6 +9,15 @@ export default async function handler(req, res) {
     const db = client.db();
     let query ={};
     let status = 200;
+    if (memberId === "count") {
+      const count = await db
+        .collection("members_counter")
+        .findOne(query);
+      if (!count) {
+        status = 404;
+      }
+      res.status(status).json(count);
+    }
     if (!isNaN(memberId)) {
       query = { memberid: parseInt(memberId) };
     } else {

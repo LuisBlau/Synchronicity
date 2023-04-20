@@ -38,7 +38,7 @@ export default function Tags() {
       .then((data) => {
         setAdmins(data);
       });
-    fetch('/api/groups?limit=5&sort=members:desc')
+    fetch('/api/groups?limit=5&sort=total_messages:desc')
       .then((res) => res.json())
       .then((data) => {
         setPopularGroups(data);

@@ -27,6 +27,8 @@ export default function Profile() {
   const [data, setData] = useState({});
   const [messages, setMessages] = useState([]);
   const [groups, setGroups] = useState([]);
+  const [popularGroups, setPopularGroups] = useState([]);
+  const [popularTags, setPopularTags] = useState([]);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
@@ -36,6 +38,16 @@ export default function Profile() {
         .then((data) => {
           setData(data)
           setLoading(false)
+        });
+      fetch('/api/tags?limit=6&sort=count:desc')
+        .then((res) => res.json())
+        .then((data) => {
+          setPopularTags(data);
+        });
+      fetch('/api/groups?limit=5&sort=total_messages:desc')
+        .then((res) => res.json())
+        .then((data) => {
+          setPopularGroups(data);
         });
     }
   }, [memberId]);
@@ -204,7 +216,7 @@ export default function Profile() {
           </aside>
           <section className={`${styles.side} ${styles.centerSide}`}>
             <div className={styles.actionBar}>
-              <div className={`${styles.actionBtn} ${styles.selected}`}>
+              <div className={styles.actionBtn}>
                 Posts
               </div>
               <div className={styles.actionBtn}>
@@ -216,7 +228,7 @@ export default function Profile() {
               <div className={styles.actionBtn}>
                 Reacted
               </div>
-              <div className={styles.actionBtn}>
+              <div className={`${styles.actionBtn} ${styles.selected}`}>
                 Activity
               </div>
             </div>
@@ -319,140 +331,39 @@ export default function Profile() {
             <div className={styles.groups}>
               <div className={styles.title}>Popular Groups</div>
               <div className={styles.tags}>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="comment svg"
-                      src={commentSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>General Chat</div>
-                    <div className={styles.description}>82,645 Posted by this tag</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="book svg"
-                      src={bookSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Books</div>
-                    <div className={styles.description}>65,523 Posted • Trending</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="cat svg"
-                      src={catSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Cats</div>
-                    <div className={styles.description}>
-                      51,354 • Trending in Bangladesh
+                {popularGroups.map((group, index) => (
+                  <div key={index} className={styles.tag}>
+                    <div className={styles.icon}>
+                      <Image
+                        className={styles.iconImg}
+                        alt="comment svg"
+                        src={group.profile_picture_group ?? commentSvg}
+                        width={16}
+                        height={16}
+                      />
+                    </div>
+                    <div className={styles.name1}>
+                      <div className={styles.subtitle}>{group.group_name}</div>
+                      <div className={styles.description}>{numberWithCommas(group.total_messages)} Posted by this group</div>
                     </div>
                   </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="music svg"
-                      src={musicSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Music</div>
-                    <div className={styles.description}>48,029 Posted by this tag</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className={styles.icon}>
-                    <Image
-                      className={styles.iconImg}
-                      alt="sport svg"
-                      src={sportSvg}
-                      width={16}
-                      height={16}
-                    />
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>Sports</div>
-                    <div className={styles.description}>
-                      51,354 • Trending in Bangladesh
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
             <div className={styles.groups}>
               <div className={styles.title}>Popular Tags</div>
               <div className={styles.tags}>
-                <div className={styles.tag}>
-                  <div className='tagIconBack1'>
-                    #
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>#bitcoin</div>
-                    <div className={styles.description}>82,645 Posted by this tag</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className='tagIconBack2'>
-                    #
-                  </div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>#music</div>
-                    <div className={styles.description}>65,523 Posted • Trending</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className='tagIconBack3'>#</div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>#meditation</div>
-                    <div className={styles.description}>
-                      51,354 • Trending in Bangladesh
+                {popularTags.map((tag, index) => (
+                  <div className={styles.tag} key={index}>
+                    <div className={`tagIconBack${(index % 5) + 1}`}>
+                      #
+                    </div>
+                    <div className={styles.name1}>
+                      <div className={styles.subtitle}>{tag.hashtag}</div>
+                      <div className={styles.description}>{numberWithCommas(tag.count)} Posted by this tag</div>
                     </div>
                   </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className='tagIconBack4'>#</div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>#yoga</div>
-                    <div className={styles.description}>48,029 Posted by this tag</div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className='tagIconBack5'>#</div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>#messi</div>
-                    <div className={styles.description}>
-                      51,354 • Trending in Bangladesh
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.tag}>
-                  <div className='tagIconBack5'>#</div>
-                  <div className={styles.name1}>
-                    <div className={styles.subtitle}>#video</div>
-                    <div className={styles.description}>82,645 Posted by this tag</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </aside>

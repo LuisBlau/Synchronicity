@@ -15,7 +15,7 @@ export function shortDateString(date) {
 export function urlify(text) {
     var urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, function(url) {
-      return '<a href="' + url + '" style="cursor: pointer" target="new">' + url + '</a>';
+      return '<a href="' + url + '" style="cursor: pointer; text-decoration: underline" target="new">' + url + '</a>';
     })
     // or alternatively
     // return text.replace(urlRegex, '<a href="$1">$1</a>')

@@ -26,7 +26,7 @@ export default function Tag() {
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch('/api/groups?limit=5&sort=members:desc')
+    fetch('/api/groups?limit=5&sort=total_messages:desc')
       .then((res) => res.json())
       .then((data) => {
         setPopularGroups(data);
@@ -151,7 +151,7 @@ export default function Tag() {
                     </div>
                     <div className={styles.name1}>
                       <div className={styles.subtitle}>{group.group_name}</div>
-                      <div className={styles.description}>65,523 Posted • Trending</div>
+                      <div className={styles.description}>{numberWithCommas(group.total_messages)} Posted by this group</div>
                     </div>
                   </div>
                 ))}

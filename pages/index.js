@@ -33,9 +33,11 @@ export default function Home() {
   const router = useRouter();
   const context = useContext(UserContext);
   const [popularGroups, setPopularGroups] = useState([]);
+  const [popularTags, setPopularTags] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [posts, setPosts] = useState([]);
   const [isLoading, setLoading] = useState(false);
+  const [membersCount, setMembersCount] = useState(0);
 
   useEffect(() => {
     setLoading(true);
@@ -44,11 +46,15 @@ export default function Home() {
       .then((data) => {
         setAdmins(data);
       });
-    fetch('/api/groups?limit=5&sort=members:desc')
+    fetch('/api/groups?limit=5&sort=total_messages:desc')
       .then((res) => res.json())
       .then((data) => {
         setPopularGroups(data);
-        setLoading(false);
+      });
+    fetch('/api/tags?limit=6&sort=count:desc')
+      .then((res) => res.json())
+      .then((data) => {
+        setPopularTags(data);
       });
     setLoading(true);
     fetch('/api/messages?sort=date:-1')
@@ -58,6 +64,12 @@ export default function Home() {
           setPosts(data.filter(item => item.contains_title !== 'No'));
         }
         setLoading(false);
+      });
+
+    fetch('/api/members/count')
+      .then((res) => res.json())
+      .then((data) => {
+        setMembersCount(data.seq_value);
       });
   }, []);
 
@@ -122,7 +134,7 @@ export default function Home() {
                 <div className={styles.titleAndDesc}>
                   <div className={styles.subtitle}>
                     <span>Members</span>
-                    <span className={styles.wrapperNumber}>24</span>
+                    <span className={styles.wrapperNumber}>{membersCount}</span>
                   </div>
                   <div className={styles.description}>Explore from members</div>
                 </div>
@@ -154,7 +166,7 @@ export default function Home() {
                   </div>
                   <div className={styles.name1}>
                     <div className={styles.subtitle}>{group.group_name}</div>
-                    <div className={styles.description}>82,645 Posted by this tag</div>
+                    <div className={styles.description}>{numberWithCommas(group.total_messages)} Posted by this group</div>
                   </div>
                 </div>
               ))}
@@ -163,56 +175,17 @@ export default function Home() {
           <div className={styles.groups}>
             <div className={styles.title}>Popular Tags(Global)</div>
             <div className={styles.tags}>
-              <div className={styles.tag}>
-                <div className="tagIconBack1">
-                  #
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#bitcoin</div>
-                  <div className={styles.description}>82,645 Posted by this tag</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className="tagIconBack2">
-                  #
-                </div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#music</div>
-                  <div className={styles.description}>65,523 Posted • Trending</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className="tagIconBack3">#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#meditation</div>
-                  <div className={styles.description}>
-                    51,354 • Trending in Bangladesh
+              {popularTags.map((tag, index) => (
+                <div className={styles.tag} key={index}>
+                  <div className={`tagIconBack${(index % 5) + 1}`}>
+                    #
+                  </div>
+                  <div className={styles.name1}>
+                    <div className={styles.subtitle}>{tag.hashtag}</div>
+                    <div className={styles.description}>{numberWithCommas(tag.count)} Posted by this tag</div>
                   </div>
                 </div>
-              </div>
-              <div className={styles.tag}>
-                <div className="tagIconBack1">#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#yoga</div>
-                  <div className={styles.description}>48,029 Posted by this tag</div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className="tagIconBack4">#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#messi</div>
-                  <div className={styles.description}>
-                    51,354 • Trending in Bangladesh
-                  </div>
-                </div>
-              </div>
-              <div className={styles.tag}>
-                <div className="tagIconBack5">#</div>
-                <div className={styles.name1}>
-                  <div className={styles.subtitle}>#video</div>
-                  <div className={styles.description}>82,645 Posted by this tag</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </aside>
