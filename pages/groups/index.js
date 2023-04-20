@@ -909,7 +909,7 @@ export default function Groups() {
                   alt="search icon"
                   src={searchIconSvg}
                 />
-            </div>          
+            </div>
           </div>
           <div className={styles.centerDown}>
             <div className={styles.groupsBoard}>
@@ -926,8 +926,10 @@ export default function Groups() {
                         />
                       </div>
                       <div className={styles.groupCardData}>
-                        <div className={styles.tagCardTitle} title={item.group_name} onClick={()=>router.push(`/groups/${item._id}`)}>
-                          {item.group_name}
+                        <div className={styles.tagCardTitle} title={item.group_name}>
+                          <Link href={`/groups/${item._id}`}>
+                            {item.group_name}
+                          </Link>
                         </div>
                         <div className={styles.tagCardDesc}>
                           {/* Created on 14/12/2022 at 20:18 UTC-4 */}

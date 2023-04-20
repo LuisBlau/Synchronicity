@@ -10,14 +10,14 @@ export default async function handler(req, res) {
   const group = await db
             .collection("groups")
             .findOne(query);
-  const adminIds = group.admins_by_member_id;
-  const admins = await Promise.all(adminIds.map(item => {
+  const memberIds = group.members_joined_by_member_id;
+  const members = await Promise.all(memberIds.map(item => {
     let query = { memberid: Number(item) };
-    const admin = db
+    const member = db
               .collection("members")
               .findOne(query)
               .then((result) => result);
-    return admin;
+    return member;
   }));
-  res.status(200).json(admins);
+  res.status(200).json(members);
 }

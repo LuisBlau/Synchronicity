@@ -27,16 +27,12 @@ export default function GroupProfile() {
   const { groupId } = router.query;
   const [data, setData] = useState({});
   const [admins, setAdmins] = useState([]);
+  const [members, setMembers] = useState([]);
   const [messages, setMessages] = useState([]);
   const [popularGroups, setPopularGroups] = useState([]);
   const [isLoading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
-    fetch('/api/members?limit=4')
-      .then((res) => res.json())
-      .then((data) => {
-        setAdmins(data);
-      });
     fetch('/api/groups?limit=5&sort=total_messages:desc')
       .then((res) => res.json())
       .then((data) => {
@@ -48,6 +44,16 @@ export default function GroupProfile() {
         .then((data) => {
           setData(data)
           setLoading(false)
+        });
+      fetch(`/api/groups/${groupId}/admins`)
+        .then((res) => res.json())
+        .then((data) => {
+          setAdmins(data);
+        });
+      fetch(`/api/groups/${groupId}/members`)
+        .then((res) => res.json())
+        .then((data) => {
+          setMembers(data);
         });
     }
   }, [groupId]);
@@ -237,7 +243,7 @@ export default function GroupProfile() {
                     </div>
                     <div className={styles.name1}>
                       <div className={styles.subtitle}>{group.group_name}</div>
-                      <div className={styles.description}>65,523 Posted • Trending</div>
+                      <div className={styles.description}>{numberWithCommas(group.total_messages)} Posted by this group</div>
                     </div>
                   </div>
                 ))}
@@ -651,7 +657,7 @@ export default function GroupProfile() {
                     <path className={styles.rightGroupTitleIcon} d="M4 10H16M16 10L11.3333 5M16 10L11.3333 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                {admins.map((admin, index) => (
+                {members.map((member, index) => (
                   <>
                     <div className={styles.rightGroupItem}>
                       <div className={styles.postUserAvatar}>
@@ -660,14 +666,14 @@ export default function GroupProfile() {
                           alt=""
                           width={34}
                           height={34}
-                          src={admin.profile_picture ?? postUserAvatar}
+                          src={member.profile_picture ?? postUserAvatar}
                         />
                       </div>
                       <div className={styles.rightGroupItemData}>
                         <div className={styles.rightGroupItemTitle}>
                           <div className={styles.rightGroupItemName} style={{ maxWidth: 130 }}>
-                            <Link href={`/members/${admin._id}`}>
-                              {admin.name}
+                            <Link href={`/members/${member._id}`}>
+                              {member.name}
                             </Link>
                           </div>
                           <div className={styles.rightGroupItemTag}>
@@ -692,7 +698,7 @@ export default function GroupProfile() {
                                 width={12}
                                 height={12}
                               />
-                              <span>{numberWithCommas(admin.total_reactions)}</span>
+                              <span>{numberWithCommas(member.total_reactions)}</span>
                             </div>
                           </div>
                           <div className={styles.profileTag}>
@@ -704,13 +710,13 @@ export default function GroupProfile() {
                                 width={12}
                                 height={12}
                               />
-                              <span>{numberWithCommas(admin.total_title)}</span>
+                              <span>{numberWithCommas(member.total_title)}</span>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    {index !== (admins.length - 1) && (<div className={styles.divider} key={index} />)}
+                    {index !== (members.length - 1) && (<div className={styles.divider} key={index} />)}
                   </>
                 ))}
               </div>
