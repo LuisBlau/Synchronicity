@@ -1,0 +1,555 @@
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e72"),
+    "hashtag" : "#RopaFea",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "111"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e73"),
+    "hashtag" : "#NoEsUnMeme",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "118"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(4)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e74"),
+    "hashtag" : "#Crypto",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "139"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e75"),
+    "hashtag" : "#Gabriel",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "301"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e76"),
+    "hashtag" : "#marico",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "303"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e77"),
+    "hashtag" : "#loco",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "306"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e78"),
+    "hashtag" : "#Valencia",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "337"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(3)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e79"),
+    "hashtag" : "#Diosdado",
+    "count" : NumberInt(2),
+    "message_ids" : [
+        "338",
+        "340"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(4)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e7a"),
+    "hashtag" : "#ElMejor",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "338"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(4)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e7b"),
+    "hashtag" : "#sisomos",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "340"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e7c"),
+    "hashtag" : "#elmejor",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "340"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e7d"),
+    "hashtag" : "#venceremos",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "341"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e7e"),
+    "hashtag" : "#loquito",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "342"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e7f"),
+    "hashtag" : "#elnodo",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "342"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e80"),
+    "hashtag" : "#genio",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "342"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e81"),
+    "hashtag" : "#incomprendido",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "347"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e82"),
+    "hashtag" : "#elyaque",
+    "count" : NumberInt(2),
+    "message_ids" : [
+        "404",
+        "407"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3920c5ab4d3fe8f41e83"),
+    "hashtag" : "#ferry",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "407"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e84"),
+    "hashtag" : "#anis",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "407"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e85"),
+    "hashtag" : "#mora",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "407"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e86"),
+    "hashtag" : "#miprimeracomunion",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "442"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e87"),
+    "hashtag" : "#diosenticonfio",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "442"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e88"),
+    "hashtag" : "#crypto",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "445"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e89"),
+    "hashtag" : "#finance",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "445"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e8a"),
+    "hashtag" : "#blackrock",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "445"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e8b"),
+    "hashtag" : "#markets",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "445"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e8c"),
+    "hashtag" : "#bullrun",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "445"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e8d"),
+    "hashtag" : "#SynchroCumple",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "447"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(3)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e8e"),
+    "hashtag" : "#elalmadelafiesta",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "455"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e8f"),
+    "hashtag" : "#wiwicandanga",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "455"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e90"),
+    "hashtag" : "#Mochakk",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "498"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e91"),
+    "hashtag" : "#FernandoAcabando",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "499"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e92"),
+    "hashtag" : "#nopapi",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "511"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e93"),
+    "hashtag" : "#Catolicos",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "512"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e94"),
+    "hashtag" : "#Alcohol",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "514"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e95"),
+    "hashtag" : "#jeje",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "517"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e96"),
+    "hashtag" : "#christhian",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "520"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e97"),
+    "hashtag" : "#SinComentarios",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "540"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e98"),
+    "hashtag" : "#ChatGPT",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "544"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e99"),
+    "hashtag" : "#Ai",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "544"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e9a"),
+    "hashtag" : "#gatos",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "548"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(5)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e9b"),
+    "hashtag" : "#familia",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "548"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(5)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e9c"),
+    "hashtag" : "#maxipet",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "562"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e9d"),
+    "hashtag" : "#BTC",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "571"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e9e"),
+    "hashtag" : "#Cryptocurrencies",
+    "count" : NumberInt(2),
+    "message_ids" : [
+        "571",
+        "572"
+    ],
+    "total_title_messages" : NumberInt(2),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41e9f"),
+    "hashtag" : "#RiquezasNaturaleza",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "575"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(12)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea0"),
+    "hashtag" : "#VenezuelaSorpresa",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "575"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(12)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea1"),
+    "hashtag" : "#EcoResponsabilidad",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "575"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(12)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea2"),
+    "hashtag" : "#Noticias",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "575"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(12)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea3"),
+    "hashtag" : "#venezuela",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "582"
+    ],
+    "total_title_messages" : NumberInt(0),
+    "total_reactions" : NumberInt(1)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea4"),
+    "hashtag" : "#Meditacion",
+    "count" : NumberInt(2),
+    "message_ids" : [
+        "585",
+        "586"
+    ],
+    "total_title_messages" : NumberInt(2),
+    "total_reactions" : NumberInt(4)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea5"),
+    "hashtag" : "#Frecuencias",
+    "count" : NumberInt(2),
+    "message_ids" : [
+        "585",
+        "586"
+    ],
+    "total_title_messages" : NumberInt(2),
+    "total_reactions" : NumberInt(4)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea6"),
+    "hashtag" : "#Mia",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "594"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(2)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea7"),
+    "hashtag" : "#BadBunny",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "605"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(0)
+}
+{
+    "_id" : ObjectId("643b3921c5ab4d3fe8f41ea8"),
+    "hashtag" : "#Musica",
+    "count" : NumberInt(1),
+    "message_ids" : [
+        "605"
+    ],
+    "total_title_messages" : NumberInt(1),
+    "total_reactions" : NumberInt(0)
+}

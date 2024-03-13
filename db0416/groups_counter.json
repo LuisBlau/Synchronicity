@@ -1,0 +1,7 @@
+{
+    "_id" : {
+        "db" : "web_whatsapp",
+        "coll" : "groups"
+    },
+    "seq_value" : NumberLong(28)
+}
